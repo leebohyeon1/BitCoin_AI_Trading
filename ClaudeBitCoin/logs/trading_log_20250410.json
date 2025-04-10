@@ -2605,5 +2605,104 @@
       }
     ],
     "price_change_24h": "-0.29%"
+  },
+  {
+    "timestamp": "2025-04-10 21:32:03",
+    "decision": "hold",
+    "decision_kr": "?��?�� ????��",
+    "confidence": 0.37499999999999994,
+    "avg_signal_strength": -0.1,
+    "signals": [
+      {
+        "source": "?��?��?��균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "?��?��?��로스 ?��?�� (5?�� ?��?��?��균선?�� 20?�� ?��?��?��균선 ?��?��?�� ?���?)"
+      },
+      {
+        "source": "?��기추?��(MA60)",
+        "signal": "sell",
+        "strength": 0.4,
+        "description": "?���? ?��?�� 추세 (?��?���?�? 60?�� ?��?��?��균선 ?��?��?�� ?���?)"
+      },
+      {
+        "source": "볼린???밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 �?�? (중립?�� ?���?)"
+      },
+      {
+        "source": "RSI(?��???강도�??��)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도?�� ?��?�� (RSI: 38.5)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD ?��?�� 추세 ?���?�?"
+      },
+      {
+        "source": "?��?��캐스?��",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "?��?�� 반전 ?��?�� (K > D, K: 53.3, D: 40.1)"
+      },
+      {
+        "source": "?���?�?(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립?�� ?���?�? (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "�??��(?���? ?��리�?�엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "?��??? ?���? ?��리�?�엄 (�??��: 9.46%)"
+      },
+      {
+        "source": "?��?��?���?(공포&?��?���??��)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 ?��?�� ?��?�� (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 4,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "123202",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "213202",
+        "trade_timestamp": 1744288322568,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120313000.0,
+        "trade_price": 121610000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "RISE",
+        "change_price": 271000.0,
+        "change_rate": 0.0022334122,
+        "signed_change_price": 271000.0,
+        "signed_change_rate": 0.0022334122,
+        "trade_volume": 0.00315395,
+        "acc_trade_price": 127594379678.29788,
+        "acc_trade_price_24h": 433498413219.85986,
+        "acc_trade_volume": 1052.20213782,
+        "acc_trade_volume_24h": 3599.31773941,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744288322607
+      }
+    ],
+    "price_change_24h": "0.22%"
   }
 ]

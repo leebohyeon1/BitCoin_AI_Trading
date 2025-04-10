@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-# ê¸°ë³¸ ì„¤ì •ê°’ ì •ì˜
+# ±âº» ¼³Á¤°ª Á¤ÀÇ
 DECISION_THRESHOLDS = {"buy_threshold": 0.2, "sell_threshold": -0.2}
 INVESTMENT_RATIOS = {"min_ratio": 0.2, "max_ratio": 0.5}
 SIGNAL_STRENGTHS = {}
@@ -12,14 +12,14 @@ TRADING_SETTINGS = {"min_order_amount": 5000, "trading_interval": 60}
 CLAUDE_SETTINGS = {"use_claude": False, "weight": 1.0, "confidence_boost": 0.1}
 HISTORICAL_SETTINGS = {"use_historical_data": False}
 
-# ì‚¬ìš©ì ì„¤ì • íŒŒì¼ ë¶ˆëŸ¬ì˜¤ê¸° ì‹œë„
+# »ç¿ëÀÚ ¼³Á¤ ÆÄÀÏ ºÒ·¯¿À±â ½Ãµµ
 try:
     from trading_config import *
-    print("ì‚¬ìš©ì ì„¤ì • íŒŒì¼ì„ ì„±ê³µì ìœ¼ë¡œ ë¶ˆëŸ¬ì™”ìŠµë‹ˆë‹¤.")
+    print("»ç¿ëÀÚ ¼³Á¤ ÆÄÀÏÀ» ¼º°øÀûÀ¸·Î ºÒ·¯¿Ô½À´Ï´Ù.")
 except ImportError:
-    print("ì‚¬ìš©ì ì„¤ì • íŒŒì¼ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ê¸°ë³¸ ì„¤ì •ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.")
+    print("»ç¿ëÀÚ ¼³Á¤ ÆÄÀÏÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù. ±âº» ¼³Á¤À» »ç¿ëÇÕ´Ï´Ù.")
 
-# í•„ìš”í•œ ë¼ì´ë¸ŒëŸ¬ë¦¬ ì„í¬íŠ¸
+# ÇÊ¿äÇÑ ¶óÀÌºê·¯¸® ÀÓÆ÷Æ®
 import pyupbit
 import json
 import pandas as pd
@@ -29,134 +29,134 @@ from datetime import datetime, timedelta
 import requests
 import traceback
 
-# ì¶”ê°€ ê±°ë˜ì†Œ API (ë°”ì´ë‚¸ìŠ¤, ë°”ì´íŠ¸) - í•„ìš”ì‹œ ì„¤ì¹˜
+# Ãß°¡ °Å·¡¼Ò API (¹ÙÀÌ³½½º, ¹ÙÀÌÆ®) - ÇÊ¿ä½Ã ¼³Ä¡
 # pip install python-binance ccxt
 
-# 1. ê±°ë˜ì†Œ ë°ì´í„° ê°€ì ¸ì˜¤ê¸° - í–¥ìƒëœ ë²„ì „
+# 1. °Å·¡¼Ò µ¥ÀÌÅÍ °¡Á®¿À±â - Çâ»óµÈ ¹öÀü
 def get_enhanced_market_data():
-    """ë‹¤ì–‘í•œ ê±°ë˜ì†Œì˜ í¬ê´„ì ì¸ ì‹œì¥ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤."""
+    """´Ù¾çÇÑ °Å·¡¼ÒÀÇ Æ÷°ıÀûÀÎ ½ÃÀå µ¥ÀÌÅÍ¸¦ °¡Á®¿É´Ï´Ù."""
     try:
         result = {}
         
-        # 1.1 ì—…ë¹„íŠ¸ ë°ì´í„°
-        print("ì—…ë¹„íŠ¸ ë°ì´í„° ê°€ì ¸ì˜¤ê¸° ì‹œì‘...")
+        # 1.1 ¾÷ºñÆ® µ¥ÀÌÅÍ
+        print("¾÷ºñÆ® µ¥ÀÌÅÍ °¡Á®¿À±â ½ÃÀÛ...")
         
-        # OHLCV ë°ì´í„° (ì¼ë´‰, ì‹œê°„ë´‰, ë¶„ë´‰)
+        # OHLCV µ¥ÀÌÅÍ (ÀÏºÀ, ½Ã°£ºÀ, ºĞºÀ)
 
-        # ì¼ë´‰ ë°ì´í„°: 200ì¼ë¡œ í™•ì¥ (ì•½ 6-7ê°œì›”)
+        # ÀÏºÀ µ¥ÀÌÅÍ: 200ÀÏ·Î È®Àå (¾à 6-7°³¿ù)
         result["upbit_daily_ohlcv"] = pyupbit.get_ohlcv("KRW-BTC", count=200, interval="day")
         
-        # ì£¼ë´‰ ë°ì´í„° ì¶”ê°€ (52ì£¼ = ì•½ 1ë…„)
+        # ÁÖºÀ µ¥ÀÌÅÍ Ãß°¡ (52ÁÖ = ¾à 1³â)
         result["upbit_hourly_ohlcv"] = pyupbit.get_ohlcv("KRW-BTC", count=24, interval="week")
         
-        # ì›”ë´‰ ë°ì´í„° ì¶”ê°€ (24ê°œì›” = 2ë…„)
+        # ¿ùºÀ µ¥ÀÌÅÍ Ãß°¡ (24°³¿ù = 2³â)
         result["upbit_minute_ohlcv"] = pyupbit.get_ohlcv("KRW-BTC", count=60, interval="minute5")
         
-        # í˜„ì¬ í˜¸ê°€ ì •ë³´ (orderbook)
+        # ÇöÀç È£°¡ Á¤º¸ (orderbook)
         result["upbit_orderbook"] = pyupbit.get_orderbook("KRW-BTC")
         
-        # ìµœê·¼ ì²´ê²° ë°ì´í„°
+        # ÃÖ±Ù Ã¼°á µ¥ÀÌÅÍ
         result["upbit_trades"] = []
         
-        # ì‹œì¥ ì „ì²´ ì •ë³´ (í‹°ì»¤)
+        # ½ÃÀå ÀüÃ¼ Á¤º¸ (Æ¼Ä¿)
         result["upbit_ticker"] = pyupbit.get_current_price("KRW-BTC", verbose=True)
         
-        # ì—…ë¹„íŠ¸ ì‹œì¥ ì „ì²´ ì½”ì¸ ì •ë³´
+        # ¾÷ºñÆ® ½ÃÀå ÀüÃ¼ ÄÚÀÎ Á¤º¸
         result["upbit_market_all"] = []
         
-        print("ì—…ë¹„íŠ¸ ë°ì´í„° ê°€ì ¸ì˜¤ê¸° ì„±ê³µ")
+        print("¾÷ºñÆ® µ¥ÀÌÅÍ °¡Á®¿À±â ¼º°ø")
         
-        # 1.2 ë°”ì´ë‚¸ìŠ¤ ë°ì´í„° (ì„ íƒì )
+        # 1.2 ¹ÙÀÌ³½½º µ¥ÀÌÅÍ (¼±ÅÃÀû)
         try:
             import ccxt
             
-            # CCXTë¥¼ í†µí•œ ë°”ì´ë‚¸ìŠ¤ ì—°ê²°
+            # CCXT¸¦ ÅëÇÑ ¹ÙÀÌ³½½º ¿¬°á
             binance = ccxt.binance()
             
-            # OHLCV ë°ì´í„°
+            # OHLCV µ¥ÀÌÅÍ
 
-            # ë°”ì´ë‚¸ìŠ¤ ì¼ë´‰ 200ì¼
+            # ¹ÙÀÌ³½½º ÀÏºÀ 200ÀÏ
             binance_ohlcv = binance.fetch_ohlcv('BTC/USDT', '1d', limit=200)
             df_binance = pd.DataFrame(binance_ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
             df_binance['timestamp'] = pd.to_datetime(df_binance['timestamp'], unit='ms')
             df_binance.set_index('timestamp', inplace=True)
             result["binance_daily_ohlcv"] = df_binance
             
-            # í˜„ì¬ê°€ ì •ë³´
+            # ÇöÀç°¡ Á¤º¸
             binance_ticker = binance.fetch_ticker('BTC/USDT')
             result["binance_ticker"] = binance_ticker
             
-            # í˜¸ê°€ì°½ ë°ì´í„°
+            # È£°¡Ã¢ µ¥ÀÌÅÍ
             binance_orderbook = binance.fetch_order_book('BTC/USDT')
             result["binance_orderbook"] = binance_orderbook
             
-            print("ë°”ì´ë‚¸ìŠ¤ ë°ì´í„° ê°€ì ¸ì˜¤ê¸° ì„±ê³µ")
+            print("¹ÙÀÌ³½½º µ¥ÀÌÅÍ °¡Á®¿À±â ¼º°ø")
         except Exception as e:
-            print(f"ë°”ì´ë‚¸ìŠ¤ ë°ì´í„° ê°€ì ¸ì˜¤ê¸° ì‹¤íŒ¨ (ë¬´ì‹œí•˜ê³  ê³„ì†): {e}")
+            print(f"¹ÙÀÌ³½½º µ¥ÀÌÅÍ °¡Á®¿À±â ½ÇÆĞ (¹«½ÃÇÏ°í °è¼Ó): {e}")
         
-        # 1.3 Fear & Greed ì§€ìˆ˜ ê°€ì ¸ì˜¤ê¸° (ì•”í˜¸í™”í ì‹œì¥ ì‹¬ë¦¬ ì§€ìˆ˜)
+        # 1.3 Fear & Greed Áö¼ö °¡Á®¿À±â (¾ÏÈ£È­Æó ½ÃÀå ½É¸® Áö¼ö)
         try:
             fg_url = "https://api.alternative.me/fng/"
             fg_response = requests.get(fg_url)
             if fg_response.status_code == 200:
                 fg_data = fg_response.json()
                 result["fear_greed_index"] = fg_data
-                print("Fear & Greed ì§€ìˆ˜ ê°€ì ¸ì˜¤ê¸° ì„±ê³µ")
+                print("Fear & Greed Áö¼ö °¡Á®¿À±â ¼º°ø")
         except Exception as e:
-            print(f"Fear & Greed ì§€ìˆ˜ ê°€ì ¸ì˜¤ê¸° ì‹¤íŒ¨ (ë¬´ì‹œí•˜ê³  ê³„ì†): {e}")
+            print(f"Fear & Greed Áö¼ö °¡Á®¿À±â ½ÇÆĞ (¹«½ÃÇÏ°í °è¼Ó): {e}")
         
-        # 1.4 ì˜¨ì²´ì¸ ë°ì´í„° (ì„ íƒì ) - Glassnode ë˜ëŠ” ë‹¤ë¥¸ ì„œë¹„ìŠ¤ API í•„ìš”
+        # 1.4 ¿ÂÃ¼ÀÎ µ¥ÀÌÅÍ (¼±ÅÃÀû) - Glassnode ¶Ç´Â ´Ù¸¥ ¼­ºñ½º API ÇÊ¿ä
         try:
-            # API í‚¤ê°€ ì„¤ì •ëœ ê²½ìš°ì—ë§Œ ì‹¤í–‰
+            # API Å°°¡ ¼³Á¤µÈ °æ¿ì¿¡¸¸ ½ÇÇà
             glassnode_api_key = os.getenv("GLASSNODE_API_KEY")
             if glassnode_api_key:
-                # ì˜ˆ: ì•¡í‹°ë¸Œ ì£¼ì†Œ ìˆ˜ 
+                # ¿¹: ¾×Æ¼ºê ÁÖ¼Ò ¼ö 
                 active_addresses_url = f"https://api.glassnode.com/v1/metrics/addresses/active_count?api_key={glassnode_api_key}&a=BTC"
                 response = requests.get(active_addresses_url)
                 if response.status_code == 200:
                     result["onchain_active_addresses"] = response.json()
                 
-                # ì˜ˆ: SOPR (Spent Output Profit Ratio)
+                # ¿¹: SOPR (Spent Output Profit Ratio)
                 sopr_url = f"https://api.glassnode.com/v1/metrics/indicators/sopr?api_key={glassnode_api_key}&a=BTC"
                 response = requests.get(sopr_url)
                 if response.status_code == 200:
                     result["onchain_sopr"] = response.json()
                 
-                print("ì˜¨ì²´ì¸ ë°ì´í„° ê°€ì ¸ì˜¤ê¸° ì„±ê³µ")
+                print("¿ÂÃ¼ÀÎ µ¥ÀÌÅÍ °¡Á®¿À±â ¼º°ø")
         except Exception as e:
-            print(f"ì˜¨ì²´ì¸ ë°ì´í„° ê°€ì ¸ì˜¤ê¸° ì‹¤íŒ¨ (ë¬´ì‹œí•˜ê³  ê³„ì†): {e}")
+            print(f"¿ÂÃ¼ÀÎ µ¥ÀÌÅÍ °¡Á®¿À±â ½ÇÆĞ (¹«½ÃÇÏ°í °è¼Ó): {e}")
             
         return result
     
     except Exception as e:
-        print(f"ì‹œì¥ ë°ì´í„° ê°€ì ¸ì˜¤ê¸° ì˜¤ë¥˜: {e}")
+        print(f"½ÃÀå µ¥ÀÌÅÍ °¡Á®¿À±â ¿À·ù: {e}")
         traceback.print_exc()
         return None
 
-# 2. ë°ì´í„° ì²˜ë¦¬ ë° ì§€í‘œ ê³„ì‚° í•¨ìˆ˜
+# 2. µ¥ÀÌÅÍ Ã³¸® ¹× ÁöÇ¥ °è»ê ÇÔ¼ö
 def calculate_technical_indicators(data):
-    """ê°€ì ¸ì˜¨ ë°ì´í„°ì—ì„œ ê¸°ìˆ ì  ì§€í‘œ ê³„ì‚°"""
+    """°¡Á®¿Â µ¥ÀÌÅÍ¿¡¼­ ±â¼úÀû ÁöÇ¥ °è»ê"""
     try:
         indicators = {}
         
-        # 2.1 ê¸°ë³¸ OHLCV ë°ì´í„°ì—ì„œ ì§€í‘œ ê³„ì‚°
+        # 2.1 ±âº» OHLCV µ¥ÀÌÅÍ¿¡¼­ ÁöÇ¥ °è»ê
         df = data["upbit_daily_ohlcv"].copy()
         
-        # ì´ë™í‰ê· ì„  ê³„ì‚°
+        # ÀÌµ¿Æò±Õ¼± °è»ê
         df['MA5'] = df['close'].rolling(window=5).mean()
         df['MA10'] = df['close'].rolling(window=10).mean()
         df['MA20'] = df['close'].rolling(window=20).mean()
         df['MA60'] = df['close'].rolling(window=60).mean() if len(df) >= 60 else None
         df['MA120'] = df['close'].rolling(window=120).mean() if len(df) >= 120 else None
         
-        # ë³¼ë¦°ì € ë°´ë“œ
+        # º¼¸°Àú ¹êµå
         df['MA20'] = df['close'].rolling(window=20).mean()
         df['stddev'] = df['close'].rolling(window=20).std()
         df['upper_band'] = df['MA20'] + (df['stddev'] * 2)
         df['lower_band'] = df['MA20'] - (df['stddev'] * 2)
         df['bandwidth'] = (df['upper_band'] - df['lower_band']) / df['MA20']
         
-        # RSI ê³„ì‚° (Relative Strength Index, ìƒëŒ€ê°•ë„ì§€ìˆ˜)
+        # RSI °è»ê (Relative Strength Index, »ó´ë°­µµÁö¼ö)
         delta = df['close'].diff()
         gain = delta.where(delta > 0, 0)
         loss = -delta.where(delta < 0, 0)
@@ -165,14 +165,14 @@ def calculate_technical_indicators(data):
         rs = avg_gain / avg_loss
         df['RSI'] = 100 - (100 / (1 + rs))
         
-        # MACD ê³„ì‚°
+        # MACD °è»ê
         df['EMA12'] = df['close'].ewm(span=12, adjust=False).mean()
         df['EMA26'] = df['close'].ewm(span=26, adjust=False).mean()
         df['MACD'] = df['EMA12'] - df['EMA26']
         df['Signal'] = df['MACD'].ewm(span=9, adjust=False).mean()
         df['MACD_hist'] = df['MACD'] - df['Signal']
         
-        # ìŠ¤í† ìºìŠ¤í‹± ì§€í‘œ
+        # ½ºÅäÄ³½ºÆ½ ÁöÇ¥
         high_14 = df['high'].rolling(window=14).max()
         low_14 = df['low'].rolling(window=14).min()
         df['K'] = 100 * ((df['close'] - low_14) / (high_14 - low_14))
@@ -191,13 +191,13 @@ def calculate_technical_indicators(data):
                             np.where(df['close'] < df['close'].shift(), 
                                     -df['volume'], 0)).cumsum()
         
-        # ì¼ë´‰ ê¸°ìˆ ì  ì§€í‘œ ì €ì¥
+        # ÀÏºÀ ±â¼úÀû ÁöÇ¥ ÀúÀå
         indicators["daily_indicators"] = df
         
-        # 2.2 ì‹œê°„ë´‰ ë°ì´í„°ì—ì„œ ì§€í‘œ ê³„ì‚°
+        # 2.2 ½Ã°£ºÀ µ¥ÀÌÅÍ¿¡¼­ ÁöÇ¥ °è»ê
         df_hourly = data["upbit_hourly_ohlcv"].copy()
         
-        # ê°„ë‹¨í•œ ì´ë™í‰ê·  ë° RSIë§Œ ê³„ì‚°
+        # °£´ÜÇÑ ÀÌµ¿Æò±Õ ¹× RSI¸¸ °è»ê
         df_hourly['MA5'] = df_hourly['close'].rolling(window=5).mean()
         df_hourly['MA10'] = df_hourly['close'].rolling(window=10).mean()
         
@@ -209,25 +209,25 @@ def calculate_technical_indicators(data):
         rs = avg_gain / avg_loss
         df_hourly['RSI'] = 100 - (100 / (1 + rs))
         
-        # ì‹œê°„ë´‰ ê¸°ìˆ ì  ì§€í‘œ ì €ì¥
+        # ½Ã°£ºÀ ±â¼úÀû ÁöÇ¥ ÀúÀå
         indicators["hourly_indicators"] = df_hourly
         
-        # 2.3 ê±°ë˜ëŸ‰ í”„ë¡œí•„ ê³„ì‚° (ê°€ê²©ëŒ€ë³„ ê±°ë˜ëŸ‰ ë¶„í¬)
-        # - ì¼ë³„ OHLCV ë°ì´í„°ë¡œ ê°„ë‹¨í•œ ê±°ë˜ëŸ‰ í”„ë¡œí•„ ìƒì„±
+        # 2.3 °Å·¡·® ÇÁ·ÎÇÊ °è»ê (°¡°İ´ëº° °Å·¡·® ºĞÆ÷)
+        # - ÀÏº° OHLCV µ¥ÀÌÅÍ·Î °£´ÜÇÑ °Å·¡·® ÇÁ·ÎÇÊ »ı¼º
         daily_data = data["upbit_daily_ohlcv"]
         
-        # ê°€ê²© êµ¬ê°„ ì •ì˜ (ìµœì €ê°€ì—ì„œ ìµœê³ ê°€ê¹Œì§€ 10ê°œ êµ¬ê°„)
+        # °¡°İ ±¸°£ Á¤ÀÇ (ÃÖÀú°¡¿¡¼­ ÃÖ°í°¡±îÁö 10°³ ±¸°£)
         price_min = daily_data['low'].min()
         price_max = daily_data['high'].max()
-        price_ranges = np.linspace(price_min, price_max, 11)  # 10ê°œ êµ¬ê°„ ê²½ê³„ ìƒì„±
+        price_ranges = np.linspace(price_min, price_max, 11)  # 10°³ ±¸°£ °æ°è »ı¼º
         
-        # ê° ê°€ê²© êµ¬ê°„ë³„ ê±°ë˜ëŸ‰ í•©ê³„
+        # °¢ °¡°İ ±¸°£º° °Å·¡·® ÇÕ°è
         volume_profile = []
         for i in range(len(price_ranges) - 1):
             price_low = price_ranges[i]
             price_high = price_ranges[i+1]
             
-            # í•´ë‹¹ ê°€ê²© êµ¬ê°„ì— ì†í•˜ëŠ” ë‚ ë“¤ì˜ ê±°ë˜ëŸ‰ í•©ê³„
+            # ÇØ´ç °¡°İ ±¸°£¿¡ ¼ÓÇÏ´Â ³¯µéÀÇ °Å·¡·® ÇÕ°è
             total_volume = daily_data[(daily_data['low'] <= price_high) & 
                                       (daily_data['high'] >= price_low)]['volume'].sum()
             
@@ -237,59 +237,59 @@ def calculate_technical_indicators(data):
                 'volume': total_volume
             })
         
-        # ê±°ë˜ëŸ‰ í”„ë¡œí•„ ì €ì¥
+        # °Å·¡·® ÇÁ·ÎÇÊ ÀúÀå
         indicators["volume_profile"] = volume_profile
         
-       # í˜¸ê°€ì°½ ë¶„ì„
+       # È£°¡Ã¢ ºĞ¼®
         if "upbit_orderbook" in data and data["upbit_orderbook"]:
             try:
                 orderbook = data["upbit_orderbook"]
                 
-                # pyupbit 0.2.34 ë²„ì „ í˜¸ê°€ì°½ êµ¬ì¡° í™•ì¸
+                # pyupbit 0.2.34 ¹öÀü È£°¡Ã¢ ±¸Á¶ È®ÀÎ
                 if isinstance(orderbook, dict) and "ask_price" in orderbook:
-                    # ë‹¨ì¼ ë”•ì…”ë„ˆë¦¬ì´ê³  ì§ì ‘ ê°€ê²© ì •ë³´ê°€ ìˆëŠ” ê²½ìš°
+                    # ´ÜÀÏ µñ¼Å³Ê¸®ÀÌ°í Á÷Á¢ °¡°İ Á¤º¸°¡ ÀÖ´Â °æ¿ì
                     best_bid = orderbook.get("bid_price", 0)
                     best_ask = orderbook.get("ask_price", 0)
                     
-                    # ìˆ˜ëŸ‰ ì •ë³´
+                    # ¼ö·® Á¤º¸
                     bid_quantity = orderbook.get("bid_size", 0)
                     ask_quantity = orderbook.get("ask_size", 0)
                     
-                    # ê°„ë‹¨í•œ ë§¤ìˆ˜/ë§¤ë„ ë¹„ìœ¨ ê³„ì‚°
+                    # °£´ÜÇÑ ¸Å¼ö/¸Åµµ ºñÀ² °è»ê
                     total_bids_amount = best_bid * bid_quantity
                     total_asks_amount = best_ask * ask_quantity
                 elif isinstance(orderbook, list) and len(orderbook) > 0:
-                    # ë¦¬ìŠ¤íŠ¸ì¸ ê²½ìš° ì²« ë²ˆì§¸ ìš”ì†Œ ì‚¬ìš©
+                    # ¸®½ºÆ®ÀÎ °æ¿ì Ã¹ ¹øÂ° ¿ä¼Ò »ç¿ë
                     first_item = orderbook[0]
                     if "orderbook_units" in first_item:
                         units = first_item["orderbook_units"]
                         
-                        # ë§¤ìˆ˜/ë§¤ë„ ì´ì•¡ ê³„ì‚°
+                        # ¸Å¼ö/¸Åµµ ÃÑ¾× °è»ê
                         total_bids_amount = sum(unit.get("bid_price", 0) * unit.get("bid_size", 0) for unit in units)
                         total_asks_amount = sum(unit.get("ask_price", 0) * unit.get("ask_size", 0) for unit in units)
                         
-                        # í˜¸ê°€ì°½ ìŠ¤í”„ë ˆë“œ
+                        # È£°¡Ã¢ ½ºÇÁ·¹µå
                         best_bid = units[0].get("bid_price", 0) if units else 0
                         best_ask = units[0].get("ask_price", 0) if units else 0
                     else:
-                        # ë‹¤ë¥¸ êµ¬ì¡°ì¸ ê²½ìš° ê¸°ë³¸ê°’ ì„¤ì •
+                        # ´Ù¸¥ ±¸Á¶ÀÎ °æ¿ì ±âº»°ª ¼³Á¤
                         total_bids_amount = 0
                         total_asks_amount = 0
                         best_bid = 0
                         best_ask = 0
                 else:
-                    # ë‹¤ë¥¸ í˜•íƒœì¸ ê²½ìš° ê¸°ë³¸ê°’ ì„¤ì •
+                    # ´Ù¸¥ ÇüÅÂÀÎ °æ¿ì ±âº»°ª ¼³Á¤
                     total_bids_amount = 0
                     total_asks_amount = 0
                     best_bid = 0
                     best_ask = 0
                 
-                # ê¸°ë³¸ ë¶„ì„ ì‹¤í–‰
+                # ±âº» ºĞ¼® ½ÇÇà
                 buy_sell_ratio = total_bids_amount / total_asks_amount if total_asks_amount > 0 else 1.0
                 spread = best_ask - best_bid if best_bid > 0 else 0
                 spread_percentage = (spread / best_bid) * 100 if best_bid > 0 else 0
                 
-                # ê²°ê³¼ ì €ì¥
+                # °á°ú ÀúÀå
                 indicators["orderbook_analysis"] = {
                     "buy_sell_ratio": buy_sell_ratio,
                     "spread": spread,
@@ -297,36 +297,36 @@ def calculate_technical_indicators(data):
                 }
                 
             except Exception as e:
-                print(f"í˜¸ê°€ì°½ ë¶„ì„ ì¤‘ ì˜¤ë¥˜ ë°œìƒ: {e}")
-                # ì˜¤ë¥˜ ë°œìƒ ì‹œ ê¸°ë³¸ê°’ ì„¤ì •
+                print(f"È£°¡Ã¢ ºĞ¼® Áß ¿À·ù ¹ß»ı: {e}")
+                # ¿À·ù ¹ß»ı ½Ã ±âº»°ª ¼³Á¤
                 indicators["orderbook_analysis"] = {
                     "buy_sell_ratio": 1.0,
                     "spread": 0,
                     "spread_percentage": 0
                 }
             
-        # 2.5 ìµœê·¼ ì²´ê²° ë¶„ì„
+        # 2.5 ÃÖ±Ù Ã¼°á ºĞ¼®
         if "upbit_trades" in data and data["upbit_trades"]:
             trades = data["upbit_trades"]
             
-            # ë§¤ìˆ˜/ë§¤ë„ ì²´ê²° ë¶„ë¥˜
+            # ¸Å¼ö/¸Åµµ Ã¼°á ºĞ·ù
             buy_trades = [trade for trade in trades if trade['ask_bid'] == 'BID']
             sell_trades = [trade for trade in trades if trade['ask_bid'] == 'ASK']
             
-            # ë§¤ìˆ˜/ë§¤ë„ ì²´ê²° ë¹„ìœ¨
+            # ¸Å¼ö/¸Åµµ Ã¼°á ºñÀ²
             buy_count = len(buy_trades)
             sell_count = len(sell_trades)
             buy_sell_count_ratio = buy_count / sell_count if sell_count > 0 else float('inf')
             
-            # ë§¤ìˆ˜/ë§¤ë„ ì²´ê²° ì´ëŸ‰
+            # ¸Å¼ö/¸Åµµ Ã¼°á ÃÑ·®
             buy_volume = sum(float(trade['trade_volume']) for trade in buy_trades)
             sell_volume = sum(float(trade['trade_volume']) for trade in sell_trades)
             buy_sell_volume_ratio = buy_volume / sell_volume if sell_volume > 0 else float('inf')
             
-            # í‰ê·  ì²´ê²° í¬ê¸°
+            # Æò±Õ Ã¼°á Å©±â
             avg_trade_size = sum(float(trade['trade_volume']) for trade in trades) / len(trades) if trades else 0
             
-            # ê±°ë˜ ì‹œê°„ ê°„ê²© (ì´ˆ ë‹¨ìœ„)
+            # °Å·¡ ½Ã°£ °£°İ (ÃÊ ´ÜÀ§)
             if len(trades) >= 2:
                 trade_times = [datetime.strptime(trade['trade_time'], '%H:%M:%S') for trade in trades]
                 time_diffs = [(trade_times[i] - trade_times[i+1]).total_seconds() 
@@ -335,7 +335,7 @@ def calculate_technical_indicators(data):
             else:
                 avg_time_between_trades = None
             
-            # ê²°ê³¼ ì €ì¥
+            # °á°ú ÀúÀå
             indicators["trade_analysis"] = {
                 "buy_sell_count_ratio": buy_sell_count_ratio,
                 "buy_sell_volume_ratio": buy_sell_volume_ratio,
@@ -343,45 +343,45 @@ def calculate_technical_indicators(data):
                 "avg_time_between_trades": avg_time_between_trades
             }
             
-        # 2.6 ë°”ì´ë‚¸ìŠ¤ ë°ì´í„° ë¶„ì„ (ìˆëŠ” ê²½ìš°)
-        # ë°”ì´ë‚¸ìŠ¤ ë°ì´í„° ë¶„ì„ (ìˆëŠ” ê²½ìš°)
+        # 2.6 ¹ÙÀÌ³½½º µ¥ÀÌÅÍ ºĞ¼® (ÀÖ´Â °æ¿ì)
+        # ¹ÙÀÌ³½½º µ¥ÀÌÅÍ ºĞ¼® (ÀÖ´Â °æ¿ì)
         if "binance_daily_ohlcv" in data:
             try:
                 binance_df = data["binance_daily_ohlcv"]
                 
-                # ë°ì´í„°ê°€ ë¹„ì–´ìˆì§€ ì•Šì€ì§€ í™•ì¸
+                # µ¥ÀÌÅÍ°¡ ºñ¾îÀÖÁö ¾ÊÀºÁö È®ÀÎ
                 if binance_df is not None and not (isinstance(binance_df, pd.DataFrame) and binance_df.empty):
-                    # ê°„ë‹¨í•œ ì´ë™í‰ê· 
+                    # °£´ÜÇÑ ÀÌµ¿Æò±Õ
                     if isinstance(binance_df, pd.DataFrame):
                         binance_df['MA5'] = binance_df['close'].rolling(window=5).mean()
                         binance_df['MA20'] = binance_df['close'].rolling(window=20).mean()
                         
-                        # USDT/KRW ê°€ê²© ê°€ì • (1 USDT = ì•½ 1350ì›ìœ¼ë¡œ ê°€ì •)
-                        usdt_krw_rate = 1350  # ì‹¤ì œë¡œëŠ” APIë¡œ í™˜ìœ¨ì„ ê°€ì ¸ì˜¤ëŠ” ê²ƒì´ ì¢‹ìŒ
+                        # USDT/KRW °¡°İ °¡Á¤ (1 USDT = ¾à 1350¿øÀ¸·Î °¡Á¤)
+                        usdt_krw_rate = 1350  # ½ÇÁ¦·Î´Â API·Î È¯À²À» °¡Á®¿À´Â °ÍÀÌ ÁÁÀ½
                         
-                        # ë§ˆì§€ë§‰ ë°”ì´ë‚¸ìŠ¤ ê°€ê²©ê³¼ ì—…ë¹„íŠ¸ ê°€ê²© ë¹„êµ
+                        # ¸¶Áö¸· ¹ÙÀÌ³½½º °¡°İ°ú ¾÷ºñÆ® °¡°İ ºñ±³
                         if "upbit_ticker" in data and data["upbit_ticker"]:
                             try:
-                                # ë°”ì´ë‚¸ìŠ¤ ê°€ê²© ì¶”ì¶œ
+                                # ¹ÙÀÌ³½½º °¡°İ ÃßÃâ
                                 try:
                                     binance_last_price = binance_df['close'].iloc[-1]
                                     if isinstance(binance_last_price, list):
                                         binance_last_price = binance_last_price[0] if binance_last_price else 0
                                 except Exception as e:
-                                    print(f"ë°”ì´ë‚¸ìŠ¤ ê°€ê²© ì¶”ì¶œ ì˜¤ë¥˜: {e}")
+                                    print(f"¹ÙÀÌ³½½º °¡°İ ÃßÃâ ¿À·ù: {e}")
                                     binance_last_price = 0
                                 
-                                # ì—…ë¹„íŠ¸ ê°€ê²© ì¶”ì¶œ
+                                # ¾÷ºñÆ® °¡°İ ÃßÃâ
                                 try:
                                     upbit_last_price = data["upbit_ticker"]
                                     if isinstance(upbit_last_price, dict):
-                                        # ë”•ì…”ë„ˆë¦¬ì—ì„œ ê°€ê²© ì¶”ì¶œ
+                                        # µñ¼Å³Ê¸®¿¡¼­ °¡°İ ÃßÃâ
                                         for key in ["trade_price", "close", "last", "price"]:
                                             if key in upbit_last_price:
                                                 upbit_last_price = upbit_last_price[key]
                                                 break
                                         else:
-                                            # í‚¤ë¥¼ ì°¾ì§€ ëª»í•œ ê²½ìš° ì²« ë²ˆì§¸ ìˆ«ì ì‚¬ìš©
+                                            # Å°¸¦ Ã£Áö ¸øÇÑ °æ¿ì Ã¹ ¹øÂ° ¼ıÀÚ »ç¿ë
                                             for k, v in upbit_last_price.items():
                                                 if isinstance(v, (int, float)):
                                                     upbit_last_price = v
@@ -389,7 +389,7 @@ def calculate_technical_indicators(data):
                                             else:
                                                 upbit_last_price = 0
                                     elif isinstance(upbit_last_price, list):
-                                        # ë¦¬ìŠ¤íŠ¸ì¸ ê²½ìš° ì²« ë²ˆì§¸ ê°’ ì‹œë„
+                                        # ¸®½ºÆ®ÀÎ °æ¿ì Ã¹ ¹øÂ° °ª ½Ãµµ
                                         upbit_last_price = upbit_last_price[0] if upbit_last_price else 0
                                         if isinstance(upbit_last_price, dict):
                                             for key in ["trade_price", "close", "last", "price"]:
@@ -397,10 +397,10 @@ def calculate_technical_indicators(data):
                                                     upbit_last_price = upbit_last_price[key]
                                                     break
                                 except Exception as e:
-                                    print(f"ì—…ë¹„íŠ¸ ê°€ê²© ì¶”ì¶œ ì˜¤ë¥˜: {e}")
+                                    print(f"¾÷ºñÆ® °¡°İ ÃßÃâ ¿À·ù: {e}")
                                     upbit_last_price = 0
                                 
-                                # ê¹€í”„ ê³„ì‚°
+                                # ±èÇÁ °è»ê
                                 try:
                                     if binance_last_price > 0 and upbit_last_price > 0:
                                         binance_krw_price = binance_last_price * usdt_krw_rate
@@ -414,13 +414,13 @@ def calculate_technical_indicators(data):
                                                 "korea_premium_percentage": kimp_percentage
                                             }
                                         except Exception as e:
-                                            print(f"exchange_comparison ì €ì¥ ì¤‘ ì˜¤ë¥˜: {e}")
+                                            print(f"exchange_comparison ÀúÀå Áß ¿À·ù: {e}")
                                 except Exception as e:
-                                    print(f"ê¹€í”„ ê³„ì‚° ì¤‘ ì˜¤ë¥˜ ë°œìƒ: {e}")
+                                    print(f"±èÇÁ °è»ê Áß ¿À·ù ¹ß»ı: {e}")
                                     binance_krw_price = 0
                                     kimp_percentage = 0
                                     
-                                    # ê¸°ë³¸ê°’ìœ¼ë¡œ ì €ì¥
+                                    # ±âº»°ªÀ¸·Î ÀúÀå
                                     try:
                                         indicators["exchange_comparison"] = {
                                             "binance_price_usdt": 0,
@@ -429,16 +429,16 @@ def calculate_technical_indicators(data):
                                             "korea_premium_percentage": 0
                                         }
                                     except Exception as e:
-                                        print(f"exchange_comparison ê¸°ë³¸ê°’ ì €ì¥ ì¤‘ ì˜¤ë¥˜: {e}")
+                                        print(f"exchange_comparison ±âº»°ª ÀúÀå Áß ¿À·ù: {e}")
                             except Exception as e:
-                                print(f"ê¹€í”„ ê³„ì‚° ì¤‘ ì˜¤ë¥˜: {e}")
+                                print(f"±èÇÁ °è»ê Áß ¿À·ù: {e}")
                         
-                        # ë°”ì´ë‚¸ìŠ¤ ê¸°ìˆ ì  ì§€í‘œ ì €ì¥
+                        # ¹ÙÀÌ³½½º ±â¼úÀû ÁöÇ¥ ÀúÀå
                         indicators["binance_indicators"] = binance_df
             except Exception as e:
-                print(f"ë°”ì´ë‚¸ìŠ¤ ë°ì´í„° ë¶„ì„ ì¤‘ ì˜¤ë¥˜: {e}")
+                print(f"¹ÙÀÌ³½½º µ¥ÀÌÅÍ ºĞ¼® Áß ¿À·ù: {e}")
             
-        # 2.7 ì‹œì¥ ì‹¬ë¦¬ ì§€ìˆ˜ (Fear & Greed)
+        # 2.7 ½ÃÀå ½É¸® Áö¼ö (Fear & Greed)
         if "fear_greed_index" in data and data["fear_greed_index"]:
             fg_data = data["fear_greed_index"]
             current_value = fg_data['data'][0]['value'] if 'data' in fg_data and fg_data['data'] else None
@@ -449,13 +449,13 @@ def calculate_technical_indicators(data):
                 "fear_greed_classification": current_classification
             }
             
-        # 2.8 ì˜¨ì²´ì¸ ë°ì´í„° ë¶„ì„ (ìˆëŠ” ê²½ìš°)
+        # 2.8 ¿ÂÃ¼ÀÎ µ¥ÀÌÅÍ ºĞ¼® (ÀÖ´Â °æ¿ì)
         if "onchain_active_addresses" in data and data["onchain_active_addresses"]:
-            # ìµœê·¼ ì•¡í‹°ë¸Œ ì£¼ì†Œ ìˆ˜ ì¶”ì¶œ
+            # ÃÖ±Ù ¾×Æ¼ºê ÁÖ¼Ò ¼ö ÃßÃâ
             active_addresses = data["onchain_active_addresses"]
             recent_active = active_addresses[-7:] if active_addresses else []
             
-            # ìµœê·¼ 7ì¼ê°„ ì¶”ì„¸ ê³„ì‚°
+            # ÃÖ±Ù 7ÀÏ°£ Ãß¼¼ °è»ê
             if recent_active and len(recent_active) >= 7:
                 first_value = recent_active[0]['v']
                 last_value = recent_active[-1]['v']
@@ -463,15 +463,15 @@ def calculate_technical_indicators(data):
             else:
                 active_addr_trend = None
                 
-            # SOPR ë¶„ì„ (Spent Output Profit Ratio)
+            # SOPR ºĞ¼® (Spent Output Profit Ratio)
             if "onchain_sopr" in data and data["onchain_sopr"]:
                 sopr_data = data["onchain_sopr"]
                 recent_sopr = sopr_data[-7:] if sopr_data else []
                 
                 if recent_sopr and len(recent_sopr) >= 1:
                     current_sopr = recent_sopr[-1]['v']
-                    # SOPR > 1 : ì´ìµ ì‹¤í˜„, SOPR < 1 : ì†ì‹¤ ì‹¤í˜„
-                    sopr_signal = "ì´ìµ ì‹¤í˜„ì¤‘" if current_sopr > 1 else "ì†ì‹¤ ì‹¤í˜„ì¤‘"
+                    # SOPR > 1 : ÀÌÀÍ ½ÇÇö, SOPR < 1 : ¼Õ½Ç ½ÇÇö
+                    sopr_signal = "ÀÌÀÍ ½ÇÇöÁß" if current_sopr > 1 else "¼Õ½Ç ½ÇÇöÁß"
                 else:
                     current_sopr = None
                     sopr_signal = None
@@ -485,194 +485,194 @@ def calculate_technical_indicators(data):
         return indicators
         
     except Exception as e:
-        print(f"ê¸°ìˆ ì  ì§€í‘œ ê³„ì‚° ì˜¤ë¥˜: {e}")
+        print(f"±â¼úÀû ÁöÇ¥ °è»ê ¿À·ù: {e}")
         traceback.print_exc()
         return None
 
-# 3. í†µí•© ë§¤ë§¤ ê²°ì • ë¶„ì„ í•¨ìˆ˜
+# 3. ÅëÇÕ ¸Å¸Å °áÁ¤ ºĞ¼® ÇÔ¼ö
 def perform_integrated_analysis(market_data, indicators):
-    """ë‹¤ì–‘í•œ ë°ì´í„° ì†ŒìŠ¤ë¥¼ ì¢…í•©í•˜ì—¬ ë§¤ë§¤ ê²°ì •ì„ ë‚´ë¦½ë‹ˆë‹¤."""
+    """´Ù¾çÇÑ µ¥ÀÌÅÍ ¼Ò½º¸¦ Á¾ÇÕÇÏ¿© ¸Å¸Å °áÁ¤À» ³»¸³´Ï´Ù."""
     try:
         signals = []
-        signal_strengths = {}  # ì‹ í˜¸ ê°•ë„ ì €ì¥
+        signal_strengths = {}  # ½ÅÈ£ °­µµ ÀúÀå
         
-        # 3.1 ì¼ë´‰ ê¸°ìˆ ì  ì§€í‘œ ë¶„ì„
+        # 3.1 ÀÏºÀ ±â¼úÀû ÁöÇ¥ ºĞ¼®
         if "daily_indicators" in indicators and not indicators["daily_indicators"].empty:
             daily_df = indicators["daily_indicators"]
-            last_row = daily_df.iloc[-1]  # ê°€ì¥ ìµœê·¼ ë°ì´í„°
+            last_row = daily_df.iloc[-1]  # °¡Àå ÃÖ±Ù µ¥ÀÌÅÍ
             
-            # ì´ë™í‰ê· ì„  ë¶„ì„ (ê³¨ë“ í¬ë¡œìŠ¤/ë°ë“œí¬ë¡œìŠ¤)
+            # ÀÌµ¿Æò±Õ¼± ºĞ¼® (°ñµçÅ©·Î½º/µ¥µåÅ©·Î½º)
             ma5 = last_row['MA5']
             ma10 = last_row['MA10']
             ma20 = last_row['MA20']
             ma60 = last_row['MA60'] if 'MA60' in last_row and not pd.isna(last_row['MA60']) else None
             
-            # ë‹¨ê¸° ì´ë™í‰ê· ì„  ë¶„ì„
+            # ´Ü±â ÀÌµ¿Æò±Õ¼± ºĞ¼®
             if ma5 > ma20:
                 signals.append({
-                    "source": "ì´ë™í‰ê· ì„ (MA)",
+                    "source": "ÀÌµ¿Æò±Õ¼±(MA)",
                     "signal": "buy",
                     "strength": 0.6,
-                    "description": "ê³¨ë“ í¬ë¡œìŠ¤ ìƒíƒœ (5ì¼ ì´ë™í‰ê· ì„ ì´ 20ì¼ ì´ë™í‰ê· ì„  ìœ„ì— ìœ„ì¹˜)"
+                    "description": "°ñµçÅ©·Î½º »óÅÂ (5ÀÏ ÀÌµ¿Æò±Õ¼±ÀÌ 20ÀÏ ÀÌµ¿Æò±Õ¼± À§¿¡ À§Ä¡)"
                 })
                 signal_strengths["MA"] = 0.6
             elif ma5 < ma20:
                 signals.append({
-                    "source": "ì´ë™í‰ê· ì„ (MA)",
+                    "source": "ÀÌµ¿Æò±Õ¼±(MA)",
                     "signal": "sell",
                     "strength": 0.6,
-                    "description": "ë°ë“œí¬ë¡œìŠ¤ ìƒíƒœ (5ì¼ ì´ë™í‰ê· ì„ ì´ 20ì¼ ì´ë™í‰ê· ì„  ì•„ë˜ì— ìœ„ì¹˜)"
+                    "description": "µ¥µåÅ©·Î½º »óÅÂ (5ÀÏ ÀÌµ¿Æò±Õ¼±ÀÌ 20ÀÏ ÀÌµ¿Æò±Õ¼± ¾Æ·¡¿¡ À§Ä¡)"
                 })
                 signal_strengths["MA"] = -0.6
             else:
                 signals.append({
-                    "source": "ì´ë™í‰ê· ì„ (MA)",
+                    "source": "ÀÌµ¿Æò±Õ¼±(MA)",
                     "signal": "hold",
                     "strength": 0,
-                    "description": "ì´ë™í‰ê· ì„  ì¤‘ë¦½ ìƒíƒœ"
+                    "description": "ÀÌµ¿Æò±Õ¼± Áß¸³ »óÅÂ"
                 })
                 signal_strengths["MA"] = 0
                 
-            # ì¥ê¸° ì´ë™í‰ê· ì„  ì¶”ì„¸ (ì¡´ì¬í•˜ëŠ” ê²½ìš°)
+            # Àå±â ÀÌµ¿Æò±Õ¼± Ãß¼¼ (Á¸ÀçÇÏ´Â °æ¿ì)
             if ma60 is not None:
                 if last_row['close'] > ma60:
                     signals.append({
-                        "source": "ì¥ê¸°ì¶”ì„¸(MA60)",
+                        "source": "Àå±âÃß¼¼(MA60)",
                         "signal": "buy",
                         "strength": 0.4,
-                        "description": "ì¥ê¸° ìƒìŠ¹ ì¶”ì„¸ (í˜„ì¬ê°€ê°€ 60ì¼ ì´ë™í‰ê· ì„  ìœ„ì— ìœ„ì¹˜)"
+                        "description": "Àå±â »ó½Â Ãß¼¼ (ÇöÀç°¡°¡ 60ÀÏ ÀÌµ¿Æò±Õ¼± À§¿¡ À§Ä¡)"
                     })
                     signal_strengths["MA60"] = 0.4
                 else:
                     signals.append({
-                        "source": "ì¥ê¸°ì¶”ì„¸(MA60)",
+                        "source": "Àå±âÃß¼¼(MA60)",
                         "signal": "sell",
                         "strength": 0.4,
-                        "description": "ì¥ê¸° í•˜ë½ ì¶”ì„¸ (í˜„ì¬ê°€ê°€ 60ì¼ ì´ë™í‰ê· ì„  ì•„ë˜ì— ìœ„ì¹˜)"
+                        "description": "Àå±â ÇÏ¶ô Ãß¼¼ (ÇöÀç°¡°¡ 60ÀÏ ÀÌµ¿Æò±Õ¼± ¾Æ·¡¿¡ À§Ä¡)"
                     })
                     signal_strengths["MA60"] = -0.4
             
-            # ë³¼ë¦°ì € ë°´ë“œ ë¶„ì„
+            # º¼¸°Àú ¹êµå ºĞ¼®
             upper_band = last_row['upper_band']
             lower_band = last_row['lower_band']
-            mid_band = last_row['MA20']  # ì¤‘ì•™ì„ ì€ 20ì¼ ì´ë™í‰ê· ì„ 
+            mid_band = last_row['MA20']  # Áß¾Ó¼±Àº 20ÀÏ ÀÌµ¿Æò±Õ¼±
             
             if last_row['close'] > upper_band:
                 signals.append({
-                    "source": "ë³¼ë¦°ì €ë°´ë“œ(BB)",
+                    "source": "º¼¸°Àú¹êµå(BB)",
                     "signal": "sell",
                     "strength": 0.7,
-                    "description": "ê³¼ë§¤ìˆ˜ ìƒíƒœ (ë³¼ë¦°ì € ë°´ë“œ ìƒë‹¨ ëŒíŒŒ)"
+                    "description": "°ú¸Å¼ö »óÅÂ (º¼¸°Àú ¹êµå »ó´Ü µ¹ÆÄ)"
                 })
                 signal_strengths["BB"] = -0.7
             elif last_row['close'] < lower_band:
                 signals.append({
-                    "source": "ë³¼ë¦°ì €ë°´ë“œ(BB)",
+                    "source": "º¼¸°Àú¹êµå(BB)",
                     "signal": "buy",
                     "strength": 0.7,
-                    "description": "ê³¼ë§¤ë„ ìƒíƒœ (ë³¼ë¦°ì € ë°´ë“œ í•˜ë‹¨ ëŒíŒŒ)"
+                    "description": "°ú¸Åµµ »óÅÂ (º¼¸°Àú ¹êµå ÇÏ´Ü µ¹ÆÄ)"
                 })
                 signal_strengths["BB"] = 0.7
             else:
-                # ë°´ë“œ ë‚´ì—ì„œì˜ ìœ„ì¹˜ë¥¼ ë°±ë¶„ìœ¨ë¡œ ê³„ì‚° (-1: í•˜ë‹¨, 0: ì¤‘ì•™, 1: ìƒë‹¨)
+                # ¹êµå ³»¿¡¼­ÀÇ À§Ä¡¸¦ ¹éºĞÀ²·Î °è»ê (-1: ÇÏ´Ü, 0: Áß¾Ó, 1: »ó´Ü)
                 band_position = 2 * (last_row['close'] - mid_band) / (upper_band - lower_band) if (upper_band - lower_band) != 0 else 0
                 
                 if band_position > 0.5:
                     signals.append({
-                        "source": "ë³¼ë¦°ì €ë°´ë“œ(BB)",
+                        "source": "º¼¸°Àú¹êµå(BB)",
                         "signal": "sell",
                         "strength": 0.3,
-                        "description": f"ìƒë‹¨ ì ‘ê·¼ì¤‘ (ë°´ë“œ ë‚´ ìœ„ì¹˜: ìƒìœ„ {(band_position*50):.0f}%)"
+                        "description": f"»ó´Ü Á¢±ÙÁß (¹êµå ³» À§Ä¡: »óÀ§ {(band_position*50):.0f}%)"
                     })
                     signal_strengths["BB"] = -0.3
                 elif band_position < -0.5:
                     signals.append({
-                        "source": "ë³¼ë¦°ì €ë°´ë“œ(BB)",
+                        "source": "º¼¸°Àú¹êµå(BB)",
                         "signal": "buy",
                         "strength": 0.3,
-                        "description": f"í•˜ë‹¨ ì ‘ê·¼ì¤‘ (ë°´ë“œ ë‚´ ìœ„ì¹˜: í•˜ìœ„ {(abs(band_position)*50):.0f}%)"
+                        "description": f"ÇÏ´Ü Á¢±ÙÁß (¹êµå ³» À§Ä¡: ÇÏÀ§ {(abs(band_position)*50):.0f}%)"
                     })
                     signal_strengths["BB"] = 0.3
                 else:
                     signals.append({
-                        "source": "ë³¼ë¦°ì €ë°´ë“œ(BB)",
+                        "source": "º¼¸°Àú¹êµå(BB)",
                         "signal": "hold",
                         "strength": 0,
-                        "description": "ë°´ë“œ ì¤‘ì•™ ë¶€ê·¼ (ì¤‘ë¦½ì  ìœ„ì¹˜)"
+                        "description": "¹êµå Áß¾Ó ºÎ±Ù (Áß¸³Àû À§Ä¡)"
                     })
                     signal_strengths["BB"] = 0
             
-            # RSI ë¶„ì„ (ê³¼ë§¤ìˆ˜/ê³¼ë§¤ë„)
+            # RSI ºĞ¼® (°ú¸Å¼ö/°ú¸Åµµ)
             rsi = last_row['RSI']
             
             if rsi > 70:
                 signals.append({
-                    "source": "RSI(ìƒëŒ€ê°•ë„ì§€ìˆ˜)",
+                    "source": "RSI(»ó´ë°­µµÁö¼ö)",
                     "signal": "sell",
                     "strength": 0.8,
-                    "description": f"ê³¼ë§¤ìˆ˜ ìƒíƒœ (RSI: {rsi:.1f} > 70)"
+                    "description": f"°ú¸Å¼ö »óÅÂ (RSI: {rsi:.1f} > 70)"
                 })
                 signal_strengths["RSI"] = -0.8
             elif rsi < 30:
                 signals.append({
-                    "source": "RSI(ìƒëŒ€ê°•ë„ì§€ìˆ˜)",
+                    "source": "RSI(»ó´ë°­µµÁö¼ö)",
                     "signal": "buy",
                     "strength": 0.8,
-                    "description": f"ê³¼ë§¤ë„ ìƒíƒœ (RSI: {rsi:.1f} < 30)"
+                    "description": f"°ú¸Åµµ »óÅÂ (RSI: {rsi:.1f} < 30)"
                 })
                 signal_strengths["RSI"] = 0.8
             else:
-                # RSI ì¤‘ê°„ ì˜ì—­ (30-70) ë‚´ì—ì„œì˜ ìœ„ì¹˜
-                rsi_normalized = (rsi - 30) / 40  # 0(=30) ì—ì„œ 1(=70) ì‚¬ì´ë¡œ ì •ê·œí™”
+                # RSI Áß°£ ¿µ¿ª (30-70) ³»¿¡¼­ÀÇ À§Ä¡
+                rsi_normalized = (rsi - 30) / 40  # 0(=30) ¿¡¼­ 1(=70) »çÀÌ·Î Á¤±ÔÈ­
                 if rsi_normalized > 0.75:  # RSI > 60
                     signals.append({
-                        "source": "RSI(ìƒëŒ€ê°•ë„ì§€ìˆ˜)",
+                        "source": "RSI(»ó´ë°­µµÁö¼ö)",
                         "signal": "sell",
                         "strength": 0.2,
-                        "description": f"ë§¤ìˆ˜ì„¸ ìš°ì„¸ (RSI: {rsi:.1f})"
+                        "description": f"¸Å¼ö¼¼ ¿ì¼¼ (RSI: {rsi:.1f})"
                     })
                     signal_strengths["RSI"] = -0.2
                 elif rsi_normalized < 0.25:  # RSI < 40
                     signals.append({
-                        "source": "RSI(ìƒëŒ€ê°•ë„ì§€ìˆ˜)",
+                        "source": "RSI(»ó´ë°­µµÁö¼ö)",
                         "signal": "buy",
                         "strength": 0.2,
-                        "description": f"ë§¤ë„ì„¸ ìš°ì„¸ (RSI: {rsi:.1f})"
+                        "description": f"¸Åµµ¼¼ ¿ì¼¼ (RSI: {rsi:.1f})"
                     })
                     signal_strengths["RSI"] = 0.2
                 else:
                     signals.append({
-                        "source": "RSI(ìƒëŒ€ê°•ë„ì§€ìˆ˜)",
+                        "source": "RSI(»ó´ë°­µµÁö¼ö)",
                         "signal": "hold",
                         "strength": 0,
-                        "description": f"ì¤‘ë¦½ì  (RSI: {rsi:.1f})"
+                        "description": f"Áß¸³Àû (RSI: {rsi:.1f})"
                     })
                     signal_strengths["RSI"] = 0
             
-            # MACD ë¶„ì„
+            # MACD ºĞ¼®
             macd = last_row['MACD']
             signal_line = last_row['Signal']
             macd_hist = last_row['MACD_hist']
             
-            # MACD íˆìŠ¤í† ê·¸ë¨ ë¶€í˜¸ ë³€í™” í™•ì¸ (ë§¤ë§¤ ì‹ í˜¸)
+            # MACD È÷½ºÅä±×·¥ ºÎÈ£ º¯È­ È®ÀÎ (¸Å¸Å ½ÅÈ£)
             prev_macd_hist = daily_df.iloc[-2]['MACD_hist'] if len(daily_df) > 1 else 0
             
             if macd_hist > 0 and prev_macd_hist <= 0:
-                # ê³¨ë“ í¬ë¡œìŠ¤ (ë§¤ìˆ˜ ì‹ í˜¸)
+                # °ñµçÅ©·Î½º (¸Å¼ö ½ÅÈ£)
                 signals.append({
                     "source": "MACD",
                     "signal": "buy",
                     "strength": 0.7,
-                    "description": "MACD ê³¨ë“ í¬ë¡œìŠ¤ (MACD ì„ ì´ ì‹ í˜¸ì„  ìƒí–¥ ëŒíŒŒ)"
+                    "description": "MACD °ñµçÅ©·Î½º (MACD ¼±ÀÌ ½ÅÈ£¼± »óÇâ µ¹ÆÄ)"
                 })
                 signal_strengths["MACD"] = 0.7
             elif macd_hist < 0 and prev_macd_hist >= 0:
-                # ë°ë“œí¬ë¡œìŠ¤ (ë§¤ë„ ì‹ í˜¸)
+                # µ¥µåÅ©·Î½º (¸Åµµ ½ÅÈ£)
                 signals.append({
                     "source": "MACD",
                     "signal": "sell",
                     "strength": 0.7,
-                    "description": "MACD ë°ë“œí¬ë¡œìŠ¤ (MACD ì„ ì´ ì‹ í˜¸ì„  í•˜í–¥ ëŒíŒŒ)"
+                    "description": "MACD µ¥µåÅ©·Î½º (MACD ¼±ÀÌ ½ÅÈ£¼± ÇÏÇâ µ¹ÆÄ)"
                 })
                 signal_strengths["MACD"] = -0.7
             elif macd_hist > 0:
@@ -680,7 +680,7 @@ def perform_integrated_analysis(market_data, indicators):
                     "source": "MACD",
                     "signal": "buy",
                     "strength": 0.3,
-                    "description": "MACD ìƒìŠ¹ ì¶”ì„¸ ìœ ì§€ì¤‘"
+                    "description": "MACD »ó½Â Ãß¼¼ À¯ÁöÁß"
                 })
                 signal_strengths["MACD"] = 0.3
             else:
@@ -688,56 +688,56 @@ def perform_integrated_analysis(market_data, indicators):
                     "source": "MACD",
                     "signal": "sell",
                     "strength": 0.3,
-                    "description": "MACD í•˜ë½ ì¶”ì„¸ ìœ ì§€ì¤‘"
+                    "description": "MACD ÇÏ¶ô Ãß¼¼ À¯ÁöÁß"
                 })
                 signal_strengths["MACD"] = -0.3
                 
-            # ìŠ¤í† ìºìŠ¤í‹± ë¶„ì„
+            # ½ºÅäÄ³½ºÆ½ ºĞ¼®
             k = last_row['K']
             d = last_row['D']
             
             if k > 80 and d > 80:
                 signals.append({
-                    "source": "ìŠ¤í† ìºìŠ¤í‹±",
+                    "source": "½ºÅäÄ³½ºÆ½",
                     "signal": "sell",
                     "strength": 0.6,
-                    "description": f"ê³¼ë§¤ìˆ˜ êµ¬ê°„ (K: {k:.1f}, D: {d:.1f})"
+                    "description": f"°ú¸Å¼ö ±¸°£ (K: {k:.1f}, D: {d:.1f})"
                 })
                 signal_strengths["Stochastic"] = -0.6
             elif k < 20 and d < 20:
                 signals.append({
-                    "source": "ìŠ¤í† ìºìŠ¤í‹±",
+                    "source": "½ºÅäÄ³½ºÆ½",
                     "signal": "buy",
                     "strength": 0.6,
-                    "description": f"ê³¼ë§¤ë„ êµ¬ê°„ (K: {k:.1f}, D: {d:.1f})"
+                    "description": f"°ú¸Åµµ ±¸°£ (K: {k:.1f}, D: {d:.1f})"
                 })
                 signal_strengths["Stochastic"] = 0.6
             elif k > d and k < 80 and d < 80:
                 signals.append({
-                    "source": "ìŠ¤í† ìºìŠ¤í‹±",
+                    "source": "½ºÅäÄ³½ºÆ½",
                     "signal": "buy",
                     "strength": 0.3,
-                    "description": f"ìƒìŠ¹ ë°˜ì „ ì‹ í˜¸ (K > D, K: {k:.1f}, D: {d:.1f})"
+                    "description": f"»ó½Â ¹İÀü ½ÅÈ£ (K > D, K: {k:.1f}, D: {d:.1f})"
                 })
                 signal_strengths["Stochastic"] = 0.3
             elif k < d and k > 20 and d > 20:
                 signals.append({
-                    "source": "ìŠ¤í† ìºìŠ¤í‹±",
+                    "source": "½ºÅäÄ³½ºÆ½",
                     "signal": "sell",
                     "strength": 0.3,
-                    "description": f"í•˜ë½ ë°˜ì „ ì‹ í˜¸ (K < D, K: {k:.1f}, D: {d:.1f})"
+                    "description": f"ÇÏ¶ô ¹İÀü ½ÅÈ£ (K < D, K: {k:.1f}, D: {d:.1f})"
                 })
                 signal_strengths["Stochastic"] = -0.3
             else:
                 signals.append({
-                    "source": "ìŠ¤í† ìºìŠ¤í‹±",
+                    "source": "½ºÅäÄ³½ºÆ½",
                     "signal": "hold",
                     "strength": 0,
-                    "description": f"ì¤‘ë¦½ (K: {k:.1f}, D: {d:.1f})"
+                    "description": f"Áß¸³ (K: {k:.1f}, D: {d:.1f})"
                 })
                 signal_strengths["Stochastic"] = 0
                 
-        # 3.2 í˜¸ê°€ì°½ ë¶„ì„
+        # 3.2 È£°¡Ã¢ ºĞ¼®
         if "orderbook_analysis" in indicators:
             order_analysis = indicators["orderbook_analysis"]
             
@@ -745,30 +745,30 @@ def perform_integrated_analysis(market_data, indicators):
             if buy_sell_ratio is not None:
                 if buy_sell_ratio > 1.5:
                     signals.append({
-                        "source": "í˜¸ê°€ì°½(ë§¤ìˆ˜/ë§¤ë„ë¹„ìœ¨)",
+                        "source": "È£°¡Ã¢(¸Å¼ö/¸ÅµµºñÀ²)",
                         "signal": "buy",
                         "strength": 0.6,
-                        "description": f"ê°•í•œ ë§¤ìˆ˜ì„¸ (ë§¤ìˆ˜/ë§¤ë„ ë¹„ìœ¨: {buy_sell_ratio:.2f})"
+                        "description": f"°­ÇÑ ¸Å¼ö¼¼ (¸Å¼ö/¸Åµµ ºñÀ²: {buy_sell_ratio:.2f})"
                     })
                     signal_strengths["Orderbook"] = 0.6
                 elif buy_sell_ratio < 0.7:
                     signals.append({
-                        "source": "í˜¸ê°€ì°½(ë§¤ìˆ˜/ë§¤ë„ë¹„ìœ¨)",
+                        "source": "È£°¡Ã¢(¸Å¼ö/¸ÅµµºñÀ²)",
                         "signal": "sell",
                         "strength": 0.6,
-                        "description": f"ê°•í•œ ë§¤ë„ì„¸ (ë§¤ìˆ˜/ë§¤ë„ ë¹„ìœ¨: {buy_sell_ratio:.2f})"
+                        "description": f"°­ÇÑ ¸Åµµ¼¼ (¸Å¼ö/¸Åµµ ºñÀ²: {buy_sell_ratio:.2f})"
                     })
                     signal_strengths["Orderbook"] = -0.6
                 else:
                     signals.append({
-                        "source": "í˜¸ê°€ì°½(ë§¤ìˆ˜/ë§¤ë„ë¹„ìœ¨)",
+                        "source": "È£°¡Ã¢(¸Å¼ö/¸ÅµµºñÀ²)",
                         "signal": "hold",
                         "strength": 0,
-                        "description": f"ì¤‘ë¦½ì  í˜¸ê°€ì°½ (ë§¤ìˆ˜/ë§¤ë„ ë¹„ìœ¨: {buy_sell_ratio:.2f})"
+                        "description": f"Áß¸³Àû È£°¡Ã¢ (¸Å¼ö/¸Åµµ ºñÀ²: {buy_sell_ratio:.2f})"
                     })
                     signal_strengths["Orderbook"] = 0
         
-        # 3.3 ì²´ê²° ë¶„ì„
+        # 3.3 Ã¼°á ºĞ¼®
         if "trade_analysis" in indicators:
             trade_analysis = indicators["trade_analysis"]
             
@@ -776,30 +776,30 @@ def perform_integrated_analysis(market_data, indicators):
             if buy_sell_volume_ratio is not None:
                 if buy_sell_volume_ratio > 1.5:
                     signals.append({
-                        "source": "ì²´ê²°ë°ì´í„°(ë§¤ìˆ˜/ë§¤ë„ëŸ‰)",
+                        "source": "Ã¼°áµ¥ÀÌÅÍ(¸Å¼ö/¸Åµµ·®)",
                         "signal": "buy",
                         "strength": 0.5,
-                        "description": f"ë§¤ìˆ˜ ì²´ê²° ìš°ì„¸ (ë§¤ìˆ˜/ë§¤ë„ ê±°ë˜ëŸ‰ ë¹„ìœ¨: {buy_sell_volume_ratio:.2f})"
+                        "description": f"¸Å¼ö Ã¼°á ¿ì¼¼ (¸Å¼ö/¸Åµµ °Å·¡·® ºñÀ²: {buy_sell_volume_ratio:.2f})"
                     })
                     signal_strengths["Trades"] = 0.5
                 elif buy_sell_volume_ratio < 0.7:
                     signals.append({
-                        "source": "ì²´ê²°ë°ì´í„°(ë§¤ìˆ˜/ë§¤ë„ëŸ‰)",
+                        "source": "Ã¼°áµ¥ÀÌÅÍ(¸Å¼ö/¸Åµµ·®)",
                         "signal": "sell",
                         "strength": 0.5,
-                        "description": f"ë§¤ë„ ì²´ê²° ìš°ì„¸ (ë§¤ìˆ˜/ë§¤ë„ ê±°ë˜ëŸ‰ ë¹„ìœ¨: {buy_sell_volume_ratio:.2f})"
+                        "description": f"¸Åµµ Ã¼°á ¿ì¼¼ (¸Å¼ö/¸Åµµ °Å·¡·® ºñÀ²: {buy_sell_volume_ratio:.2f})"
                     })
                     signal_strengths["Trades"] = -0.5
                 else:
                     signals.append({
-                        "source": "ì²´ê²°ë°ì´í„°(ë§¤ìˆ˜/ë§¤ë„ëŸ‰)",
+                        "source": "Ã¼°áµ¥ÀÌÅÍ(¸Å¼ö/¸Åµµ·®)",
                         "signal": "hold",
                         "strength": 0,
-                        "description": f"ì¤‘ë¦½ì  ì²´ê²° íë¦„ (ë§¤ìˆ˜/ë§¤ë„ ê±°ë˜ëŸ‰ ë¹„ìœ¨: {buy_sell_volume_ratio:.2f})"
+                        "description": f"Áß¸³Àû Ã¼°á Èå¸§ (¸Å¼ö/¸Åµµ °Å·¡·® ºñÀ²: {buy_sell_volume_ratio:.2f})"
                     })
                     signal_strengths["Trades"] = 0
                     
-        # 3.4 ê¹€í”„(KIMP) ë¶„ì„
+        # 3.4 ±èÇÁ(KIMP) ºĞ¼®
         if "exchange_comparison" in indicators:
             exc_comparison = indicators["exchange_comparison"]
             
@@ -807,30 +807,30 @@ def perform_integrated_analysis(market_data, indicators):
             if korea_premium is not None:
                 if korea_premium > 5.0:
                     signals.append({
-                        "source": "ê¹€í”„(í•œêµ­ í”„ë¦¬ë¯¸ì—„)",
+                        "source": "±èÇÁ(ÇÑ±¹ ÇÁ¸®¹Ì¾ö)",
                         "signal": "sell",
                         "strength": 0.5,
-                        "description": f"ë†’ì€ í•œêµ­ í”„ë¦¬ë¯¸ì—„ (ê¹€í”„: {korea_premium:.2f}%)"
+                        "description": f"³ôÀº ÇÑ±¹ ÇÁ¸®¹Ì¾ö (±èÇÁ: {korea_premium:.2f}%)"
                     })
                     signal_strengths["KIMP"] = -0.5
                 elif korea_premium < -1.0:
                     signals.append({
-                        "source": "ê¹€í”„(í•œêµ­ í”„ë¦¬ë¯¸ì—„)",
+                        "source": "±èÇÁ(ÇÑ±¹ ÇÁ¸®¹Ì¾ö)",
                         "signal": "buy",
                         "strength": 0.5,
-                        "description": f"í•œêµ­ í”„ë¦¬ë¯¸ì—„ ì—­ì „ (ê¹€í”„: {korea_premium:.2f}%)"
+                        "description": f"ÇÑ±¹ ÇÁ¸®¹Ì¾ö ¿ªÀü (±èÇÁ: {korea_premium:.2f}%)"
                     })
                     signal_strengths["KIMP"] = 0.5
                 else:
                     signals.append({
-                        "source": "ê¹€í”„(í•œêµ­ í”„ë¦¬ë¯¸ì—„)",
+                        "source": "±èÇÁ(ÇÑ±¹ ÇÁ¸®¹Ì¾ö)",
                         "signal": "hold",
                         "strength": 0,
-                        "description": f"ë³´í†µ ìˆ˜ì¤€ì˜ í•œêµ­ í”„ë¦¬ë¯¸ì—„ (ê¹€í”„: {korea_premium:.2f}%)"
+                        "description": f"º¸Åë ¼öÁØÀÇ ÇÑ±¹ ÇÁ¸®¹Ì¾ö (±èÇÁ: {korea_premium:.2f}%)"
                     })
                     signal_strengths["KIMP"] = 0
         
-        # 3.5 ì‹œì¥ ì‹¬ë¦¬ ì§€ìˆ˜ ë¶„ì„
+        # 3.5 ½ÃÀå ½É¸® Áö¼ö ºĞ¼®
         if "market_sentiment" in indicators:
             sentiment = indicators["market_sentiment"]
             
@@ -840,48 +840,48 @@ def perform_integrated_analysis(market_data, indicators):
             if fear_greed_value is not None:
                 fear_greed_value = int(fear_greed_value)
                 
-                if fear_greed_value <= 25:  # ê·¹ë„ì˜ ê³µí¬
+                if fear_greed_value <= 25:  # ±ØµµÀÇ °øÆ÷
                     signals.append({
-                        "source": "ì‹œì¥ì‹¬ë¦¬(ê³µí¬&íƒìš•ì§€ìˆ˜)",
+                        "source": "½ÃÀå½É¸®(°øÆ÷&Å½¿åÁö¼ö)",
                         "signal": "buy",
                         "strength": 0.7,
-                        "description": f"ê·¹ë„ì˜ ê³µí¬ ìƒíƒœ (Fear & Greed: {fear_greed_value}, {fear_greed_class})"
+                        "description": f"±ØµµÀÇ °øÆ÷ »óÅÂ (Fear & Greed: {fear_greed_value}, {fear_greed_class})"
                     })
                     signal_strengths["FearGreed"] = 0.7
-                elif fear_greed_value >= 75:  # ê·¹ë„ì˜ íƒìš•
+                elif fear_greed_value >= 75:  # ±ØµµÀÇ Å½¿å
                     signals.append({
-                        "source": "ì‹œì¥ì‹¬ë¦¬(ê³µí¬&íƒìš•ì§€ìˆ˜)",
+                        "source": "½ÃÀå½É¸®(°øÆ÷&Å½¿åÁö¼ö)",
                         "signal": "sell",
                         "strength": 0.7,
-                        "description": f"ê·¹ë„ì˜ íƒìš• ìƒíƒœ (Fear & Greed: {fear_greed_value}, {fear_greed_class})"
+                        "description": f"±ØµµÀÇ Å½¿å »óÅÂ (Fear & Greed: {fear_greed_value}, {fear_greed_class})"
                     })
                     signal_strengths["FearGreed"] = -0.7
-                elif fear_greed_value < 40:  # ê³µí¬
+                elif fear_greed_value < 40:  # °øÆ÷
                     signals.append({
-                        "source": "ì‹œì¥ì‹¬ë¦¬(ê³µí¬&íƒìš•ì§€ìˆ˜)",
+                        "source": "½ÃÀå½É¸®(°øÆ÷&Å½¿åÁö¼ö)",
                         "signal": "buy",
                         "strength": 0.4,
-                        "description": f"ê³µí¬ ìš°ì„¸ ìƒíƒœ (Fear & Greed: {fear_greed_value}, {fear_greed_class})"
+                        "description": f"°øÆ÷ ¿ì¼¼ »óÅÂ (Fear & Greed: {fear_greed_value}, {fear_greed_class})"
                     })
                     signal_strengths["FearGreed"] = 0.4
-                elif fear_greed_value > 60:  # íƒìš•
+                elif fear_greed_value > 60:  # Å½¿å
                     signals.append({
-                        "source": "ì‹œì¥ì‹¬ë¦¬(ê³µí¬&íƒìš•ì§€ìˆ˜)",
+                        "source": "½ÃÀå½É¸®(°øÆ÷&Å½¿åÁö¼ö)",
                         "signal": "sell",
                         "strength": 0.4,
-                        "description": f"íƒìš• ìš°ì„¸ ìƒíƒœ (Fear & Greed: {fear_greed_value}, {fear_greed_class})"
+                        "description": f"Å½¿å ¿ì¼¼ »óÅÂ (Fear & Greed: {fear_greed_value}, {fear_greed_class})"
                     })
                     signal_strengths["FearGreed"] = -0.4
                 else:
                     signals.append({
-                        "source": "ì‹œì¥ì‹¬ë¦¬(ê³µí¬&íƒìš•ì§€ìˆ˜)",
+                        "source": "½ÃÀå½É¸®(°øÆ÷&Å½¿åÁö¼ö)",
                         "signal": "hold",
                         "strength": 0,
-                        "description": f"ì¤‘ë¦½ì  ì‹œì¥ ì‹¬ë¦¬ (Fear & Greed: {fear_greed_value}, {fear_greed_class})"
+                        "description": f"Áß¸³Àû ½ÃÀå ½É¸® (Fear & Greed: {fear_greed_value}, {fear_greed_class})"
                     })
                     signal_strengths["FearGreed"] = 0
                     
-        # 3.6 ì˜¨ì²´ì¸ ë°ì´í„° ë¶„ì„
+        # 3.6 ¿ÂÃ¼ÀÎ µ¥ÀÌÅÍ ºĞ¼®
         if "onchain_analysis" in indicators:
             onchain = indicators["onchain_analysis"]
             
@@ -891,59 +891,59 @@ def perform_integrated_analysis(market_data, indicators):
             if current_sopr is not None and sopr_signal is not None:
                 if current_sopr < 0.95:
                     signals.append({
-                        "source": "ì˜¨ì²´ì¸(SOPR)",
+                        "source": "¿ÂÃ¼ÀÎ(SOPR)",
                         "signal": "buy",
                         "strength": 0.6,
-                        "description": f"ì†ì‹¤ ìƒíƒœì—ì„œ ë§¤ë„ ì¤‘ (SOPR: {current_sopr:.3f})"
+                        "description": f"¼Õ½Ç »óÅÂ¿¡¼­ ¸Åµµ Áß (SOPR: {current_sopr:.3f})"
                     })
                     signal_strengths["SOPR"] = 0.6
                 elif current_sopr > 1.05:
                     signals.append({
-                        "source": "ì˜¨ì²´ì¸(SOPR)",
+                        "source": "¿ÂÃ¼ÀÎ(SOPR)",
                         "signal": "sell",
                         "strength": 0.6,
-                        "description": f"ì´ìµ ìƒíƒœì—ì„œ ë§¤ë„ ì¤‘ (SOPR: {current_sopr:.3f})"
+                        "description": f"ÀÌÀÍ »óÅÂ¿¡¼­ ¸Åµµ Áß (SOPR: {current_sopr:.3f})"
                     })
                     signal_strengths["SOPR"] = -0.6
                 else:
                     signals.append({
-                        "source": "ì˜¨ì²´ì¸(SOPR)",
+                        "source": "¿ÂÃ¼ÀÎ(SOPR)",
                         "signal": "hold",
                         "strength": 0,
-                        "description": f"ì¤‘ë¦½ì  ë§¤ë„ íŒ¨í„´ (SOPR: {current_sopr:.3f})"
+                        "description": f"Áß¸³Àû ¸Åµµ ÆĞÅÏ (SOPR: {current_sopr:.3f})"
                     })
                     signal_strengths["SOPR"] = 0
             
-            # ì•¡í‹°ë¸Œ ì£¼ì†Œ ì¶”ì„¸
+            # ¾×Æ¼ºê ÁÖ¼Ò Ãß¼¼
             active_addr_trend = onchain.get("active_addresses_7d_trend")
             if active_addr_trend is not None:
                 if active_addr_trend > 10:
                     signals.append({
-                        "source": "ì˜¨ì²´ì¸(í™œì„±ì£¼ì†Œ)",
+                        "source": "¿ÂÃ¼ÀÎ(È°¼ºÁÖ¼Ò)",
                         "signal": "buy",
                         "strength": 0.4,
-                        "description": f"ë„¤íŠ¸ì›Œí¬ í™œì„± ì¦ê°€ (7ì¼ í™œì„±ì£¼ì†Œ ë³€í™”: {active_addr_trend:.1f}%)"
+                        "description": f"³×Æ®¿öÅ© È°¼º Áõ°¡ (7ÀÏ È°¼ºÁÖ¼Ò º¯È­: {active_addr_trend:.1f}%)"
                     })
                     signal_strengths["ActiveAddr"] = 0.4
                 elif active_addr_trend < -10:
                     signals.append({
-                        "source": "ì˜¨ì²´ì¸(í™œì„±ì£¼ì†Œ)",
+                        "source": "¿ÂÃ¼ÀÎ(È°¼ºÁÖ¼Ò)",
                         "signal": "sell",
                         "strength": 0.4,
-                        "description": f"ë„¤íŠ¸ì›Œí¬ í™œì„± ê°ì†Œ (7ì¼ í™œì„±ì£¼ì†Œ ë³€í™”: {active_addr_trend:.1f}%)"
+                        "description": f"³×Æ®¿öÅ© È°¼º °¨¼Ò (7ÀÏ È°¼ºÁÖ¼Ò º¯È­: {active_addr_trend:.1f}%)"
                     })
                     signal_strengths["ActiveAddr"] = -0.4
                 else:
                     signals.append({
-                        "source": "ì˜¨ì²´ì¸(í™œì„±ì£¼ì†Œ)",
+                        "source": "¿ÂÃ¼ÀÎ(È°¼ºÁÖ¼Ò)",
                         "signal": "hold",
                         "strength": 0,
-                        "description": f"ë„¤íŠ¸ì›Œí¬ í™œì„± ì•ˆì •ì  (7ì¼ í™œì„±ì£¼ì†Œ ë³€í™”: {active_addr_trend:.1f}%)"
+                        "description": f"³×Æ®¿öÅ© È°¼º ¾ÈÁ¤Àû (7ÀÏ È°¼ºÁÖ¼Ò º¯È­: {active_addr_trend:.1f}%)"
                     })
                     signal_strengths["ActiveAddr"] = 0
         
-        # 3.7 ì¢…í•© ì‹ í˜¸ ê³„ì‚°
-        # ê°€ì¤‘ í‰ê·  ì‹ í˜¸ ê³„ì‚°
+        # 3.7 Á¾ÇÕ ½ÅÈ£ °è»ê
+        # °¡Áß Æò±Õ ½ÅÈ£ °è»ê
         total_strength = 0
         weighted_sum = 0
         count = 0
@@ -955,33 +955,33 @@ def perform_integrated_analysis(market_data, indicators):
         
         if count > 0:
             avg_signal = weighted_sum / count
-            confidence = min(total_strength / count / 0.8, 1.0)  # ìµœëŒ€ ì‹ ë¢°ë„ëŠ” 1.0
+            confidence = min(total_strength / count / 0.8, 1.0)  # ÃÖ´ë ½Å·Úµµ´Â 1.0
         else:
             avg_signal = 0
             confidence = 0
         
-        # ìµœì¢… ë§¤ë§¤ ê²°ì •
+        # ÃÖÁ¾ ¸Å¸Å °áÁ¤
         if avg_signal > 0.2:
             decision = "buy"
-            decision_kr = "ë§¤ìˆ˜"
+            decision_kr = "¸Å¼ö"
         elif avg_signal < -0.2:
             decision = "sell"
-            decision_kr = "ë§¤ë„"
+            decision_kr = "¸Åµµ"
         else:
             decision = "hold"
-            decision_kr = "í™€ë“œ"
+            decision_kr = "È¦µå"
         
-        # ê±°ë˜ ê°•ë„ì— ë”°ë¥¸ ì¶”ê°€ ê²°ì • (ê°•í•œ ë§¤ìˆ˜/ë§¤ë„/í™€ë“œ)
+        # °Å·¡ °­µµ¿¡ µû¸¥ Ãß°¡ °áÁ¤ (°­ÇÑ ¸Å¼ö/¸Åµµ/È¦µå)
         if abs(avg_signal) > 0.5:
-            strength_prefix = "ê°•í•œ "
+            strength_prefix = "°­ÇÑ "
         elif abs(avg_signal) > 0.3:
-            strength_prefix = "ë³´í†µ "
+            strength_prefix = "º¸Åë "
         else:
-            strength_prefix = "ì•½í•œ "
+            strength_prefix = "¾àÇÑ "
         
         decision_with_strength = strength_prefix + decision_kr
         
-        # í˜„ì¬ ì‹œì¥ ìƒíƒœ ìš”ì•½
+        # ÇöÀç ½ÃÀå »óÅÂ ¿ä¾à
         current_price = None
         price_change_24h = None
         
@@ -994,7 +994,7 @@ def perform_integrated_analysis(market_data, indicators):
                     today_close = df.iloc[-1]['close']
                     price_change_24h = ((today_close - yesterday_close) / yesterday_close) * 100
         
-        # ê²°ê³¼ ì¡°í•©
+        # °á°ú Á¶ÇÕ
         result = {
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "decision": decision,
@@ -1009,7 +1009,7 @@ def perform_integrated_analysis(market_data, indicators):
             }
         }
         
-        # í˜„ì¬ ê°€ê²© ë° ë³€ë™ë¥  ì¶”ê°€
+        # ÇöÀç °¡°İ ¹× º¯µ¿·ü Ãß°¡
         if current_price is not None:
             result["current_price"] = current_price
         if price_change_24h is not None:
@@ -1018,38 +1018,38 @@ def perform_integrated_analysis(market_data, indicators):
         return result
         
     except Exception as e:
-        print(f"ë¶„ì„ ì˜¤ë¥˜: {e}")
+        print(f"ºĞ¼® ¿À·ù: {e}")
         traceback.print_exc()
         return None
 
-# 4. AI ê¸°ë°˜ ë¶„ì„ í•¨ìˆ˜
+# 4. AI ±â¹İ ºĞ¼® ÇÔ¼ö
 def get_claude_analysis(market_data):
-    """Claude AIë¥¼ ì‚¬ìš©í•˜ì—¬ ë¹„íŠ¸ì½”ì¸ ë°ì´í„° ë¶„ì„"""
+    """Claude AI¸¦ »ç¿ëÇÏ¿© ºñÆ®ÄÚÀÎ µ¥ÀÌÅÍ ºĞ¼®"""
     try:
         import anthropic
         
         ANTHROPIC_API_KEY = os.getenv("CLAUDE_API_KEY")
         if not ANTHROPIC_API_KEY:
-            print("Claude API í‚¤ê°€ ì„¤ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.")
+            print("Claude API Å°°¡ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.")
             return None
             
         client = anthropic.Anthropic(
             api_key=ANTHROPIC_API_KEY,
         )
         
-        # ë¶„ì„ìš© ë°ì´í„° ì¤€ë¹„
-        # OHLCV ë°ì´í„°
+        # ºĞ¼®¿ë µ¥ÀÌÅÍ ÁØºñ
+        # OHLCV µ¥ÀÌÅÍ
         ohlcv_data = None
         if "upbit_daily_ohlcv" in market_data and not market_data["upbit_daily_ohlcv"].empty:
             ohlcv_data = market_data["upbit_daily_ohlcv"].to_json()
         
-        # ê¸°íƒ€ ì§€í‘œ ë°ì´í„° (ê°„ê²°ì„±ì„ ìœ„í•´ ì¼ë¶€ë§Œ í¬í•¨)
+        # ±âÅ¸ ÁöÇ¥ µ¥ÀÌÅÍ (°£°á¼ºÀ» À§ÇØ ÀÏºÎ¸¸ Æ÷ÇÔ)
         data_for_claude = {
             "ohlcv_data": ohlcv_data,
             "current_price": market_data.get("upbit_ticker"),
         }
         
-        # í˜¸ê°€ì°½ ë°ì´í„° ì¶”ê°€
+        # È£°¡Ã¢ µ¥ÀÌÅÍ Ãß°¡
         if "upbit_orderbook" in market_data and market_data["upbit_orderbook"]:
             orderbook_simple = {
                 "bid_prices": [unit['bid_price'] for unit in market_data["upbit_orderbook"][0]['orderbook_units'][:5]],
@@ -1059,19 +1059,19 @@ def get_claude_analysis(market_data):
             }
             data_for_claude["orderbook"] = orderbook_simple
         
-        # ê¹€í”„ ë°ì´í„° ì¶”ê°€
+        # ±èÇÁ µ¥ÀÌÅÍ Ãß°¡
         if "exchange_comparison" in market_data and market_data["exchange_comparison"]:
             data_for_claude["korea_premium"] = market_data["exchange_comparison"]
         
-        # Fear & Greed ì§€ìˆ˜ ì¶”ê°€
+        # Fear & Greed Áö¼ö Ãß°¡
         if "market_sentiment" in market_data and market_data["market_sentiment"]:
             data_for_claude["fear_greed"] = market_data["market_sentiment"]
         
-        # ì˜¨ì²´ì¸ ë°ì´í„° ì¶”ê°€
+        # ¿ÂÃ¼ÀÎ µ¥ÀÌÅÍ Ãß°¡
         if "onchain_analysis" in market_data and market_data["onchain_analysis"]:
             data_for_claude["onchain"] = market_data["onchain_analysis"]
         
-        # Claude API í˜¸ì¶œ
+        # Claude API È£Ãâ
         response = client.messages.create(
             model="claude-3-7-sonnet-20250219",
             max_tokens=1000,
@@ -1090,11 +1090,11 @@ def get_claude_analysis(market_data):
             ]
         )
         
-        # ì‘ë‹µ ì¶”ì¶œ ë° ì²˜ë¦¬
-        result_text = response.content[0].text  # í…ìŠ¤íŠ¸ ë‚´ìš© ì¶”ì¶œ
-        print("Claude ì‘ë‹µ ì›ë³¸:", result_text)
+        # ÀÀ´ä ÃßÃâ ¹× Ã³¸®
+        result_text = response.content[0].text  # ÅØ½ºÆ® ³»¿ë ÃßÃâ
+        print("Claude ÀÀ´ä ¿øº»:", result_text)
         
-        # JSON ë¬¸ìì—´ ì¶”ì¶œ (ì‘ë‹µì— ë‹¤ë¥¸ í…ìŠ¤íŠ¸ê°€ í¬í•¨ëœ ê²½ìš°ë¥¼ ëŒ€ë¹„)
+        # JSON ¹®ÀÚ¿­ ÃßÃâ (ÀÀ´ä¿¡ ´Ù¸¥ ÅØ½ºÆ®°¡ Æ÷ÇÔµÈ °æ¿ì¸¦ ´ëºñ)
         import re
         json_match = re.search(r'\{.*\}', result_text, re.DOTALL)
         if json_match:
@@ -1103,190 +1103,190 @@ def get_claude_analysis(market_data):
                 result = json.loads(json_str)
                 return result
             except json.JSONDecodeError as e:
-                print(f"JSON íŒŒì‹± ì˜¤ë¥˜: {e}")
+                print(f"JSON ÆÄ½Ì ¿À·ù: {e}")
                 return None
         else:
-            print("ì‘ë‹µì—ì„œ JSON í˜•ì‹ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.")
+            print("ÀÀ´ä¿¡¼­ JSON Çü½ÄÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.")
             return None
             
     except Exception as e:
-        print(f"Claude API ì˜¤ë¥˜: {e}")
+        print(f"Claude API ¿À·ù: {e}")
         traceback.print_exc()
         return None
 
-# 5. ë§¤ë§¤ ì‹¤í–‰ í•¨ìˆ˜
+# 5. ¸Å¸Å ½ÇÇà ÇÔ¼ö
 def execute_trade(decision, confidence, market_data):
-    """ë§¤ë§¤ ê²°ì •ì— ë”°ë¼ ì‹¤ì œ ê±°ë˜ë¥¼ ì‹¤í–‰í•©ë‹ˆë‹¤."""
-    print(f"\n===== ë§¤ë§¤ ê²°ì •: {decision} (ì‹ ë¢°ë„: {confidence:.2f}) =====")
+    """¸Å¸Å °áÁ¤¿¡ µû¶ó ½ÇÁ¦ °Å·¡¸¦ ½ÇÇàÇÕ´Ï´Ù."""
+    print(f"\n===== ¸Å¸Å °áÁ¤: {decision} (½Å·Úµµ: {confidence:.2f}) =====")
     
     try:
-        # ì—…ë¹„íŠ¸ API ì—°ê²°
+        # ¾÷ºñÆ® API ¿¬°á
         import pyupbit
         access = os.getenv("UPBIT_ACCESS_KEY")
         secret = os.getenv("UPBIT_SECRET_KEY")
         
         if not access or not secret:
-            print("ì—…ë¹„íŠ¸ API í‚¤ê°€ ì„¤ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤. .env íŒŒì¼ì„ í™•ì¸í•˜ì„¸ìš”.")
+            print("¾÷ºñÆ® API Å°°¡ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù. .env ÆÄÀÏÀ» È®ÀÎÇÏ¼¼¿ä.")
             return
             
         upbit = pyupbit.Upbit(access, secret)
         
-        # í˜„ì¬ ìì‚° ì •ë³´ í™•ì¸
+        # ÇöÀç ÀÚ»ê Á¤º¸ È®ÀÎ
         my_krw = upbit.get_balance("KRW")
         my_btc = upbit.get_balance("KRW-BTC")
         
-        # íƒ€ì… ê²€ì‚¬ ë° ë³€í™˜ ì¶”ê°€
+        # Å¸ÀÔ °Ë»ç ¹× º¯È¯ Ãß°¡
         if my_krw and not isinstance(my_krw, (int, float)):
             try:
                 my_krw = float(my_krw) if my_krw else 0
             except (TypeError, ValueError):
                 my_krw = 0
-                print("ì›í™” ì”ê³ ë¥¼ ìˆ«ìë¡œ ë³€í™˜í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. 0ìœ¼ë¡œ ì„¤ì •í•©ë‹ˆë‹¤.")
+                print("¿øÈ­ ÀÜ°í¸¦ ¼ıÀÚ·Î º¯È¯ÇÒ ¼ö ¾ø½À´Ï´Ù. 0À¸·Î ¼³Á¤ÇÕ´Ï´Ù.")
             
         if my_btc and not isinstance(my_btc, (int, float)):
             try:
                 my_btc = float(my_btc) if my_btc else 0
             except (TypeError, ValueError):
                 my_btc = 0
-                print("ë¹„íŠ¸ì½”ì¸ ì”ê³ ë¥¼ ìˆ«ìë¡œ ë³€í™˜í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. 0ìœ¼ë¡œ ì„¤ì •í•©ë‹ˆë‹¤.")
+                print("ºñÆ®ÄÚÀÎ ÀÜ°í¸¦ ¼ıÀÚ·Î º¯È¯ÇÒ ¼ö ¾ø½À´Ï´Ù. 0À¸·Î ¼³Á¤ÇÕ´Ï´Ù.")
         
-        # í˜„ì¬ê°€ ì²˜ë¦¬ - íƒ€ì…ì— ë”°ë¼ ì ì ˆíˆ ì²˜ë¦¬
+        # ÇöÀç°¡ Ã³¸® - Å¸ÀÔ¿¡ µû¶ó ÀûÀıÈ÷ Ã³¸®
         current_price = 0
         try:
-            # ì§ì ‘ í˜„ì¬ê°€ ì¡°íšŒ
+            # Á÷Á¢ ÇöÀç°¡ Á¶È¸
             current_price_direct = pyupbit.get_current_price("KRW-BTC")
             if isinstance(current_price_direct, (int, float)):
                 current_price = current_price_direct
             elif isinstance(current_price_direct, dict) and "trade_price" in current_price_direct:
                 current_price = current_price_direct["trade_price"]
             else:
-                print(f"ì§ì ‘ ì¡°íšŒí•œ í˜„ì¬ê°€ í˜•ì‹ í™•ì¸: {type(current_price_direct)}")
-                # ë¦¬ìŠ¤íŠ¸ì¼ ê²½ìš° ì²« ë²ˆì§¸ í•­ëª© ì‹œë„
+                print(f"Á÷Á¢ Á¶È¸ÇÑ ÇöÀç°¡ Çü½Ä È®ÀÎ: {type(current_price_direct)}")
+                # ¸®½ºÆ®ÀÏ °æ¿ì Ã¹ ¹øÂ° Ç×¸ñ ½Ãµµ
                 if isinstance(current_price_direct, list) and len(current_price_direct) > 0:
                     if isinstance(current_price_direct[0], (int, float)):
                         current_price = current_price_direct[0]
                     elif isinstance(current_price_direct[0], dict) and "trade_price" in current_price_direct[0]:
                         current_price = current_price_direct[0]["trade_price"]
         except Exception as e:
-            print(f"í˜„ì¬ê°€ ì§ì ‘ ì¡°íšŒ ì¤‘ ì˜¤ë¥˜: {e}")
+            print(f"ÇöÀç°¡ Á÷Á¢ Á¶È¸ Áß ¿À·ù: {e}")
             
-        # ê°’ì´ ì—†ìœ¼ë©´ ì„ì˜ì˜ ê°€ê²© ì‚¬ìš© (í…ŒìŠ¤íŠ¸ìš©)
+        # °ªÀÌ ¾øÀ¸¸é ÀÓÀÇÀÇ °¡°İ »ç¿ë (Å×½ºÆ®¿ë)
         if current_price == 0:
-            current_price = 80000000  # ì„ì˜ì˜ ë¹„íŠ¸ì½”ì¸ ê°€ê²© (í…ŒìŠ¤íŠ¸ìš©)
-            print(f"í˜„ì¬ê°€ë¥¼ ê°€ì ¸ì˜¬ ìˆ˜ ì—†ì–´ ì„ì˜ì˜ ê°€ê²©({current_price})ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.")
+            current_price = 80000000  # ÀÓÀÇÀÇ ºñÆ®ÄÚÀÎ °¡°İ (Å×½ºÆ®¿ë)
+            print(f"ÇöÀç°¡¸¦ °¡Á®¿Ã ¼ö ¾ø¾î ÀÓÀÇÀÇ °¡°İ({current_price})À» »ç¿ëÇÕ´Ï´Ù.")
         
-        # ì´ì œ ìˆ˜ì¹˜ ê³„ì‚° ê°€ëŠ¥
+        # ÀÌÁ¦ ¼öÄ¡ °è»ê °¡´É
         estimated_btc_value = my_btc * current_price if my_btc and current_price else 0
         
-        print(f"í˜„ì¬ ë³´ìœ  ìì‚°: {my_krw:.0f}ì› + {my_btc} BTC (ì•½ {estimated_btc_value:.0f}ì›)")
-        print(f"ì´ ìì‚° ê°€ì¹˜: ì•½ {my_krw + estimated_btc_value:.0f}ì›")
+        print(f"ÇöÀç º¸À¯ ÀÚ»ê: {my_krw:.0f}¿ø + {my_btc} BTC (¾à {estimated_btc_value:.0f}¿ø)")
+        print(f"ÃÑ ÀÚ»ê °¡Ä¡: ¾à {my_krw + estimated_btc_value:.0f}¿ø")
         
-        # ë‚˜ë¨¸ì§€ í•¨ìˆ˜ ì½”ë“œëŠ” ê·¸ëŒ€ë¡œ ìœ ì§€...
+        # ³ª¸ÓÁö ÇÔ¼ö ÄÚµå´Â ±×´ë·Î À¯Áö...
         
-        # ì‚¬ìš©ì ì„¤ì • ê°’ìœ¼ë¡œ íˆ¬ì ë¹„ìœ¨ ì¡°ì •
-        # ì‹ ë¢°ë„ê°€ ë†’ì„ìˆ˜ë¡ ë” ë§ì€ ë¹„ìœ¨ë¡œ íˆ¬ì/ë§¤ë„
-        min_ratio = INVESTMENT_RATIOS.get("min_ratio", 0.2)  # ìµœì†Œ íˆ¬ì ë¹„ìœ¨ (ê¸°ë³¸ê°’: 20%)
-        max_ratio = INVESTMENT_RATIOS.get("max_ratio", 0.5)  # ìµœëŒ€ íˆ¬ì ë¹„ìœ¨ (ê¸°ë³¸ê°’: 50%)
-        # ì‹ ë¢°ë„ì— ë”°ë¼ min_ratio~max_ratio ì‚¬ì´ì˜ ê°’ìœ¼ë¡œ ìŠ¤ì¼€ì¼ë§
+        # »ç¿ëÀÚ ¼³Á¤ °ªÀ¸·Î ÅõÀÚ ºñÀ² Á¶Á¤
+        # ½Å·Úµµ°¡ ³ôÀ»¼ö·Ï ´õ ¸¹Àº ºñÀ²·Î ÅõÀÚ/¸Åµµ
+        min_ratio = INVESTMENT_RATIOS.get("min_ratio", 0.2)  # ÃÖ¼Ò ÅõÀÚ ºñÀ² (±âº»°ª: 20%)
+        max_ratio = INVESTMENT_RATIOS.get("max_ratio", 0.5)  # ÃÖ´ë ÅõÀÚ ºñÀ² (±âº»°ª: 50%)
+        # ½Å·Úµµ¿¡ µû¶ó min_ratio~max_ratio »çÀÌÀÇ °ªÀ¸·Î ½ºÄÉÀÏ¸µ
         trade_ratio = min_ratio + (confidence * (max_ratio - min_ratio))
         
-        # ê²°ì •ì— ë”°ë¼ ë§¤ë§¤ ì‹¤í–‰
+        # °áÁ¤¿¡ µû¶ó ¸Å¸Å ½ÇÇà
         if decision == "buy":
-            # ì‹ ë¢°ë„ì— ë”°ë¼ íˆ¬ì ë¹„ìœ¨ ê²°ì •
+            # ½Å·Úµµ¿¡ µû¶ó ÅõÀÚ ºñÀ² °áÁ¤
             invest_amount = my_krw * trade_ratio
             
-            min_order_amount = TRADING_SETTINGS.get("min_order_amount", 5000)  # ìµœì†Œ ì£¼ë¬¸ ê¸ˆì•¡ ì‚¬ìš©ì ì„¤ì •
+            min_order_amount = TRADING_SETTINGS.get("min_order_amount", 5000)  # ÃÖ¼Ò ÁÖ¹® ±İ¾× »ç¿ëÀÚ ¼³Á¤
             
-            if invest_amount > min_order_amount:  # ìµœì†Œ ì£¼ë¬¸ ê¸ˆì•¡ ì´ìƒ
-                print(f"ë§¤ìˆ˜ ì‹œë„: {invest_amount:.0f}ì› (ë³´ìœ  KRWì˜ {trade_ratio*100:.0f}%)")
+            if invest_amount > min_order_amount:  # ÃÖ¼Ò ÁÖ¹® ±İ¾× ÀÌ»ó
+                print(f"¸Å¼ö ½Ãµµ: {invest_amount:.0f}¿ø (º¸À¯ KRWÀÇ {trade_ratio*100:.0f}%)")
                 order = upbit.buy_market_order("KRW-BTC", invest_amount)
-                print(f"ë§¤ìˆ˜ ì£¼ë¬¸ ê²°ê³¼: {order}")
+                print(f"¸Å¼ö ÁÖ¹® °á°ú: {order}")
             else:
-                print(f"ë§¤ìˆ˜ ì‹¤íŒ¨: ì£¼ë¬¸ ê¸ˆì•¡ì´ {min_order_amount}ì› ë¯¸ë§Œì…ë‹ˆë‹¤ (í˜„ì¬ ë³´ìœ  KRW: {my_krw}ì›)")
+                print(f"¸Å¼ö ½ÇÆĞ: ÁÖ¹® ±İ¾×ÀÌ {min_order_amount}¿ø ¹Ì¸¸ÀÔ´Ï´Ù (ÇöÀç º¸À¯ KRW: {my_krw}¿ø)")
                 
         elif decision == "sell":
-            # ì‹ ë¢°ë„ì— ë”°ë¼ ë§¤ë„ ë¹„ìœ¨ ê²°ì •
+            # ½Å·Úµµ¿¡ µû¶ó ¸Åµµ ºñÀ² °áÁ¤
             sell_ratio = trade_ratio
             sell_amount = my_btc * sell_ratio
             
-            # í˜„ì¬ê°€ í™•ì¸ (ë§¤ë„ ê¸ˆì•¡ ê³„ì‚°ìš©)
+            # ÇöÀç°¡ È®ÀÎ (¸Åµµ ±İ¾× °è»ê¿ë)
             estimated_value = sell_amount * current_price
             
-            min_order_amount = TRADING_SETTINGS.get("min_order_amount", 5000)  # ìµœì†Œ ì£¼ë¬¸ ê¸ˆì•¡ ì‚¬ìš©ì ì„¤ì •
+            min_order_amount = TRADING_SETTINGS.get("min_order_amount", 5000)  # ÃÖ¼Ò ÁÖ¹® ±İ¾× »ç¿ëÀÚ ¼³Á¤
             
-            if estimated_value > min_order_amount:  # ìµœì†Œ ì£¼ë¬¸ ê¸ˆì•¡ ì´ìƒ
-                print(f"ë§¤ë„ ì‹œë„: {sell_amount} BTC (ì•½ {estimated_value:.0f}ì›, ë³´ìœ ëŸ‰ì˜ {sell_ratio*100:.0f}%)")
+            if estimated_value > min_order_amount:  # ÃÖ¼Ò ÁÖ¹® ±İ¾× ÀÌ»ó
+                print(f"¸Åµµ ½Ãµµ: {sell_amount} BTC (¾à {estimated_value:.0f}¿ø, º¸À¯·®ÀÇ {sell_ratio*100:.0f}%)")
                 order = upbit.sell_market_order("KRW-BTC", sell_amount)
-                print(f"ë§¤ë„ ì£¼ë¬¸ ê²°ê³¼: {order}")
+                print(f"¸Åµµ ÁÖ¹® °á°ú: {order}")
             else:
-                print(f"ë§¤ë„ ì‹¤íŒ¨: ì£¼ë¬¸ ê¸ˆì•¡ì´ {min_order_amount}ì› ë¯¸ë§Œì…ë‹ˆë‹¤ (í˜„ì¬ ë³´ìœ  BTC: {my_btc}, ì¶”ì •ê°€ì¹˜: {estimated_value:.0f}ì›)")
+                print(f"¸Åµµ ½ÇÆĞ: ÁÖ¹® ±İ¾×ÀÌ {min_order_amount}¿ø ¹Ì¸¸ÀÔ´Ï´Ù (ÇöÀç º¸À¯ BTC: {my_btc}, ÃßÁ¤°¡Ä¡: {estimated_value:.0f}¿ø)")
         else:  # hold
-            print("í˜„ì¬ í¬ì§€ì…˜ ìœ ì§€ (í™€ë“œ)")
+            print("ÇöÀç Æ÷Áö¼Ç À¯Áö (È¦µå)")
     
     except Exception as e:
-        print(f"ë§¤ë§¤ ì‹¤í–‰ ì¤‘ ì˜¤ë¥˜ ë°œìƒ: {e}")
+        print(f"¸Å¸Å ½ÇÇà Áß ¿À·ù ¹ß»ı: {e}")
         traceback.print_exc()
-        print("í…ŒìŠ¤íŠ¸ ëª¨ë“œë¡œ ì‹¤í–‰: ì‹¤ì œ ë§¤ë§¤ëŠ” ì´ë£¨ì–´ì§€ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.")
+        print("Å×½ºÆ® ¸ğµå·Î ½ÇÇà: ½ÇÁ¦ ¸Å¸Å´Â ÀÌ·ç¾îÁöÁö ¾Ê¾Ò½À´Ï´Ù.")
 
-# 6. í†µí•© ê±°ë˜ í•¨ìˆ˜ (ë©”ì¸ í•¨ìˆ˜)
+# 6. ÅëÇÕ °Å·¡ ÇÔ¼ö (¸ŞÀÎ ÇÔ¼ö)
 def integrated_trading():
-    """í™•ì¥ëœ ë°ì´í„°ì™€ ë¶„ì„ì„ í†µí•œ ë¹„íŠ¸ì½”ì¸ ìë™ë§¤ë§¤ì˜ ì „ì²´ í”„ë¡œì„¸ìŠ¤ë¥¼ ì‹¤í–‰í•©ë‹ˆë‹¤."""
+    """È®ÀåµÈ µ¥ÀÌÅÍ¿Í ºĞ¼®À» ÅëÇÑ ºñÆ®ÄÚÀÎ ÀÚµ¿¸Å¸ÅÀÇ ÀüÃ¼ ÇÁ·Î¼¼½º¸¦ ½ÇÇàÇÕ´Ï´Ù."""
     try:
-        # 1. ë‹¤ì–‘í•œ ê±°ë˜ì†Œ ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
-        print("\n== ê±°ë˜ì†Œ ë°ì´í„° ìˆ˜ì§‘ ì‹œì‘ ==")
+        # 1. ´Ù¾çÇÑ °Å·¡¼Ò µ¥ÀÌÅÍ °¡Á®¿À±â
+        print("\n== °Å·¡¼Ò µ¥ÀÌÅÍ ¼öÁı ½ÃÀÛ ==")
         market_data = get_enhanced_market_data()
         if market_data is None:
-            print("ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤. ë‹¤ìŒ ì‹¤í–‰ì„ ê¸°ë‹¤ë¦½ë‹ˆë‹¤.")
+            print("µ¥ÀÌÅÍ¸¦ °¡Á®¿ÀÁö ¸øÇß½À´Ï´Ù. ´ÙÀ½ ½ÇÇàÀ» ±â´Ù¸³´Ï´Ù.")
             return
             
-        # 2. ê¸°ìˆ ì  ì§€í‘œ ê³„ì‚°
-        print("\n== ê¸°ìˆ ì  ì§€í‘œ ê³„ì‚° ì‹œì‘ ==")
+        # 2. ±â¼úÀû ÁöÇ¥ °è»ê
+        print("\n== ±â¼úÀû ÁöÇ¥ °è»ê ½ÃÀÛ ==")
         indicators = calculate_technical_indicators(market_data)
         if indicators is None:
-            print("ì§€í‘œ ê³„ì‚°ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤. ë‹¤ìŒ ì‹¤í–‰ì„ ê¸°ë‹¤ë¦½ë‹ˆë‹¤.")
+            print("ÁöÇ¥ °è»ê¿¡ ½ÇÆĞÇß½À´Ï´Ù. ´ÙÀ½ ½ÇÇàÀ» ±â´Ù¸³´Ï´Ù.")
             return
             
-        # 3. í†µí•© ë¶„ì„ ì‹¤í–‰
-        print("\n== í†µí•© ë¶„ì„ ì‹¤í–‰ ==")
+        # 3. ÅëÇÕ ºĞ¼® ½ÇÇà
+        print("\n== ÅëÇÕ ºĞ¼® ½ÇÇà ==")
         analysis_result = perform_integrated_analysis(market_data, indicators)
         
-        # 4. Claude AIë¡œ ë¶„ì„ ì‹œë„ (ì„ íƒì )
+        # 4. Claude AI·Î ºĞ¼® ½Ãµµ (¼±ÅÃÀû)
         claude_result = None
         use_claude = CLAUDE_SETTINGS.get("use_claude", False)
         
         if use_claude:
-            print("\n== Claude AIë¡œ ë¶„ì„ ì‹œë„ ==")
+            print("\n== Claude AI·Î ºĞ¼® ½Ãµµ ==")
             claude_result = get_claude_analysis(market_data)
         
-        # 5. ìµœì¢… ê²°ì • ë° ê²°ê³¼ ì¶œë ¥
+        # 5. ÃÖÁ¾ °áÁ¤ ¹× °á°ú Ãâ·Â
         final_result = None
         
         if analysis_result and claude_result:
-            print("\n===== ë¶„ì„ ê²°ê³¼ ë¹„êµ =====")
-            print("ìì²´ ë¶„ì„:", analysis_result["decision"], f"(ì‹ ë¢°ë„: {analysis_result['confidence']:.2f})")
-            print("Claude ë¶„ì„:", claude_result["decision"], f"(ì‹ ë¢°ë„: {claude_result.get('confidence', 0.5):.2f})")
+            print("\n===== ºĞ¼® °á°ú ºñ±³ =====")
+            print("ÀÚÃ¼ ºĞ¼®:", analysis_result["decision"], f"(½Å·Úµµ: {analysis_result['confidence']:.2f})")
+            print("Claude ºĞ¼®:", claude_result["decision"], f"(½Å·Úµµ: {claude_result.get('confidence', 0.5):.2f})")
             
-            # Claudeì˜ ë¶„ì„ ì´ìœ ë„ ì¶œë ¥
+            # ClaudeÀÇ ºĞ¼® ÀÌÀ¯µµ Ãâ·Â
             if "reason" in claude_result:
-                print(f"\nClaude ë¶„ì„ ì´ìœ : {claude_result['reason']}")
+                print(f"\nClaude ºĞ¼® ÀÌÀ¯: {claude_result['reason']}")
                 
-            # ê°€ê²© ëª©í‘œê°€ ìˆë‹¤ë©´ ì¶œë ¥
+            # °¡°İ ¸ñÇ¥°¡ ÀÖ´Ù¸é Ãâ·Â
             if "price_target" in claude_result and claude_result["price_target"]:
                 price_target = claude_result["price_target"]
-                print("\nClaude ê°€ê²© ì „ë§:")
+                print("\nClaude °¡°İ Àü¸Á:")
                 if "short_term" in price_target:
-                    print(f"  ë‹¨ê¸°: {price_target['short_term']:,}ì›")
+                    print(f"  ´Ü±â: {price_target['short_term']:,}¿ø")
                 if "medium_term" in price_target:
-                    print(f"  ì¤‘ê¸°: {price_target['medium_term']:,}ì›")
+                    print(f"  Áß±â: {price_target['medium_term']:,}¿ø")
             
-            # ë‘ ë¶„ì„ì´ ì¼ì¹˜í•˜ë©´ ì‹ ë¢°ë„ ìƒìŠ¹
+            # µÎ ºĞ¼®ÀÌ ÀÏÄ¡ÇÏ¸é ½Å·Úµµ »ó½Â
             if analysis_result["decision"] == claude_result["decision"]:
                 confidence_boost = CLAUDE_SETTINGS.get("confidence_boost", 0.1)
                 boosted_confidence = min(0.95, (analysis_result["confidence"] + claude_result.get("confidence", 0.5)) / 2 + confidence_boost)
                 final_decision = analysis_result["decision"]
-                reason = f"ìì²´ ë¶„ì„ê³¼ Claude AI ë¶„ì„ ê²°ê³¼ê°€ ì¼ì¹˜ ({final_decision}). ì‹ ë¢°ë„ ìƒìŠ¹."
+                reason = f"ÀÚÃ¼ ºĞ¼®°ú Claude AI ºĞ¼® °á°ú°¡ ÀÏÄ¡ ({final_decision}). ½Å·Úµµ »ó½Â."
             else:
-                # ì‹ ë¢°ë„ê°€ ë” ë†’ì€ ë¶„ì„ ì„ íƒ
+                # ½Å·Úµµ°¡ ´õ ³ôÀº ºĞ¼® ¼±ÅÃ
                 claude_weight = CLAUDE_SETTINGS.get("weight", 1.0)
                 analysis_weight = 1.0
                 total_weight = analysis_weight + claude_weight
@@ -1294,11 +1294,11 @@ def integrated_trading():
                 if analysis_result["confidence"] >= claude_result.get("confidence", 0.5):
                     final_decision = analysis_result["decision"]
                     boosted_confidence = (analysis_result["confidence"] * analysis_weight) / total_weight
-                    reason = f"ìì²´ ë¶„ì„ ì‹ ë¢°ë„({analysis_result['confidence']:.2f})ê°€ ë” ë†’ì•„ ì±„íƒ"
+                    reason = f"ÀÚÃ¼ ºĞ¼® ½Å·Úµµ({analysis_result['confidence']:.2f})°¡ ´õ ³ô¾Æ Ã¤ÅÃ"
                 else:
                     final_decision = claude_result["decision"]
                     boosted_confidence = (claude_result.get("confidence", 0.5) * claude_weight) / total_weight
-                    reason = f"Claude ë¶„ì„ ì‹ ë¢°ë„({claude_result.get('confidence', 0.5):.2f})ê°€ ë” ë†’ì•„ ì±„íƒ"
+                    reason = f"Claude ºĞ¼® ½Å·Úµµ({claude_result.get('confidence', 0.5):.2f})°¡ ´õ ³ô¾Æ Ã¤ÅÃ"
             
             final_result = {
                 "decision": final_decision,
@@ -1311,128 +1311,128 @@ def integrated_trading():
             final_decision = analysis_result["decision"]
             final_confidence = analysis_result["confidence"]
             final_result = analysis_result
-            print("\n===== ë¶„ì„ ê²°ê³¼ =====")
-            print(f"ê²°ì •: {final_decision} (ì‹ ë¢°ë„: {final_confidence:.2f})")
+            print("\n===== ºĞ¼® °á°ú =====")
+            print(f"°áÁ¤: {final_decision} (½Å·Úµµ: {final_confidence:.2f})")
         else:
-            print("ëª¨ë“  ë¶„ì„ ë°©ë²•ì´ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤. ë‹¤ìŒ ì‹¤í–‰ì„ ê¸°ë‹¤ë¦½ë‹ˆë‹¤.")
+            print("¸ğµç ºĞ¼® ¹æ¹ıÀÌ ½ÇÆĞÇß½À´Ï´Ù. ´ÙÀ½ ½ÇÇàÀ» ±â´Ù¸³´Ï´Ù.")
             return
         
-        # 6. ê²°ê³¼ ì¶œë ¥
-        print("\n===== ìµœì¢… ë¶„ì„ ê²°ê³¼ =====")
+        # 6. °á°ú Ãâ·Â
+        print("\n===== ÃÖÁ¾ ºĞ¼® °á°ú =====")
         print(json.dumps(final_result, indent=2, ensure_ascii=False))
         
-        # ìƒì„¸ ê²°ì • ì´ìœ  ì¶œë ¥
-        print("\n===== ìƒì„¸ ê²°ì • ì´ìœ  =====")
-        print(f"ê²°ì •: {final_result['decision_kr']} (ì‹ ë¢°ë„: {final_result['confidence']:.2f})")
+        # »ó¼¼ °áÁ¤ ÀÌÀ¯ Ãâ·Â
+        print("\n===== »ó¼¼ °áÁ¤ ÀÌÀ¯ =====")
+        print(f"°áÁ¤: {final_result['decision_kr']} (½Å·Úµµ: {final_result['confidence']:.2f})")
         
-        print("\n[ê°œë³„ ì§€í‘œ ì‹ í˜¸]")
+        print("\n[°³º° ÁöÇ¥ ½ÅÈ£]")
         for signal in final_result['signals']:
-            signal_icon = "ğŸ”´" if signal['signal'] == 'sell' else "ğŸŸ¢" if signal['signal'] == 'buy' else "âšª"
-            print(f"{signal_icon} {signal['source']}: {signal['description']} (ê°•ë„: {signal['strength']:.2f})")
+            signal_icon = "?" if signal['signal'] == 'sell' else "?" if signal['signal'] == 'buy' else "?"
+            print(f"{signal_icon} {signal['source']}: {signal['description']} (°­µµ: {signal['strength']:.2f})")
         
-        print(f"\nì´ ì‹ í˜¸ ìˆ˜: ë§¤ìˆ˜ {final_result['signal_counts']['buy']}ê°œ, ë§¤ë„ {final_result['signal_counts']['sell']}ê°œ, í™€ë“œ {final_result['signal_counts']['hold']}ê°œ")
-        print(f"ì¢…í•© ì‹ í˜¸ ê°•ë„: {final_result['avg_signal_strength']:.3f}")
+        print(f"\nÃÑ ½ÅÈ£ ¼ö: ¸Å¼ö {final_result['signal_counts']['buy']}°³, ¸Åµµ {final_result['signal_counts']['sell']}°³, È¦µå {final_result['signal_counts']['hold']}°³")
+        print(f"Á¾ÇÕ ½ÅÈ£ °­µµ: {final_result['avg_signal_strength']:.3f}")
         
-        # 7. ë§¤ë§¤ ì‹¤í–‰
+        # 7. ¸Å¸Å ½ÇÇà
         trade_enabled = os.getenv("ENABLE_TRADE", "").lower() == "true"
         
         if trade_enabled:
-            print("\n== ìë™ ë§¤ë§¤ ì‹¤í–‰ ==")
+            print("\n== ÀÚµ¿ ¸Å¸Å ½ÇÇà ==")
             execute_trade(final_result["decision"], final_result["confidence"], market_data)
         else:
-            print("\n== ìë™ ë§¤ë§¤ ë¹„í™œì„±í™”ë¨ (í…ŒìŠ¤íŠ¸ ëª¨ë“œ) ==")
-            print(f"ì‹¤í–‰ë  ë§¤ë§¤: {final_result['decision']} (ì‹ ë¢°ë„: {final_result['confidence']:.2f})")
+            print("\n== ÀÚµ¿ ¸Å¸Å ºñÈ°¼ºÈ­µÊ (Å×½ºÆ® ¸ğµå) ==")
+            print(f"½ÇÇàµÉ ¸Å¸Å: {final_result['decision']} (½Å·Úµµ: {final_result['confidence']:.2f})")
             
-        # 8. ê²°ê³¼ ì €ì¥ (ë¡œê·¸ ë˜ëŠ” DB)
+        # 8. °á°ú ÀúÀå (·Î±× ¶Ç´Â DB)
         try:
             log_dir = "logs"
             os.makedirs(log_dir, exist_ok=True)
             
             log_file = os.path.join(log_dir, f"trading_log_{datetime.now().strftime('%Y%m%d')}.json")
             
-            # ê¸°ì¡´ ë¡œê·¸ê°€ ìˆìœ¼ë©´ ë¡œë“œ
+            # ±âÁ¸ ·Î±×°¡ ÀÖÀ¸¸é ·Îµå
             existing_logs = []
             if os.path.exists(log_file):
                 with open(log_file, 'r', encoding='utf-8') as f:
                     existing_logs = json.load(f)
             
-            # ìƒˆ ë¡œê·¸ ì¶”ê°€
+            # »õ ·Î±× Ãß°¡
             existing_logs.append(final_result)
             
-            # ë¡œê·¸ ì €ì¥
+            # ·Î±× ÀúÀå
             with open(log_file, 'w', encoding='utf-8') as f:
                 json.dump(existing_logs, f, indent=2, ensure_ascii=False)
                 
-            print(f"\nê±°ë˜ ë¡œê·¸ê°€ ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤: {log_file}")
+            print(f"\n°Å·¡ ·Î±×°¡ ÀúÀåµÇ¾ú½À´Ï´Ù: {log_file}")
         except Exception as e:
-            print(f"ë¡œê·¸ ì €ì¥ ì¤‘ ì˜¤ë¥˜ ë°œìƒ: {e}")
+            print(f"·Î±× ÀúÀå Áß ¿À·ù ¹ß»ı: {e}")
         
     except Exception as e:
-        print(f"ê±°ë˜ í”„ë¡œì„¸ìŠ¤ ì¤‘ ì˜ˆìƒì¹˜ ëª»í•œ ì˜¤ë¥˜ ë°œìƒ: {e}")
+        print(f"°Å·¡ ÇÁ·Î¼¼½º Áß ¿¹»óÄ¡ ¸øÇÑ ¿À·ù ¹ß»ı: {e}")
         traceback.print_exc()
 
-# ë©”ì¸ ì‹¤í–‰ ë¶€ë¶„
+# ¸ŞÀÎ ½ÇÇà ºÎºĞ
 if __name__ == "__main__":
-    print("í™•ì¥ëœ ë¹„íŠ¸ì½”ì¸ ìë™ë§¤ë§¤ ì‹œìŠ¤í…œì„ ì‹œì‘í•©ë‹ˆë‹¤...")
-    print("ì´ í”„ë¡œê·¸ë¨ì€ ë‹¤ì–‘í•œ ê±°ë˜ì†Œ ë°ì´í„°ì™€ ì˜¨ì²´ì¸ ë°ì´í„°ë¥¼ í™œìš©í•©ë‹ˆë‹¤.")
-    print("Ctrl+Cë¥¼ ëˆŒëŸ¬ ì–¸ì œë“ ì§€ ì¢…ë£Œí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.\n")
+    print("È®ÀåµÈ ºñÆ®ÄÚÀÎ ÀÚµ¿¸Å¸Å ½Ã½ºÅÛÀ» ½ÃÀÛÇÕ´Ï´Ù...")
+    print("ÀÌ ÇÁ·Î±×·¥Àº ´Ù¾çÇÑ °Å·¡¼Ò µ¥ÀÌÅÍ¿Í ¿ÂÃ¼ÀÎ µ¥ÀÌÅÍ¸¦ È°¿ëÇÕ´Ï´Ù.")
+    print("Ctrl+C¸¦ ´­·¯ ¾ğÁ¦µçÁö Á¾·áÇÒ ¼ö ÀÖ½À´Ï´Ù.\n")
     
-    # í™˜ê²½ ë³€ìˆ˜ ì„¤ì • í™•ì¸
+    # È¯°æ º¯¼ö ¼³Á¤ È®ÀÎ
     required_vars = {
-        "UPBIT_ACCESS_KEY": "ì—…ë¹„íŠ¸ API ì ‘ê·¼ í‚¤",
-        "UPBIT_SECRET_KEY": "ì—…ë¹„íŠ¸ API ë¹„ë°€ í‚¤"
+        "UPBIT_ACCESS_KEY": "¾÷ºñÆ® API Á¢±Ù Å°",
+        "UPBIT_SECRET_KEY": "¾÷ºñÆ® API ºñ¹Ğ Å°"
     }
     
     optional_vars = {
-        "CLAUDE_API_KEY": "Claude AI API í‚¤ (ì„ íƒ ì‚¬í•­)",
-        "GLASSNODE_API_KEY": "Glassnode API í‚¤ (ì„ íƒ ì‚¬í•­)",
-        "USE_CLAUDE": "Claude AI ì‚¬ìš© ì—¬ë¶€ (true/false)",
-        "ENABLE_TRADE": "ì‹¤ì œ ë§¤ë§¤ í™œì„±í™” ì—¬ë¶€ (true/false)"
+        "CLAUDE_API_KEY": "Claude AI API Å° (¼±ÅÃ »çÇ×)",
+        "GLASSNODE_API_KEY": "Glassnode API Å° (¼±ÅÃ »çÇ×)",
+        "USE_CLAUDE": "Claude AI »ç¿ë ¿©ºÎ (true/false)",
+        "ENABLE_TRADE": "½ÇÁ¦ ¸Å¸Å È°¼ºÈ­ ¿©ºÎ (true/false)"
     }
     
-    # í•„ìˆ˜ í™˜ê²½ ë³€ìˆ˜ í™•ì¸
+    # ÇÊ¼ö È¯°æ º¯¼ö È®ÀÎ
     missing_vars = [var for var in required_vars if not os.getenv(var)]
     if missing_vars:
-        print("âš ï¸ ë‹¤ìŒ í•„ìˆ˜ í™˜ê²½ ë³€ìˆ˜ê°€ ì„¤ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤:")
+        print("?? ´ÙÀ½ ÇÊ¼ö È¯°æ º¯¼ö°¡ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù:")
         for var in missing_vars:
             print(f"  - {var}: {required_vars[var]}")
-        print("\n.env íŒŒì¼ì„ í™•ì¸í•˜ê±°ë‚˜ í™˜ê²½ ë³€ìˆ˜ë¥¼ ì„¤ì •í•˜ì„¸ìš”.")
+        print("\n.env ÆÄÀÏÀ» È®ÀÎÇÏ°Å³ª È¯°æ º¯¼ö¸¦ ¼³Á¤ÇÏ¼¼¿ä.")
         
-    # ì„ íƒì  í™˜ê²½ ë³€ìˆ˜ í™•ì¸
+    # ¼±ÅÃÀû È¯°æ º¯¼ö È®ÀÎ
     for var, desc in optional_vars.items():
         value = os.getenv(var)
-        status = "âœ“ ì„¤ì •ë¨" if value else "âœ— ì„¤ì •ë˜ì§€ ì•ŠìŒ"
+        status = "? ¼³Á¤µÊ" if value else "? ¼³Á¤µÇÁö ¾ÊÀ½"
         print(f"{var}: {desc} - {status}")
     
-    # í™˜ê²½ ë³€ìˆ˜ ì•ˆë‚´
+    # È¯°æ º¯¼ö ¾È³»
     if not os.getenv("USE_CLAUDE", "").lower() == "true":
-        print("\nğŸ“Œ Claude AIë¥¼ ì‚¬ìš©í•˜ë ¤ë©´ .env íŒŒì¼ì— USE_CLAUDE=trueì™€ CLAUDE_API_KEYë¥¼ ì„¤ì •í•˜ì„¸ìš”.")
+        print("\n? Claude AI¸¦ »ç¿ëÇÏ·Á¸é .env ÆÄÀÏ¿¡ USE_CLAUDE=true¿Í CLAUDE_API_KEY¸¦ ¼³Á¤ÇÏ¼¼¿ä.")
     
     if not os.getenv("ENABLE_TRADE", "").lower() == "true":
-        print("\nğŸ“Œ ì‹¤ì œ ë§¤ë§¤ë¥¼ í™œì„±í™”í•˜ë ¤ë©´ .env íŒŒì¼ì— ENABLE_TRADE=trueë¥¼ ì„¤ì •í•˜ì„¸ìš”.")
-        print("   í˜„ì¬ëŠ” í…ŒìŠ¤íŠ¸ ëª¨ë“œë¡œ ì‹¤í–‰ë©ë‹ˆë‹¤. (ì‹¤ì œ ë§¤ë§¤ ì—†ìŒ)")
+        print("\n? ½ÇÁ¦ ¸Å¸Å¸¦ È°¼ºÈ­ÇÏ·Á¸é .env ÆÄÀÏ¿¡ ENABLE_TRADE=true¸¦ ¼³Á¤ÇÏ¼¼¿ä.")
+        print("   ÇöÀç´Â Å×½ºÆ® ¸ğµå·Î ½ÇÇàµË´Ï´Ù. (½ÇÁ¦ ¸Å¸Å ¾øÀ½)")
     else:
-        print("\nâš ï¸ ì‹¤ì œ ë§¤ë§¤ê°€ í™œì„±í™”ë˜ì—ˆìŠµë‹ˆë‹¤. ìë™ìœ¼ë¡œ ì‹¤ì œ ê±°ë˜ê°€ ì´ë£¨ì–´ì§‘ë‹ˆë‹¤!")
+        print("\n?? ½ÇÁ¦ ¸Å¸Å°¡ È°¼ºÈ­µÇ¾ú½À´Ï´Ù. ÀÚµ¿À¸·Î ½ÇÁ¦ °Å·¡°¡ ÀÌ·ç¾îÁı´Ï´Ù!")
     
-    # ë¬´í•œ ë£¨í”„ë¡œ ì¼ì • ì‹œê°„ë§ˆë‹¤ ë§¤ë§¤ ë¶„ì„ ë° ì‹¤í–‰
-    interval_minutes = TRADING_SETTINGS.get("trading_interval", 60)  # ê¸°ë³¸ê°’ 60ë¶„
+    # ¹«ÇÑ ·çÇÁ·Î ÀÏÁ¤ ½Ã°£¸¶´Ù ¸Å¸Å ºĞ¼® ¹× ½ÇÇà
+    interval_minutes = TRADING_SETTINGS.get("trading_interval", 60)  # ±âº»°ª 60ºĞ
     
     try:
         while True:
-            print(f"\n{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - ë§¤ë§¤ ë¶„ì„ ì‹œì‘")
+            print(f"\n{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - ¸Å¸Å ºĞ¼® ½ÃÀÛ")
             integrated_trading()
             
             next_run = datetime.now() + timedelta(minutes=interval_minutes)
-            print(f"\në‹¤ìŒ ë¶„ì„ ì˜ˆì • ì‹œê°„: {next_run.strftime('%Y-%m-%d %H:%M:%S')} ({interval_minutes}ë¶„ í›„)")
+            print(f"\n´ÙÀ½ ºĞ¼® ¿¹Á¤ ½Ã°£: {next_run.strftime('%Y-%m-%d %H:%M:%S')} ({interval_minutes}ºĞ ÈÄ)")
             
             for i in range(interval_minutes):
-                time.sleep(60)  # 1ë¶„ì”© ëŒ€ê¸°
+                time.sleep(60)  # 1ºĞ¾¿ ´ë±â
                 minutes_left = interval_minutes - i - 1
-                if minutes_left > 0 and minutes_left % 5 == 0:  # 5ë¶„ ê°„ê²©ìœ¼ë¡œ ìƒíƒœ ë©”ì‹œì§€
-                    print(f"ë‹¤ìŒ ë¶„ì„ê¹Œì§€ {minutes_left}ë¶„ ë‚¨ì•˜ìŠµë‹ˆë‹¤...")
+                if minutes_left > 0 and minutes_left % 5 == 0:  # 5ºĞ °£°İÀ¸·Î »óÅÂ ¸Ş½ÃÁö
+                    print(f"´ÙÀ½ ºĞ¼®±îÁö {minutes_left}ºĞ ³²¾Ò½À´Ï´Ù...")
     
     except KeyboardInterrupt:
-        print("\ní”„ë¡œê·¸ë¨ì´ ì‚¬ìš©ìì— ì˜í•´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.")
+        print("\nÇÁ·Î±×·¥ÀÌ »ç¿ëÀÚ¿¡ ÀÇÇØ Á¾·áµÇ¾ú½À´Ï´Ù.")
     except Exception as e:
-        print(f"\nì˜ˆìƒì¹˜ ëª»í•œ ì˜¤ë¥˜ë¡œ í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë©ë‹ˆë‹¤: {e}")
+        print(f"\n¿¹»óÄ¡ ¸øÇÑ ¿À·ù·Î ÇÁ·Î±×·¥ÀÌ Á¾·áµË´Ï´Ù: {e}")
         traceback.print_exc()

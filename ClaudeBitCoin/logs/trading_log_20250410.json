@@ -1,0 +1,2609 @@
+[
+  {
+    "timestamp": "2025-04-10 00:48:14",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.5357142857142857,
+    "avg_signal_strength": 0.08571428571428572,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "하단 접근중 (밴드 내 위치: 하위 45%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.8,
+        "description": "과매도 상태 (RSI: 24.7 < 30)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "하락 반전 신호 (K < D, K: 22.3, D: 23.9)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "154812",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "004812",
+        "trade_timestamp": 1744213692384,
+        "opening_price": 114497000.0,
+        "high_price": 117240000.0,
+        "low_price": 112549000.0,
+        "trade_price": 115824000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 1335000.0,
+        "change_rate": 0.0116605089,
+        "signed_change_price": 1335000.0,
+        "signed_change_rate": 0.0116605089,
+        "trade_volume": 8.625e-05,
+        "acc_trade_price": 325008484595.0061,
+        "acc_trade_price_24h": 428034322000.207,
+        "acc_trade_volume": 2822.85879187,
+        "acc_trade_volume_24h": 3714.61357235,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744213692407
+      }
+    ],
+    "price_change_24h": "1.17%"
+  },
+  {
+    "timestamp": "2025-04-10 00:52:19",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.5357142857142857,
+    "avg_signal_strength": 0.08571428571428572,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "하단 접근중 (밴드 내 위치: 하위 45%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.8,
+        "description": "과매도 상태 (RSI: 24.8 < 30)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "하락 반전 신호 (K < D, K: 22.4, D: 23.9)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "155213",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "005213",
+        "trade_timestamp": 1744213933500,
+        "opening_price": 114497000.0,
+        "high_price": 117240000.0,
+        "low_price": 112549000.0,
+        "trade_price": 115840000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 1351000.0,
+        "change_rate": 0.0118002603,
+        "signed_change_price": 1351000.0,
+        "signed_change_rate": 0.0118002603,
+        "trade_volume": 0.001,
+        "acc_trade_price": 325632480461.4893,
+        "acc_trade_price_24h": 427650428110.60583,
+        "acc_trade_volume": 2828.24609632,
+        "acc_trade_volume_24h": 3711.40838475,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744213933536
+      }
+    ],
+    "price_change_24h": "1.18%"
+  },
+  {
+    "timestamp": "2025-04-10 00:53:27",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.5357142857142857,
+    "avg_signal_strength": 0.08571428571428572,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "하단 접근중 (밴드 내 위치: 하위 45%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.8,
+        "description": "과매도 상태 (RSI: 24.8 < 30)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "하락 반전 신호 (K < D, K: 22.4, D: 23.9)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "155323",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "005323",
+        "trade_timestamp": 1744214003629,
+        "opening_price": 114497000.0,
+        "high_price": 117240000.0,
+        "low_price": 112549000.0,
+        "trade_price": 115840000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 1351000.0,
+        "change_rate": 0.0118002603,
+        "signed_change_price": 1351000.0,
+        "signed_change_rate": 0.0118002603,
+        "trade_volume": 0.00021581,
+        "acc_trade_price": 325652569106.64923,
+        "acc_trade_price_24h": 427713797540.6627,
+        "acc_trade_volume": 2828.41951705,
+        "acc_trade_volume_24h": 3711.95579233,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744214003672
+      }
+    ],
+    "price_change_24h": "1.18%"
+  },
+  {
+    "timestamp": "2025-04-10 00:54:33",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.5357142857142857,
+    "avg_signal_strength": 0.08571428571428572,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "하단 접근중 (밴드 내 위치: 하위 46%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.8,
+        "description": "과매도 상태 (RSI: 24.5 < 30)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "하락 반전 신호 (K < D, K: 21.9, D: 23.8)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "155428",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "005428",
+        "trade_timestamp": 1744214068539,
+        "opening_price": 114497000.0,
+        "high_price": 117240000.0,
+        "low_price": 112549000.0,
+        "trade_price": 115752000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 1263000.0,
+        "change_rate": 0.0110316275,
+        "signed_change_price": 1263000.0,
+        "signed_change_rate": 0.0110316275,
+        "trade_volume": 0.00777524,
+        "acc_trade_price": 325722031744.8985,
+        "acc_trade_price_24h": 427789205765.8328,
+        "acc_trade_volume": 2829.01965901,
+        "acc_trade_volume_24h": 3712.60726109,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744214070027
+      }
+    ],
+    "price_change_24h": "1.10%"
+  },
+  {
+    "timestamp": "2025-04-10 00:55:35",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.5357142857142857,
+    "avg_signal_strength": 0.08571428571428572,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "하단 접근중 (밴드 내 위치: 하위 46%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.8,
+        "description": "과매도 상태 (RSI: 24.3 < 30)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "하락 반전 신호 (K < D, K: 21.6, D: 23.7)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "155532",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "005532",
+        "trade_timestamp": 1744214132991,
+        "opening_price": 114497000.0,
+        "high_price": 117240000.0,
+        "low_price": 112549000.0,
+        "trade_price": 115696000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 1207000.0,
+        "change_rate": 0.0105424975,
+        "signed_change_price": 1207000.0,
+        "signed_change_rate": 0.0105424975,
+        "trade_volume": 0.00333015,
+        "acc_trade_price": 325819764717.09827,
+        "acc_trade_price_24h": 427541050100.9009,
+        "acc_trade_volume": 2829.86424267,
+        "acc_trade_volume_24h": 3710.51001649,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744214133022
+      }
+    ],
+    "price_change_24h": "1.05%"
+  },
+  {
+    "timestamp": "2025-04-10 00:56:38",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.5357142857142857,
+    "avg_signal_strength": 0.08571428571428572,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "하단 접근중 (밴드 내 위치: 하위 47%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.8,
+        "description": "과매도 상태 (RSI: 23.7 < 30)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "하락 반전 신호 (K < D, K: 20.6, D: 23.3)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "155635",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "005635",
+        "trade_timestamp": 1744214195046,
+        "opening_price": 114497000.0,
+        "high_price": 117240000.0,
+        "low_price": 112549000.0,
+        "trade_price": 115500000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 1011000.0,
+        "change_rate": 0.0088305427,
+        "signed_change_price": 1011000.0,
+        "signed_change_rate": 0.0088305427,
+        "trade_volume": 0.0079,
+        "acc_trade_price": 325851795972.1533,
+        "acc_trade_price_24h": 427565837842.67,
+        "acc_trade_volume": 2830.14132772,
+        "acc_trade_volume_24h": 3710.72436815,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744214195087
+      }
+    ],
+    "price_change_24h": "0.88%"
+  },
+  {
+    "timestamp": "2025-04-10 00:57:07",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.5357142857142857,
+    "avg_signal_strength": 0.08571428571428572,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "하단 접근중 (밴드 내 위치: 하위 47%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.8,
+        "description": "과매도 상태 (RSI: 23.9 < 30)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "하락 반전 신호 (K < D, K: 20.9, D: 23.4)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "155704",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "005704",
+        "trade_timestamp": 1744214224816,
+        "opening_price": 114497000.0,
+        "high_price": 117240000.0,
+        "low_price": 112549000.0,
+        "trade_price": 115560000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 1071000.0,
+        "change_rate": 0.0093546105,
+        "signed_change_price": 1071000.0,
+        "signed_change_rate": 0.0093546105,
+        "trade_volume": 0.00137613,
+        "acc_trade_price": 325869381922.2311,
+        "acc_trade_price_24h": 427589843802.60443,
+        "acc_trade_volume": 2830.29358187,
+        "acc_trade_volume_24h": 3710.93220927,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744214224845
+      }
+    ],
+    "price_change_24h": "0.94%"
+  },
+  {
+    "timestamp": "2025-04-10 01:05:36",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.5357142857142857,
+    "avg_signal_strength": 0.08571428571428572,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "하단 접근중 (밴드 내 위치: 하위 46%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.8,
+        "description": "과매도 상태 (RSI: 24.6 < 30)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "하락 반전 신호 (K < D, K: 22.1, D: 23.8)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "160529",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "010529",
+        "trade_timestamp": 1744214729771,
+        "opening_price": 114497000.0,
+        "high_price": 117240000.0,
+        "low_price": 112549000.0,
+        "trade_price": 115741000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 1252000.0,
+        "change_rate": 0.0109355484,
+        "signed_change_price": 1252000.0,
+        "signed_change_rate": 0.0109355484,
+        "trade_volume": 5.121e-05,
+        "acc_trade_price": 326103798112.1985,
+        "acc_trade_price_24h": 426756892786.34607,
+        "acc_trade_volume": 2832.32066698,
+        "acc_trade_volume_24h": 3703.86445039,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744214729801
+      }
+    ],
+    "price_change_24h": "1.13%"
+  },
+  {
+    "timestamp": "2025-04-10 01:15:45",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.5357142857142857,
+    "avg_signal_strength": 0.17142857142857143,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "하단 접근중 (밴드 내 위치: 하위 43%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.8,
+        "description": "과매도 상태 (RSI: 26.3 < 30)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 25.2, D: 24.9)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 4,
+      "sell": 2,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "161541",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "011541",
+        "trade_timestamp": 1744215341228,
+        "opening_price": 114497000.0,
+        "high_price": 117240000.0,
+        "low_price": 112549000.0,
+        "trade_price": 116360000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 1871000.0,
+        "change_rate": 0.0163421813,
+        "signed_change_price": 1871000.0,
+        "signed_change_rate": 0.0163421813,
+        "trade_volume": 0.0257116,
+        "acc_trade_price": 327370479706.25555,
+        "acc_trade_price_24h": 424041348922.36774,
+        "acc_trade_volume": 2843.22761659,
+        "acc_trade_volume_24h": 3680.77255938,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744215341272
+      }
+    ],
+    "price_change_24h": "1.63%"
+  },
+  {
+    "timestamp": "2025-04-10 02:15:47",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.5357142857142857,
+    "avg_signal_strength": 0.17142857142857143,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "하단 접근중 (밴드 내 위치: 하위 39%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.8,
+        "description": "과매도 상태 (RSI: 28.6 < 30)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 29.7, D: 26.4)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 4,
+      "sell": 2,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "171544",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "021544",
+        "trade_timestamp": 1744218944108,
+        "opening_price": 114497000.0,
+        "high_price": 117653000.0,
+        "low_price": 112549000.0,
+        "trade_price": 117200000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 2711000.0,
+        "change_rate": 0.0236791307,
+        "signed_change_price": 2711000.0,
+        "signed_change_rate": 0.0236791307,
+        "trade_volume": 0.02586076,
+        "acc_trade_price": 338761194484.8592,
+        "acc_trade_price_24h": 419376443688.59503,
+        "acc_trade_volume": 2940.64037681,
+        "acc_trade_volume_24h": 3639.90489706,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744218944151
+      }
+    ],
+    "price_change_24h": "2.37%"
+  },
+  {
+    "timestamp": "2025-04-10 03:15:50",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.37499999999999994,
+    "avg_signal_strength": 0.04285714285714286,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 38.2)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 51.6, D: 33.7)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 2,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "181548",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "031548",
+        "trade_timestamp": 1744222548120,
+        "opening_price": 114497000.0,
+        "high_price": 121526000.0,
+        "low_price": 112549000.0,
+        "trade_price": 121298000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 6809000.0,
+        "change_rate": 0.0594729625,
+        "signed_change_price": 6809000.0,
+        "signed_change_rate": 0.0594729625,
+        "trade_volume": 0.00234581,
+        "acc_trade_price": 431908847576.7837,
+        "acc_trade_price_24h": 496286998378.7941,
+        "acc_trade_volume": 3716.01755332,
+        "acc_trade_volume_24h": 4274.87494056,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744222548156
+      }
+    ],
+    "price_change_24h": "5.95%"
+  },
+  {
+    "timestamp": "2025-04-10 04:15:54",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.37499999999999994,
+    "avg_signal_strength": 0.04285714285714286,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.2)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 49.1, D: 32.8)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 2,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "191549",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "041549",
+        "trade_timestamp": 1744226149959,
+        "opening_price": 114497000.0,
+        "high_price": 122208000.0,
+        "low_price": 112549000.0,
+        "trade_price": 120825000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 6336000.0,
+        "change_rate": 0.0553415612,
+        "signed_change_price": 6336000.0,
+        "signed_change_rate": 0.0553415612,
+        "trade_volume": 4.899e-05,
+        "acc_trade_price": 466091662234.53467,
+        "acc_trade_price_24h": 521601876782.1213,
+        "acc_trade_volume": 3998.10488317,
+        "acc_trade_volume_24h": 4480.41570273,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744226149994
+      }
+    ],
+    "price_change_24h": "5.53%"
+  },
+  {
+    "timestamp": "2025-04-10 05:15:57",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.37499999999999994,
+    "avg_signal_strength": 0.04285714285714286,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.8)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 50.6, D: 33.3)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 2,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "201554",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "051554",
+        "trade_timestamp": 1744229754001,
+        "opening_price": 114497000.0,
+        "high_price": 122208000.0,
+        "low_price": 112549000.0,
+        "trade_price": 121108000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 6619000.0,
+        "change_rate": 0.0578134144,
+        "signed_change_price": 6619000.0,
+        "signed_change_rate": 0.0578134144,
+        "trade_volume": 0.0003633,
+        "acc_trade_price": 484673452009.3845,
+        "acc_trade_price_24h": 528254900303.84247,
+        "acc_trade_volume": 4151.39895269,
+        "acc_trade_volume_24h": 4530.07204819,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744229754023
+      }
+    ],
+    "price_change_24h": "5.78%"
+  },
+  {
+    "timestamp": "2025-04-10 06:16:00",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.33928571428571425,
+    "avg_signal_strength": 0.0142857142857143,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 (RSI: 41.4)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 60.6, D: 36.7)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 2,
+      "sell": 2,
+      "hold": 3
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "211556",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "061556",
+        "trade_timestamp": 1744233356055,
+        "opening_price": 114497000.0,
+        "high_price": 123100000.0,
+        "low_price": 112549000.0,
+        "trade_price": 123001000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 8512000.0,
+        "change_rate": 0.0743477539,
+        "signed_change_price": 8512000.0,
+        "signed_change_rate": 0.0743477539,
+        "trade_volume": 0.06425714,
+        "acc_trade_price": 515328455365.7261,
+        "acc_trade_price_24h": 550561290693.162,
+        "acc_trade_volume": 4402.15473765,
+        "acc_trade_volume_24h": 4708.86771269,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744233356098
+      }
+    ],
+    "price_change_24h": "7.41%"
+  },
+  {
+    "timestamp": "2025-04-10 07:16:02",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.33928571428571425,
+    "avg_signal_strength": 0.0142857142857143,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 (RSI: 41.1)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 59.9, D: 36.4)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 2,
+      "sell": 2,
+      "hold": 3
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "221600",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "071600",
+        "trade_timestamp": 1744236960062,
+        "opening_price": 114497000.0,
+        "high_price": 123168000.0,
+        "low_price": 112549000.0,
+        "trade_price": 122900000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 8411000.0,
+        "change_rate": 0.0734655731,
+        "signed_change_price": 8411000.0,
+        "signed_change_rate": 0.0734655731,
+        "trade_volume": 0.00025869,
+        "acc_trade_price": 543356322817.0681,
+        "acc_trade_price_24h": 567119249186.719,
+        "acc_trade_volume": 4630.65778413,
+        "acc_trade_volume_24h": 4837.78607364,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744236960092
+      }
+    ],
+    "price_change_24h": "7.30%"
+  },
+  {
+    "timestamp": "2025-04-10 08:16:05",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.37499999999999994,
+    "avg_signal_strength": 0.04285714285714286,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 39.9)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 56.4, D: 35.3)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 18, Extreme Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 2,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250409",
+        "trade_time": "231603",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "081603",
+        "trade_timestamp": 1744240563018,
+        "opening_price": 114497000.0,
+        "high_price": 123168000.0,
+        "low_price": 112549000.0,
+        "trade_price": 122198000.0,
+        "prev_closing_price": 114489000.0,
+        "change": "RISE",
+        "change_price": 7709000.0,
+        "change_rate": 0.0673339797,
+        "signed_change_price": 7709000.0,
+        "signed_change_rate": 0.0673339797,
+        "trade_volume": 0.00836525,
+        "acc_trade_price": 563327337159.3687,
+        "acc_trade_price_24h": 570906112480.2745,
+        "acc_trade_volume": 4793.68450694,
+        "acc_trade_volume_24h": 4859.8458113,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744240563071
+      }
+    ],
+    "price_change_24h": "6.73%"
+  },
+  {
+    "timestamp": "2025-04-10 09:16:09",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.32142857142857145,
+    "avg_signal_strength": 7.93016446160826e-18,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 38.6)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 53.4, D: 40.1)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 2,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "001603",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "091603",
+        "trade_timestamp": 1744244163656,
+        "opening_price": 121339000.0,
+        "high_price": 121892000.0,
+        "low_price": 121313000.0,
+        "trade_price": 121643000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "RISE",
+        "change_price": 304000.0,
+        "change_rate": 0.0025053775,
+        "signed_change_price": 304000.0,
+        "signed_change_rate": 0.0025053775,
+        "trade_volume": 5.752e-05,
+        "acc_trade_price": 8376458708.08628,
+        "acc_trade_price_24h": 577551160766.1857,
+        "acc_trade_volume": 68.89809119,
+        "acc_trade_volume_24h": 4905.65676304,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744244163698
+      }
+    ],
+    "price_change_24h": "0.25%"
+  },
+  {
+    "timestamp": "2025-04-10 10:16:12",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.32142857142857145,
+    "avg_signal_strength": 7.93016446160826e-18,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 39.2)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 55.2, D: 40.7)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 2,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "011606",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "101606",
+        "trade_timestamp": 1744247766944,
+        "opening_price": 121339000.0,
+        "high_price": 122107000.0,
+        "low_price": 120953000.0,
+        "trade_price": 121976000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "RISE",
+        "change_price": 637000.0,
+        "change_rate": 0.0052497548,
+        "signed_change_price": 637000.0,
+        "signed_change_rate": 0.0052497548,
+        "trade_volume": 0.02965254,
+        "acc_trade_price": 30088827918.64564,
+        "acc_trade_price_24h": 574932457096.3232,
+        "acc_trade_volume": 247.65994229,
+        "acc_trade_volume_24h": 4871.37972988,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744247766980
+      }
+    ],
+    "price_change_24h": "0.52%"
+  },
+  {
+    "timestamp": "2025-04-10 11:16:23",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.32142857142857145,
+    "avg_signal_strength": 7.93016446160826e-18,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 38.8)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 54.1, D: 40.4)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 2,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "021613",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "111613",
+        "trade_timestamp": 1744251373751,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120953000.0,
+        "trade_price": 121773000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "RISE",
+        "change_price": 434000.0,
+        "change_rate": 0.003576756,
+        "signed_change_price": 434000.0,
+        "signed_change_rate": 0.003576756,
+        "trade_volume": 0.0024636,
+        "acc_trade_price": 43615969338.15068,
+        "acc_trade_price_24h": 554155701972.9742,
+        "acc_trade_volume": 358.63260288,
+        "acc_trade_volume_24h": 4680.39599699,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744251373777
+      }
+    ],
+    "price_change_24h": "0.36%"
+  },
+  {
+    "timestamp": "2025-04-10 12:16:26",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.32142857142857145,
+    "avg_signal_strength": 7.93016446160826e-18,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.0)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 47.5, D: 38.2)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 2,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "031624",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "121624",
+        "trade_timestamp": 1744254984027,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120500000.0,
+        "trade_price": 120542000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "FALL",
+        "change_price": 797000.0,
+        "change_rate": 0.0065683746,
+        "signed_change_price": -797000.0,
+        "signed_change_rate": -0.0065683746,
+        "trade_volume": 4.5e-05,
+        "acc_trade_price": 56491002410.49499,
+        "acc_trade_price_24h": 556202013172.8918,
+        "acc_trade_volume": 464.7504503,
+        "acc_trade_volume_24h": 4691.54703294,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744254984067
+      }
+    ],
+    "price_change_24h": "-0.66%"
+  },
+  {
+    "timestamp": "2025-04-10 13:16:23",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.34375,
+    "avg_signal_strength": -0.05,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "sell",
+        "strength": 0.4,
+        "description": "장기 하락 추세 (현재가가 60일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.2)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 48.7, D: 38.6)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "041620",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "131620",
+        "trade_timestamp": 1744258580749,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120313000.0,
+        "trade_price": 120765000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "FALL",
+        "change_price": 574000.0,
+        "change_rate": 0.0047305483,
+        "signed_change_price": -574000.0,
+        "signed_change_rate": -0.0047305483,
+        "trade_volume": 8.28e-05,
+        "acc_trade_price": 67799926642.06263,
+        "acc_trade_price_24h": 550697883591.1384,
+        "acc_trade_volume": 558.5365791,
+        "acc_trade_volume_24h": 4637.10486356,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744258580790
+      }
+    ],
+    "price_change_24h": "-0.47%"
+  },
+  {
+    "timestamp": "2025-04-10 13:36:32",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.34375,
+    "avg_signal_strength": -0.05,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "sell",
+        "strength": 0.4,
+        "description": "장기 하락 추세 (현재가가 60일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.0)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 47.8, D: 38.3)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "043628",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "133628",
+        "trade_timestamp": 1744259788814,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120313000.0,
+        "trade_price": 120596000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "FALL",
+        "change_price": 743000.0,
+        "change_rate": 0.0061233404,
+        "signed_change_price": -743000.0,
+        "signed_change_rate": -0.0061233404,
+        "trade_volume": 4.146e-05,
+        "acc_trade_price": 69440997714.66428,
+        "acc_trade_price_24h": 547282771083.87445,
+        "acc_trade_volume": 572.12522005,
+        "acc_trade_volume_24h": 4606.44631708,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744259788852
+      }
+    ],
+    "price_change_24h": "-0.61%"
+  },
+  {
+    "timestamp": "2025-04-10 13:38:20",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.34375,
+    "avg_signal_strength": -0.05,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "sell",
+        "strength": 0.4,
+        "description": "장기 하락 추세 (현재가가 60일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.0)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 47.7, D: 38.2)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "043817",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "133817",
+        "trade_timestamp": 1744259897078,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120313000.0,
+        "trade_price": 120564000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "FALL",
+        "change_price": 775000.0,
+        "change_rate": 0.0063870643,
+        "signed_change_price": -775000.0,
+        "signed_change_rate": -0.0063870643,
+        "trade_volume": 0.00931447,
+        "acc_trade_price": 69602911828.8653,
+        "acc_trade_price_24h": 547458327562.2423,
+        "acc_trade_volume": 573.46817799,
+        "acc_trade_volume_24h": 4607.90237063,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744259897101
+      }
+    ],
+    "price_change_24h": "-0.64%"
+  },
+  {
+    "timestamp": "2025-04-10 13:42:07",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.34375,
+    "avg_signal_strength": -0.05,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "sell",
+        "strength": 0.4,
+        "description": "장기 하락 추세 (현재가가 60일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.3)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 48.8, D: 38.6)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 3,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "044204",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "134204",
+        "trade_timestamp": 1744260124937,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120313000.0,
+        "trade_price": 120777000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "FALL",
+        "change_price": 562000.0,
+        "change_rate": 0.0046316518,
+        "signed_change_price": -562000.0,
+        "signed_change_rate": -0.0046316518,
+        "trade_volume": 0.028793,
+        "acc_trade_price": 70401061953.57048,
+        "acc_trade_price_24h": 546438742248.571,
+        "acc_trade_volume": 580.08321687,
+        "acc_trade_volume_24h": 4598.70248787,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744260124963
+      }
+    ],
+    "price_change_24h": "-0.46%"
+  },
+  {
+    "timestamp": "2025-04-10 13:45:27",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.37499999999999994,
+    "avg_signal_strength": -0.1,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "sell",
+        "strength": 0.4,
+        "description": "장기 하락 추세 (현재가가 60일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.4)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 49.4, D: 38.8)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 한국 프리미엄 (김프: 9.41%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 4,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "044525",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "134525",
+        "trade_timestamp": 1744260325018,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120313000.0,
+        "trade_price": 120881000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "FALL",
+        "change_price": 458000.0,
+        "change_rate": 0.003774549,
+        "signed_change_price": -458000.0,
+        "signed_change_rate": -0.003774549,
+        "trade_volume": 8.272e-05,
+        "acc_trade_price": 70636367559.11148,
+        "acc_trade_price_24h": 544401747289.527,
+        "acc_trade_volume": 582.03127802,
+        "acc_trade_volume_24h": 4580.92508691,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744260325057
+      }
+    ],
+    "price_change_24h": "-0.38%"
+  },
+  {
+    "timestamp": "2025-04-10 13:49:08",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.37499999999999994,
+    "avg_signal_strength": -0.1,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "sell",
+        "strength": 0.4,
+        "description": "장기 하락 추세 (현재가가 60일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.5)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 49.9, D: 38.9)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 한국 프리미엄 (김프: 9.39%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 4,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "044904",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "134904",
+        "trade_timestamp": 1744260544815,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120313000.0,
+        "trade_price": 120979000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "FALL",
+        "change_price": 360000.0,
+        "change_rate": 0.0029668944,
+        "signed_change_price": -360000.0,
+        "signed_change_rate": -0.0029668944,
+        "trade_volume": 0.00484833,
+        "acc_trade_price": 70890574723.27544,
+        "acc_trade_price_24h": 544665338477.5104,
+        "acc_trade_volume": 584.13309969,
+        "acc_trade_volume_24h": 4583.10460203,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744260544855
+      }
+    ],
+    "price_change_24h": "-0.30%"
+  },
+  {
+    "timestamp": "2025-04-10 14:49:11",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.37499999999999994,
+    "avg_signal_strength": -0.1,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "sell",
+        "strength": 0.4,
+        "description": "장기 하락 추세 (현재가가 60일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 38.0)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 52.0, D: 39.7)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 한국 프리미엄 (김프: 9.45%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 4,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "054910",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "144910",
+        "trade_timestamp": 1744264150489,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120313000.0,
+        "trade_price": 121370000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "RISE",
+        "change_price": 31000.0,
+        "change_rate": 0.0002554826,
+        "signed_change_price": 31000.0,
+        "signed_change_rate": 0.0002554826,
+        "trade_volume": 0.00823926,
+        "acc_trade_price": 78571536224.85352,
+        "acc_trade_price_24h": 541424750659.6625,
+        "acc_trade_volume": 647.44577209,
+        "acc_trade_volume_24h": 4551.62922431,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744264150529
+      }
+    ],
+    "price_change_24h": "0.03%"
+  },
+  {
+    "timestamp": "2025-04-10 15:49:14",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.37499999999999994,
+    "avg_signal_strength": -0.1,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "sell",
+        "strength": 0.4,
+        "description": "장기 하락 추세 (현재가가 60일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.7)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 50.5, D: 39.2)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 한국 프리미엄 (김프: 9.51%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 4,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "064912",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "154912",
+        "trade_timestamp": 1744267752123,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120313000.0,
+        "trade_price": 121103000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "FALL",
+        "change_price": 236000.0,
+        "change_rate": 0.0019449641,
+        "signed_change_price": -236000.0,
+        "signed_change_rate": -0.0019449641,
+        "trade_volume": 0.00561662,
+        "acc_trade_price": 85509378233.19495,
+        "acc_trade_price_24h": 520898293634.5909,
+        "acc_trade_volume": 704.62882232,
+        "acc_trade_volume_24h": 4371.79524498,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744267752158
+      }
+    ],
+    "price_change_24h": "-0.20%"
+  },
+  {
+    "timestamp": "2025-04-10 16:49:17",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.37499999999999994,
+    "avg_signal_strength": -0.1,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "sell",
+        "strength": 0.4,
+        "description": "장기 하락 추세 (현재가가 60일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "밴드 중앙 부근 (중립적 위치)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 37.5)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 반전 신호 (K > D, K: 49.9, D: 39.0)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 한국 프리미엄 (김프: 9.68%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 4,
+      "hold": 2
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_date": "20250410",
+        "trade_time": "074915",
+        "trade_date_kst": "20250410",
+        "trade_time_kst": "164915",
+        "trade_timestamp": 1744271355484,
+        "opening_price": 121339000.0,
+        "high_price": 122300000.0,
+        "low_price": 120313000.0,
+        "trade_price": 120986000.0,
+        "prev_closing_price": 121339000.0,
+        "change": "FALL",
+        "change_price": 353000.0,
+        "change_rate": 0.0029092048,
+        "signed_change_price": -353000.0,
+        "signed_change_rate": -0.0029092048,
+        "trade_volume": 0.12219038,
+        "acc_trade_price": 93172105854.25786,
+        "acc_trade_price_24h": 489484556017.1086,
+        "acc_trade_volume": 767.95544507,
+        "acc_trade_volume_24h": 4099.5667739,
+        "highest_52_week_price": 163325000.0,
+        "highest_52_week_date": "2025-01-20",
+        "lowest_52_week_price": 72100000.0,
+        "lowest_52_week_date": "2024-08-05",
+        "timestamp": 1744271355511
+      }
+    ],
+    "price_change_24h": "-0.29%"
+  }
+]

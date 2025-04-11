@@ -70,8 +70,12 @@ class UpbitAPI:
         Returns:
             float: 현재가 (원)
         """
-        return pyupbit.get_current_price(ticker)
-    
+        try:
+            return pyupbit.get_current_price(ticker)
+        except Exception as e:
+            print(f"현재가 조회 오류: {e}")
+            return None
+        
     def get_balance(self, ticker=None):
         """
         잔고 조회
@@ -90,17 +94,71 @@ class UpbitAPI:
         else:
             return self.client.get_balances()
     
+    # get_orderbook 함수 수정
+    # get_orderbook 함수 수정
     def get_orderbook(self, ticker="KRW-BTC"):
         """
         호가창 조회
         
         Args:
             ticker: 티커 (예: KRW-BTC)
-            
+                
         Returns:
             dict: 호가창 정보
         """
-        return pyupbit.get_orderbook(ticker)
+        try:
+            # 호가창 조회 시도
+            orderbook = pyupbit.get_orderbook(ticker)
+            
+            # 데이터 구조 확인
+            if orderbook is None or len(orderbook) == 0:
+                print("Empty orderbook response")
+                return [{
+                    "market": ticker,
+                    "orderbook_units": []
+                }]
+            
+            # 호가창 구조 디버깅
+            print(f"Orderbook structure: {list(orderbook[0].keys())}")
+            
+            # PyUpbit 0.2.33 버전 구조: orderbook_units 포함
+            if "orderbook_units" in orderbook[0]:
+                return orderbook
+            
+            # 최신 PyUpbit 버전 구조: asks, bids 포함
+            elif "asks" in orderbook[0] and "bids" in orderbook[0]:
+                # 안전하게 새 구조로 변환
+                formatted_orderbook = [{
+                    "market": ticker,
+                    "timestamp": orderbook[0].get("timestamp", 0),
+                    "total_ask_size": sum([ask[1] for ask in orderbook[0]["asks"]]),
+                    "total_bid_size": sum([bid[1] for bid in orderbook[0]["bids"]]),
+                    "orderbook_units": [
+                        {
+                            "ask_price": ask[0],
+                            "ask_size": ask[1],
+                            "bid_price": bid[0] if idx < len(orderbook[0]["bids"]) else 0,
+                            "bid_size": bid[1] if idx < len(orderbook[0]["bids"]) else 0
+                        } for idx, (ask, bid) in enumerate(zip(orderbook[0]["asks"], orderbook[0]["bids"]))
+                    ]
+                }]
+                return formatted_orderbook
+            
+            # 알 수 없는 형태
+            else:
+                print(f"Unknown orderbook structure: {orderbook[0]}")
+                return [{
+                    "market": ticker,
+                    "orderbook_units": []
+                }]
+                
+        except Exception as e:
+            print(f"호가창 조회 오류: {e}")
+            # 오류 발생 시 빈 호가창 반환
+            return [{
+                "market": ticker,
+                "orderbook_units": []
+            }]
     
     def get_ohlcv(self, ticker="KRW-BTC", interval="minute60", count=200):
         """

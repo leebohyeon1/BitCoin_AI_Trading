@@ -66,21 +66,46 @@ def main():
         def trading_job():
             try:
                 # OHLCV 데이터 업데이트
-                ohlcv = upbit_api.get_ohlcv(ticker, interval=interval, count=count)
-                technical.set_data(ohlcv)
+                try:
+                    ohlcv = upbit_api.get_ohlcv(ticker, interval=interval, count=count)
+                    if ohlcv is not None and not ohlcv.empty:
+                        technical.set_data(ohlcv)
+                    else:
+                        logger.log_error("OHLCV 데이터가 비어 있습니다.")
+                        return
+                except Exception as e:
+                    logger.log_error(f"OHLCV 데이터 업데이트 오류: {e}")
+                    return
                 
                 # 시장 분석
-                analysis_result = trading_engine.analyze_market(ticker)
+                try:
+                    analysis_result = trading_engine.analyze_market(ticker)
+                except Exception as e:
+                    logger.log_error(f"시장 분석 오류: {e}")
+                    return
                 
                 # 거래 실행 (enable_trade가 True일 때만)
                 if os.getenv("ENABLE_TRADE", "false").lower() == "true":
-                    trade_result = trading_engine.execute_trade(analysis_result, ticker)
-                    logger.log_trade(f"거래 결과: {trade_result}")# 분석 결과 로깅
-                    logger.log_app(f"분석 결과: {analysis_result['decision']} (신뢰도: {analysis_result['confidence']:.2f})")
-                    logger.log_app(f"현재가: {analysis_result['current_price'][0]['trade_price']:,}원")               
+                    try:
+                        trade_result = trading_engine.execute_trade(analysis_result, ticker)
+                        logger.log_trade(f"거래 결과: {trade_result}")
+                    except Exception as e:
+                        logger.log_error(f"거래 실행 오류: {e}")
+                
+                # 분석 결과 로깅
+                logger.log_app(f"분석 결과: {analysis_result.get('decision', 'unknown')} (신뢰도: {analysis_result.get('confidence', 0):.2f})")
+                
+                current_price_info = "N/A"
+                try:
+                    if analysis_result.get('current_price') and analysis_result['current_price'][0]:
+                        current_price_info = f"{analysis_result['current_price'][0].get('trade_price', 'N/A'):,}원"
+                except:
+                    pass
+                
+                logger.log_app(f"현재가: {current_price_info}")
             except Exception as e:
                 logger.log_error(f"트레이딩 작업 오류: {e}")
-        
+                
         # 스케줄 등록
          # 스케줄러 대신 무한 루프 사용
         interval_minutes = trading_config.get("TRADING_SETTINGS", {}).get("trading_interval", 60)

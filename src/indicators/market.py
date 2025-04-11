@@ -18,13 +18,14 @@ class MarketIndicators:
         """
         self.upbit_api = upbit_api
     
+    # get_orderbook_ratio 함수 수정
     def get_orderbook_ratio(self, ticker="KRW-BTC"):
         """
         호가창 매수/매도 비율 계산
         
         Args:
             ticker: 티커 (예: KRW-BTC)
-            
+                
         Returns:
             float: 매수/매도 비율 (1보다 크면 매수세 강함, 1보다 작으면 매도세 강함)
         """
@@ -34,11 +35,28 @@ class MarketIndicators:
         try:
             orderbook = self.upbit_api.get_orderbook(ticker)
             
-            # 총 매수 금액 (bid)
-            total_bid = sum([x['price'] * x['quantity'] for x in orderbook[0]['orderbook_units']])
-            
-            # 총 매도 금액 (ask)
-            total_ask = sum([x['price'] * x['quantity'] for x in orderbook[0]['orderbook_units']])
+            # 데이터 구조 확인 및 안전한 처리
+            if not orderbook or not isinstance(orderbook, list) or len(orderbook) == 0:
+                print("Expected orderbook to be a non-empty list but got:", type(orderbook))
+                return 1.0
+                
+            # 처리 방법 1: orderbook_units 키 있는 경우
+            if 'orderbook_units' in orderbook[0]:
+                units = orderbook[0].get("orderbook_units", [])
+                # 총 매수 금액 (bid)
+                total_bid = sum([x['price'] * x['quantity'] for x in units])
+                # 총 매도 금액 (ask)
+                total_ask = sum([x['price'] * x['quantity'] for x in units])
+            # 처리 방법 2: bids/asks 키 있는 경우
+            elif 'bids' in orderbook[0] and 'asks' in orderbook[0]:
+                # 총 매수 금액 (bid)
+                total_bid = sum([x['price'] * x['quantity'] for x in orderbook[0]['bids']])
+                # 총 매도 금액 (ask)
+                total_ask = sum([x['price'] * x['quantity'] for x in orderbook[0]['asks']])
+            else:
+                # 호가창 구조를 확인하고 디버깅
+                print("Unexpected orderbook structure:", orderbook[0].keys())
+                return 1.0
             
             # 매수/매도 비율
             if total_ask == 0:
@@ -98,9 +116,16 @@ class MarketIndicators:
         
         try:
             # 최근 체결 내역 조회 (최대 100개)
-            url = f"https://api.upbit.com/v1/trades/ticks?market={ticker}&count=100"
-            response = requests.get(url)
-            trades = response.json()
+            trades = None
+            try:
+                # 직접 API 요청으로 체결 데이터 가져오기
+                url = f"https://api.upbit.com/v1/trades/ticks?market={ticker}&count=100"
+                response = requests.get(url, timeout=10)  # 타임아웃 추가
+                trades = response.json()
+            except Exception as e:
+                print(f"체결 데이터 API 요청 오류: {e}")
+                # API 요청 실패 시, 더미 데이터 사용 또는 오류 대체
+                return "hold", 0, "체결 데이터를 가져올 수 없습니다."
             
             # 현재 시간 기준으로 timeframe_minutes분 이내의 체결만 필터링
             now = datetime.now()
@@ -108,24 +133,36 @@ class MarketIndicators:
             
             # 시간 필터링
             recent_trades = []
-            for trade in trades:
-                trade_time = datetime.strptime(trade['trade_time_utc'], '%Y-%m-%dT%H:%M:%S')
-                if trade_time >= cutoff_time:
-                    recent_trades.append(trade)
+            try:
+                for trade in trades:
+                    try:
+                        trade_time = datetime.strptime(trade['trade_time_utc'], '%Y-%m-%dT%H:%M:%S')
+                        if trade_time >= cutoff_time:
+                            recent_trades.append(trade)
+                    except (KeyError, ValueError) as e:
+                        print(f"체결 데이터 형식 오류: {e}")
+                        continue
+            except Exception as e:
+                print(f"체결 데이터 시간 필터링 오류: {e}")
+                return "hold", 0, "체결 데이터 처리 오류"
             
             if not recent_trades:
                 return "hold", 0, "최근 체결 데이터가 없습니다."
             
             # 매수/매도 체결량 계산
-            ask_volume = sum([float(trade['trade_volume']) for trade in recent_trades if trade['ask_bid'] == 'ASK'])
-            bid_volume = sum([float(trade['trade_volume']) for trade in recent_trades if trade['ask_bid'] == 'BID'])
-            
-            total_volume = ask_volume + bid_volume
-            if total_volume == 0:
-                return "hold", 0, "최근 체결 데이터가 없습니다."
-            
-            # 매수 비율 계산
-            bid_ratio = bid_volume / total_volume
+            try:
+                ask_volume = sum([float(trade.get('trade_volume', 0)) for trade in recent_trades if trade.get('ask_bid') == 'ASK'])
+                bid_volume = sum([float(trade.get('trade_volume', 0)) for trade in recent_trades if trade.get('ask_bid') == 'BID'])
+                
+                total_volume = ask_volume + bid_volume
+                if total_volume == 0:
+                    return "hold", 0, "최근 체결 데이터가 없습니다."
+                
+                # 매수 비율 계산
+                bid_ratio = bid_volume / total_volume
+            except Exception as e:
+                print(f"체결량 계산 오류: {e}")
+                return "hold", 0, "체결량 계산 오류"
             
             # 신호 판단
             if bid_ratio > 0.6:  # 매수 비율이 60% 이상이면 매수세 강함
@@ -155,18 +192,47 @@ class MarketIndicators:
             return "hold", 0, "API 인스턴스가 없어 김프를 계산할 수 없습니다.", 0
         
         try:
-            # 김프 계산 (업비트 API 클래스에 구현된 메서드 사용)
-            kimp = self.upbit_api.get_korea_premium()
+            # 업비트 BTC 가격 (원)
+            krw_btc = self.upbit_api.get_current_price("KRW-BTC")
+            if not krw_btc:  # None 체크 추가
+                return "hold", 0, "업비트 가격 조회 실패", 0
+            
+            # 바이낸스 BTC 가격 (달러)
+            try:
+                url = "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT"
+                response = requests.get(url, timeout=5)  # 타임아웃 설정
+                binance_btc_usdt = float(response.json()["price"])
+            except Exception as e:
+                print(f"바이낸스 API 오류: {e}")
+                return "hold", 0, "바이낸스 가격 조회 실패", 0
+            
+            # 달러 환율 (USD/KRW)
+            try:
+                url = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD"
+                response = requests.get(url, timeout=5)  # 타임아웃 설정
+                usd_krw = float(response.json()[0]["basePrice"])
+            except Exception as e:
+                print(f"환율 API 오류: {e}")
+                # 환율 API 실패 시 고정 환율 사용
+                usd_krw = 1350.0  # 임시 환율 값
+                print(f"환율 API 실패로 임시 환율 사용: {usd_krw}")
+            
+            # 바이낸스 BTC 가격 (원)
+            binance_btc_krw = binance_btc_usdt * usd_krw
+            
+            # 김프 계산 (%)
+            kimp = ((krw_btc / binance_btc_krw) - 1) * 100
+            kimp_rounded = round(kimp, 2)
             
             # 신호 판단
             if kimp < -1.0:  # 역프리미엄 1% 이상이면 매수 신호
                 strength = min(0.5, abs(kimp) / 10)
-                return "buy", strength, f"낮은 한국 프리미엄 (김프: {kimp:.2f}%)", kimp
+                return "buy", strength, f"낮은 한국 프리미엄 (김프: {kimp_rounded:.2f}%)", kimp_rounded
             elif kimp > 5.0:  # 프리미엄 5% 이상이면 매도 신호
                 strength = min(0.5, kimp / 10)
-                return "sell", strength, f"높은 한국 프리미엄 (김프: {kimp:.2f}%)", kimp
+                return "sell", strength, f"높은 한국 프리미엄 (김프: {kimp_rounded:.2f}%)", kimp_rounded
             else:
-                return "hold", 0, f"적정 한국 프리미엄 (김프: {kimp:.2f}%)", kimp
+                return "hold", 0, f"적정 한국 프리미엄 (김프: {kimp_rounded:.2f}%)", kimp_rounded
         except Exception as e:
             print(f"김프 계산 오류: {e}")
             return "hold", 0, "김프 계산 오류", 0

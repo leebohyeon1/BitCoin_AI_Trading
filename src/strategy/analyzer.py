@@ -20,7 +20,7 @@ logger = logging.getLogger('analyzer')
 try:
     spec = importlib.util.spec_from_file_location(
         "trading_config", 
-        Path(__file__).parent.parent / "trading_config.py"
+        Path(__file__).parent.parent.parent / "config" / "trading_config.py"
     )
     config = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(config)
@@ -366,3 +366,365 @@ class MarketAnalyzer:
                         "signal": "buy",
                         "strength": SIGNAL_STRENGTHS.get("macd_trend", 0.3),
                         "description": "MACD 상승 추세 유지중"
+                    })
+            elif last_row['MACD'] < last_row['MACD_signal']:
+                if df['MACD'].iloc[-2] >= df['MACD_signal'].iloc[-2]:  # 교차 발생
+                    signals.append({
+                        "source": "MACD",
+                        "signal": "sell",
+                        "strength": SIGNAL_STRENGTHS.get("macd_crossover", 0.7),
+                        "description": "MACD 데드크로스 발생"
+                    })
+                else:  # 유지
+                    signals.append({
+                        "source": "MACD",
+                        "signal": "sell",
+                        "strength": SIGNAL_STRENGTHS.get("macd_trend", 0.3),
+                        "description": "MACD 하락 추세 유지중"
+                    })
+            else:  # MACD와 시그널 라인이 같은 경우 (드물지만)
+                signals.append({
+                    "source": "MACD",
+                    "signal": "hold",
+                    "strength": 0,
+                    "description": "MACD 중립적 상태"
+                })
+                
+        # 6. 스토캐스틱 분석
+        if INDICATOR_USAGE.get("Stochastic", True):
+            k = last_row['STOCH_K']
+            d = last_row['STOCH_D']
+            
+            # 과매수/과매도 영역 확인
+            if k <= 20 and d <= 20:  # 과매도 영역
+                if k > d:  # K가 D를 상향돌파 (반등 신호)
+                    signals.append({
+                        "source": "스토캐스틱",
+                        "signal": "buy",
+                        "strength": SIGNAL_STRENGTHS.get("stoch_extreme", 0.6),
+                        "description": f"과매도 반등 신호 (K: {k:.1f}, D: {d:.1f})"
+                    })
+                else:
+                    signals.append({
+                        "source": "스토캐스틱",
+                        "signal": "buy",
+                        "strength": SIGNAL_STRENGTHS.get("stoch_middle", 0.3),
+                        "description": f"과매도 영역 (K: {k:.1f}, D: {d:.1f})"
+                    })
+            elif k >= 80 and d >= 80:  # 과매수 영역
+                if k < d:  # K가 D를 하향돌파 (하락 반전 신호)
+                    signals.append({
+                        "source": "스토캐스틱",
+                        "signal": "sell",
+                        "strength": SIGNAL_STRENGTHS.get("stoch_extreme", 0.6),
+                        "description": f"과매수 반전 신호 (K: {k:.1f}, D: {d:.1f})"
+                    })
+                else:
+                    signals.append({
+                        "source": "스토캐스틱",
+                        "signal": "sell",
+                        "strength": SIGNAL_STRENGTHS.get("stoch_middle", 0.3),
+                        "description": f"과매수 영역 (K: {k:.1f}, D: {d:.1f})"
+                    })
+            elif k > d:  # K가 D보다 위 (상승 모멘텀)
+                signals.append({
+                    "source": "스토캐스틱",
+                    "signal": "buy",
+                    "strength": SIGNAL_STRENGTHS.get("stoch_middle", 0.3),
+                    "description": f"상승 모멘텀 (K: {k:.1f} > D: {d:.1f})"
+                })
+            elif k < d:  # K가 D보다 아래 (하락 모멘텀)
+                signals.append({
+                    "source": "스토캐스틱",
+                    "signal": "sell",
+                    "strength": SIGNAL_STRENGTHS.get("stoch_middle", 0.3),
+                    "description": f"하락 모멘텀 (K: {k:.1f} < D: {d:.1f})"
+                })
+            else:  # K와 D가 같은 경우
+                signals.append({
+                    "source": "스토캐스틱",
+                    "signal": "hold",
+                    "strength": 0,
+                    "description": f"중립적 (K: {k:.1f}, D: {d:.1f})"
+                })
+        
+        # 7. 호가창 분석
+        if INDICATOR_USAGE.get("Orderbook", True):
+            if orderbook_ratio > 1.2:  # 매수세가 강함
+                strength = min(0.6, (orderbook_ratio - 1) / 2)  # 최대 0.6
+                signals.append({
+                    "source": "호가창(매수/매도비율)",
+                    "signal": "buy",
+                    "strength": strength,
+                    "description": f"매수세 강함 (매수/매도 비율: {orderbook_ratio:.2f})"
+                })
+            elif orderbook_ratio < 0.8:  # 매도세가 강함
+                strength = min(0.6, (1 - orderbook_ratio) / 2)  # 최대 0.6
+                signals.append({
+                    "source": "호가창(매수/매도비율)",
+                    "signal": "sell",
+                    "strength": strength,
+                    "description": f"매도세 강함 (매수/매도 비율: {orderbook_ratio:.2f})"
+                })
+            else:  # 중립적
+                signals.append({
+                    "source": "호가창(매수/매도비율)",
+                    "signal": "hold",
+                    "strength": 0,
+                    "description": f"중립적 호가창 (매수/매도 비율: {orderbook_ratio:.2f})"
+                })
+                
+        # 8. 체결 데이터 분석
+        if INDICATOR_USAGE.get("Trades", True):
+            if trade_signal > 0.3:  # 매수세 우세
+                signals.append({
+                    "source": "체결데이터",
+                    "signal": "buy",
+                    "strength": SIGNAL_STRENGTHS.get("trade_data", 0.5) * min(1, trade_signal),
+                    "description": f"매수 체결 우세 (신호 강도: {trade_signal:.2f})"
+                })
+            elif trade_signal < -0.3:  # 매도세 우세
+                signals.append({
+                    "source": "체결데이터",
+                    "signal": "sell",
+                    "strength": SIGNAL_STRENGTHS.get("trade_data", 0.5) * min(1, abs(trade_signal)),
+                    "description": f"매도 체결 우세 (신호 강도: {trade_signal:.2f})"
+                })
+            else:  # 중립적
+                signals.append({
+                    "source": "체결데이터",
+                    "signal": "hold",
+                    "strength": 0,
+                    "description": f"중립적 체결 (신호 강도: {trade_signal:.2f})"
+                })
+                
+        # 9. 김프(한국 프리미엄) 분석
+        if INDICATOR_USAGE.get("KIMP", True):
+            if kimchi_premium < -1.0:  # 역프리미엄 1% 이상 (한국 가격이 저평가)
+                strength = min(0.5, abs(kimchi_premium) / 10)  # 최대 0.5
+                signals.append({
+                    "source": "김프(한국 프리미엄)",
+                    "signal": "buy",
+                    "strength": strength,
+                    "description": f"역프리미엄 발생 (김프: {kimchi_premium:.2f}%)"
+                })
+            elif kimchi_premium > 4.0:  # 프리미엄 4% 이상 (한국 가격이 고평가)
+                strength = min(0.5, kimchi_premium / 10)  # 최대 0.5
+                signals.append({
+                    "source": "김프(한국 프리미엄)",
+                    "signal": "sell",
+                    "strength": strength,
+                    "description": f"높은 프리미엄 (김프: {kimchi_premium:.2f}%)"
+                })
+            else:  # 적정 수준의 프리미엄
+                signals.append({
+                    "source": "김프(한국 프리미엄)",
+                    "signal": "hold",
+                    "strength": 0,
+                    "description": f"적정 프리미엄 수준 (김프: {kimchi_premium:.2f}%)"
+                })
+                
+        # 10. 공포&탐욕 지수 분석
+        if INDICATOR_USAGE.get("FearGreed", True):
+            fear_greed_value = self.get_fear_greed_index()
+            
+            if fear_greed_value <= 25:  # 극도의 공포 (0-25)
+                signals.append({
+                    "source": "시장심리(공포&탐욕지수)",
+                    "signal": "buy",
+                    "strength": SIGNAL_STRENGTHS.get("fear_greed_extreme", 0.7),
+                    "description": f"극도의 공포 상태 (Fear & Greed: {fear_greed_value}, Extreme Fear)"
+                })
+            elif fear_greed_value <= 40:  # 공포 (26-40)
+                signals.append({
+                    "source": "시장심리(공포&탐욕지수)",
+                    "signal": "buy",
+                    "strength": SIGNAL_STRENGTHS.get("fear_greed_middle", 0.4),
+                    "description": f"공포 우세 상태 (Fear & Greed: {fear_greed_value}, Fear)"
+                })
+            elif fear_greed_value >= 75:  # 극도의 탐욕 (75-100)
+                signals.append({
+                    "source": "시장심리(공포&탐욕지수)",
+                    "signal": "sell",
+                    "strength": SIGNAL_STRENGTHS.get("fear_greed_extreme", 0.7),
+                    "description": f"극도의 탐욕 상태 (Fear & Greed: {fear_greed_value}, Extreme Greed)"
+                })
+            elif fear_greed_value >= 60:  # 탐욕 (60-74)
+                signals.append({
+                    "source": "시장심리(공포&탐욕지수)",
+                    "signal": "sell",
+                    "strength": SIGNAL_STRENGTHS.get("fear_greed_middle", 0.4),
+                    "description": f"탐욕 우세 상태 (Fear & Greed: {fear_greed_value}, Greed)"
+                })
+            else:  # 중립 (41-59)
+                signals.append({
+                    "source": "시장심리(공포&탐욕지수)",
+                    "signal": "hold",
+                    "strength": 0,
+                    "description": f"중립적 시장 심리 (Fear & Greed: {fear_greed_value}, Neutral)"
+                })
+                
+        # 최종 매매 신호 계산
+        buy_signals = []
+        sell_signals = []
+        hold_signals = []
+        
+        # 신호 분류 및 가중치 적용
+        total_weight = 0
+        weighted_signal_sum = 0
+        
+        for signal in signals:
+            source = signal["source"].split("(")[0].strip()
+            weight = INDICATOR_WEIGHTS.get(source, 1.0)
+            total_weight += weight
+            
+            if signal["signal"] == "buy":
+                buy_signals.append(signal)
+                weighted_signal_sum += signal["strength"] * weight
+            elif signal["signal"] == "sell":
+                sell_signals.append(signal)
+                weighted_signal_sum -= signal["strength"] * weight
+            else:  # hold
+                hold_signals.append(signal)
+        
+        # 평균 신호 강도 계산 (-1 ~ 1 범위)
+        avg_signal_strength = weighted_signal_sum / total_weight if total_weight > 0 else 0
+        
+        # 신호 카운트
+        signal_counts = {
+            "buy": len(buy_signals),
+            "sell": len(sell_signals),
+            "hold": len(hold_signals)
+        }
+        
+        # 신뢰도 계산 (0.5 ~ 1.0 범위)
+        confidence = 0.5 + abs(avg_signal_strength) / 2
+        
+        # 최종 결정
+        if avg_signal_strength >= DECISION_THRESHOLDS["buy_threshold"]:
+            decision = "buy"
+            decision_kr = "매수" if avg_signal_strength >= 0.4 else "약한 매수"
+        elif avg_signal_strength <= DECISION_THRESHOLDS["sell_threshold"]:
+            decision = "sell"
+            decision_kr = "매도" if avg_signal_strength <= -0.4 else "약한 매도"
+        else:
+            decision = "hold"
+            decision_kr = "홀드" if abs(avg_signal_strength) < 0.05 else "약한 홀드"
+        
+        # 결과 반환
+        result = {
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "decision": decision,
+            "decision_kr": decision_kr,
+            "confidence": confidence,
+            "avg_signal_strength": avg_signal_strength,
+            "signals": signals,
+            "signal_counts": signal_counts,
+            "current_price": current_price,
+            "price_change_24h": self._calculate_price_change_24h(df) if df is not None else "N/A"
+        }
+        
+        return result
+    
+    def _calculate_price_change_24h(self, df):
+        """24시간 가격 변화율 계산"""
+        try:
+            if len(df) >= 2:
+                current_price = df['close'].iloc[-1]
+                prev_price = df['close'].iloc[-24] if len(df) >= 24 else df['close'].iloc[0]
+                change_pct = ((current_price / prev_price) - 1) * 100
+                return f"{change_pct:.2f}%"
+            return "N/A"
+        except Exception as e:
+            logger.error(f"가격 변화율 계산 오류: {e}")
+            return "N/A"
+    
+    def analyze(self, ticker="KRW-BTC"):
+        """종합 시장 분석 수행"""
+        try:
+            # 1. 시장 데이터 조회
+            df = self.get_market_data(ticker)
+            if df is None or len(df) < 20:
+                logger.error("충분한 시장 데이터를 조회할 수 없습니다.")
+                return {"decision": "hold", "confidence": 0.5, "reason": "데이터 부족"}
+            
+            # 2. 기술적 지표 계산
+            df = self.calculate_technical_indicators(df)
+            
+            # 3. 현재가 조회
+            current_price = self.get_current_price(ticker)
+            
+            # 4. 호가창 분석
+            orderbook_ratio = self.analyze_orderbook(ticker)
+            
+            # 5. 체결 데이터 분석
+            trade_signal = self.analyze_trades(ticker)
+            
+            # 6. 김프 계산
+            kimchi_premium = self.calculate_kimchi_premium()
+            
+            # 7. 종합 신호 생성
+            result = self.generate_trading_signals(
+                df, current_price, orderbook_ratio, trade_signal, kimchi_premium
+            )
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"시장 분석 오류: {e}")
+            return {"decision": "hold", "confidence": 0.5, "reason": f"분석 오류: {str(e)}"}
+
+
+class SignalAnalyzer(MarketAnalyzer):
+    """신호 분석 클래스 (MarketAnalyzer 상속)"""
+    
+    def __init__(self, config, technical_indicators=None, market_indicators=None, claude_api=None):
+        """초기화"""
+        super().__init__()
+        self.config = config
+        self.technical_indicators = technical_indicators
+        self.market_indicators = market_indicators
+        self.claude_api = claude_api
+        
+    def analyze(self, market_data, ticker="KRW-BTC"):
+        """시장 분석 및 매매 신호 생성"""
+        # 기존 MarketAnalyzer의 analyze 메서드 사용
+        market_analysis = super().analyze(ticker)
+        
+        # Claude AI 분석 통합 (설정된 경우)
+        claude_settings = self.config.get("CLAUDE_SETTINGS", {})
+        if claude_settings.get("use_claude", False) and self.claude_api is not None:
+            try:
+                # 기술적 지표 데이터 준비
+                technical_data = {}
+                if self.technical_indicators is not None:
+                    # 여기에 기술적 지표 데이터 구성 코드 추가
+                    pass
+                
+                # 시장 지표 데이터 준비
+                market_indicator_data = {}
+                if self.market_indicators is not None:
+                    # 여기에 시장 지표 데이터 구성 코드 추가
+                    pass
+                
+                # Claude API 호출
+                claude_analysis = self.claude_api.analyze_market(market_data, technical_data)
+                
+                # Claude의 신뢰도가 높은 경우 신호 강화
+                if claude_analysis["signal"] == market_analysis["decision"]:
+                    market_analysis["confidence"] = min(
+                        1.0, 
+                        market_analysis["confidence"] + claude_settings.get("confidence_boost", 0.1)
+                    )
+                    market_analysis["claude_agrees"] = True
+                else:
+                    market_analysis["claude_agrees"] = False
+                
+                # Claude 분석 결과 저장
+                market_analysis["claude_analysis"] = claude_analysis
+                
+            except Exception as e:
+                logger.error(f"Claude 분석 오류: {e}")
+                market_analysis["claude_error"] = str(e)
+        
+        return market_analysis

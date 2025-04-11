@@ -47,22 +47,23 @@ class TradingEngine:
             ohlcv = self.upbit_api.get_ohlcv(ticker, interval="day", count=2)
             
             # 24시간 가격 변화율 계산
-            if not ohlcv.empty and len(ohlcv) >= 2:
+            price_change_24h = "N/A"
+            if ohlcv is not None and not ohlcv.empty and len(ohlcv) >= 2:
                 prev_close = ohlcv['close'].iloc[-2]
-                price_change_24h = ((current_price / prev_close) - 1) * 100
-                price_change_24h = f"{price_change_24h:.2f}%"
-            else:
-                price_change_24h = "N/A"
+                if current_price and prev_close:
+                    price_change_24h = ((current_price / prev_close) - 1) * 100
+                    price_change_24h = f"{price_change_24h:.2f}%"
             
             # 시장 데이터 반환
+            # get_ticker 대신 현재가를 직접 사용
             return {
-                "current_price": [self.upbit_api.client.get_ticker(ticker)[0]],
+                "current_price": [{"trade_price": current_price}],
                 "price_change_24h": price_change_24h
             }
         except Exception as e:
             print(f"시장 데이터 조회 오류: {e}")
             return {
-                "current_price": None,
+                "current_price": [{"trade_price": 0}],  # 기본값 제공
                 "price_change_24h": "N/A"
             }
     

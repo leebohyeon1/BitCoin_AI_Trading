@@ -1,0 +1,554 @@
+[
+  {
+    "timestamp": "2025-04-07 00:00:00",
+    "decision": "hold",
+    "decision_kr": "홀드",
+    "confidence": 0.5237440627137258,
+    "avg_signal_strength": 0.23883636767471023,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.41467016589503064,
+        "description": "매도 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "hold",
+        "strength": 0.20494272061265198,
+        "description": "중립 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "sell",
+        "strength": 0.5906514737004926,
+        "description": "매도 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "hold",
+        "strength": 0.14582118404468794,
+        "description": "중립적 (RSI: 46.9)",
+        "weight": 1.2
+      },
+      {
+        "source": "MACD",
+        "signal": "buy",
+        "strength": 0.567393384826135,
+        "description": "MACD 골든크로스 발생",
+        "weight": 1.2
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "hold",
+        "strength": 0.2874054456378772,
+        "description": "중립 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.439281034713719,
+        "description": "매수 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0.19528363540771926,
+        "description": "중립 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "hold",
+        "strength": 0.2156885354981836,
+        "description": "중립 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.5504827247722373,
+        "description": "매수 신호",
+        "weight": 1.0
+      }
+    ],
+    "signal_counts": {
+      "buy": 4,
+      "sell": 4,
+      "hold": 8
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 50227128.51357167,
+        "signed_change_rate": 0.014814522871943233
+      }
+    ],
+    "price_change_24h": "1.48%"
+  },
+  {
+    "timestamp": "2025-04-07 04:00:00",
+    "decision": "hold",
+    "decision_kr": "홀드",
+    "confidence": 0.5896553654350962,
+    "avg_signal_strength": 0.049217751356683256,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.41247255588663845,
+        "description": "매도 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4756183076264562,
+        "description": "매수 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.5770268828008764,
+        "description": "매수 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "sell",
+        "strength": 0.43573283270898977,
+        "description": "과매수 상태 (RSI: 70.5 > 70)",
+        "weight": 1.2
+      },
+      {
+        "source": "MACD",
+        "signal": "buy",
+        "strength": 0.3833466169123483,
+        "description": "MACD 골든크로스 발생",
+        "weight": 1.2
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.7758290818858837,
+        "description": "매수 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.5434731642092478,
+        "description": "매수 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "체결데이터",
+        "signal": "buy",
+        "strength": 0.5755042782594848,
+        "description": "매수 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "buy",
+        "strength": 0.48564111622418205,
+        "description": "매수 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "hold",
+        "strength": 0.010726124669200353,
+        "description": "중립 신호",
+        "weight": 1.0
+      }
+    ],
+    "signal_counts": {
+      "buy": 1,
+      "sell": 5,
+      "hold": 6
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 50119341.96257611,
+        "signed_change_rate": -0.002145982742502061
+      }
+    ],
+    "price_change_24h": "-0.21%"
+  },
+  {
+    "timestamp": "2025-04-07 08:00:00",
+    "decision": "buy",
+    "decision_kr": "매수",
+    "confidence": 0.6167662537558606,
+    "avg_signal_strength": 0.12589642300288717,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6226224734135266,
+        "description": "매도 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "hold",
+        "strength": 0.24463494080308343,
+        "description": "중립 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "sell",
+        "strength": 0.30328920191759967,
+        "description": "매도 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "sell",
+        "strength": 0.7767064228575226,
+        "description": "과매수 상태 (RSI: 79.1 > 70)",
+        "weight": 1.2
+      },
+      {
+        "source": "MACD",
+        "signal": "buy",
+        "strength": 0.7715645795334833,
+        "description": "MACD 골든크로스 발생",
+        "weight": 1.2
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "hold",
+        "strength": 0.22081078295689707,
+        "description": "중립 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0.1302670668529271,
+        "description": "중립 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "체결데이터",
+        "signal": "sell",
+        "strength": 0.6577733334444649,
+        "description": "매도 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "hold",
+        "strength": 0.29426563920338733,
+        "description": "중립 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "hold",
+        "strength": 0.05338399523225041,
+        "description": "중립 신호",
+        "weight": 1.0
+      }
+    ],
+    "signal_counts": {
+      "buy": 5,
+      "sell": 3,
+      "hold": 4
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 49868266.44663957,
+        "signed_change_rate": -0.005009553320233513
+      }
+    ],
+    "price_change_24h": "-0.50%"
+  },
+  {
+    "timestamp": "2025-04-07 12:00:00",
+    "decision": "hold",
+    "decision_kr": "홀드",
+    "confidence": 0.5543882164662527,
+    "avg_signal_strength": 0.23922696461389553,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.7760389872972331,
+        "description": "매도 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.6410053263011211,
+        "description": "매수 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.6165825406002343,
+        "description": "매수 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.4807500505628085,
+        "description": "과매도 상태 (RSI: 18.9 < 30)",
+        "weight": 1.2
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.30243557476622823,
+        "description": "MACD 데드크로스 발생",
+        "weight": 1.2
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "hold",
+        "strength": 0.2605747416401006,
+        "description": "중립 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "sell",
+        "strength": 0.5851338704340812,
+        "description": "매도 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "체결데이터",
+        "signal": "sell",
+        "strength": 0.42082664663436165,
+        "description": "매도 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "buy",
+        "strength": 0.41244058634983893,
+        "description": "매수 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "hold",
+        "strength": 0.15085211807322793,
+        "description": "중립 신호",
+        "weight": 1.0
+      }
+    ],
+    "signal_counts": {
+      "buy": 5,
+      "sell": 1,
+      "hold": 7
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 50479240.19579466,
+        "signed_change_rate": 0.01225175432574627
+      }
+    ],
+    "price_change_24h": "1.23%"
+  },
+  {
+    "timestamp": "2025-04-07 16:00:00",
+    "decision": "hold",
+    "decision_kr": "홀드",
+    "confidence": 0.5107061453651053,
+    "avg_signal_strength": 0.22475438903179612,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6508897776538531,
+        "description": "매도 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "hold",
+        "strength": 0.2810665002496534,
+        "description": "중립 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0.11028644341943013,
+        "description": "중립 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "hold",
+        "strength": 0.1743472097633046,
+        "description": "중립적 (RSI: 54.1)",
+        "weight": 1.2
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.5522713565595798,
+        "description": "MACD 데드크로스 발생",
+        "weight": 1.2
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.7132514025926209,
+        "description": "매도 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0.09539150824344705,
+        "description": "중립 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0.2536586052149116,
+        "description": "중립 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "hold",
+        "strength": 0.18115372549924946,
+        "description": "중립 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "hold",
+        "strength": 0.17920711849670382,
+        "description": "중립 신호",
+        "weight": 1.0
+      }
+    ],
+    "signal_counts": {
+      "buy": 1,
+      "sell": 1,
+      "hold": 6
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 50935205.26377256,
+        "signed_change_rate": 0.00903272446671827
+      }
+    ],
+    "price_change_24h": "0.90%"
+  },
+  {
+    "timestamp": "2025-04-07 20:00:00",
+    "decision": "hold",
+    "decision_kr": "홀드",
+    "confidence": 0.5821812600696529,
+    "avg_signal_strength": 0.22392053125719888,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.4025045044334171,
+        "description": "매도 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.5760459127318047,
+        "description": "매수 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.3185336247486829,
+        "description": "매수 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "hold",
+        "strength": 0.06784897845460258,
+        "description": "중립적 (RSI: 53.6)",
+        "weight": 1.2
+      },
+      {
+        "source": "MACD",
+        "signal": "buy",
+        "strength": 0.3642491914274722,
+        "description": "MACD 골든크로스 발생",
+        "weight": 1.2
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.32219382122954693,
+        "description": "매수 신호",
+        "weight": 1.0
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "sell",
+        "strength": 0.7829161850765038,
+        "description": "매도 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0.21394429457503097,
+        "description": "중립 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "hold",
+        "strength": 0.18383931391415104,
+        "description": "중립 신호",
+        "weight": 0.8
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "hold",
+        "strength": 0.2902190105944207,
+        "description": "중립 신호",
+        "weight": 1.0
+      }
+    ],
+    "signal_counts": {
+      "buy": 3,
+      "sell": 1,
+      "hold": 5
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 50766982.95657085,
+        "signed_change_rate": -0.003302672607886012
+      }
+    ],
+    "price_change_24h": "-0.33%"
+  }
+]

@@ -1,0 +1,96 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 0.75rem 1.25rem;
+}
+
+.log-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.badge-buy {
+    background-color: #28a745;
+    color: white;
+}
+
+.badge-sell {
+    background-color: #dc3545;
+    color: white;
+}
+
+.badge-hold {
+    background-color: #6c757d;
+    color: white;
+}
+
+.signal-buy {
+    color: #28a745;
+}
+
+.signal-sell {
+    color: #dc3545;
+}
+
+.signal-hold {
+    color: #6c757d;
+}
+
+.strength-bar {
+    height: 5px;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+#current-price {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+#price-change.up {
+    background-color: #28a745;
+}
+
+#price-change.down {
+    background-color: #dc3545;
+}
+
+/* 테이블 디자인 개선 */
+.table {
+    font-size: 0.875rem;
+}
+
+.table > :not(caption) > * > * {
+    padding: 0.5rem;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* 작은 디바이스에서 여백 조정 */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 0.5rem;
+    }
+    
+    .card {
+        margin-bottom: 0.5rem;
+    }
+}

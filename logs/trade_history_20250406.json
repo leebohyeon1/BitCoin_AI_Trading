@@ -1,0 +1,32 @@
+[
+  {
+    "type": "sell",
+    "ticker": "KRW-BTC",
+    "price": 50282179,
+    "amount": 0.008160637066869838,
+    "total": 410334.61375038413,
+    "timestamp": "2025-04-06 19:56:23",
+    "confidence": 0.7736630758403782,
+    "order_id": "uuid-789128"
+  },
+  {
+    "type": "buy",
+    "ticker": "KRW-BTC",
+    "price": 51636446,
+    "amount": 0.0012139180330773829,
+    "total": 62682.4129634265,
+    "timestamp": "2025-04-06 18:06:23",
+    "confidence": 0.7390166914667748,
+    "order_id": "uuid-189161"
+  },
+  {
+    "type": "buy",
+    "ticker": "KRW-BTC",
+    "price": 49185302,
+    "amount": 0.007494420345022969,
+    "total": 368615.32798489893,
+    "timestamp": "2025-04-06 21:48:54",
+    "confidence": 0.8359026797981237,
+    "order_id": "uuid-915497"
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "timestamp": "2025-04-11 17:53:13",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "confidence": 0.4425287356321839,
+    "avg_signal_strength": 0.011494252873563216,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "hold",
+        "strength": 0.0,
+        "description": "뚜렷한 추세 없음",
+        "weight": 1.0
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "hold",
+        "strength": 0.3,
+        "description": "상단 접근중 (밴드 내 위치: 상위 82%)",
+        "weight": 1.0
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "hold",
+        "strength": 0.2,
+        "description": "매수세 우세 (RSI: 65.6)",
+        "weight": 1.2
+      },
+      {
+        "source": "MACD",
+        "signal": "hold",
+        "strength": 0.3,
+        "description": "MACD 상승 추세 유지중",
+        "weight": 1.2
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "과매수 반전 신호 (K: 84.1, D: 89.5)",
+        "weight": 1.0
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 호가창 (매수/매도 비율: 1.00)",
+        "weight": 0.8
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "체결 데이터 분석 오류",
+        "weight": 0.8
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "적정 한국 프리미엄 (김프: 0.00%)",
+        "weight": 0.7
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "극도의 공포 상태 (Fear & Greed: 25, Extreme Fear)",
+        "weight": 1.0
+      }
+    ],
+    "signal_counts": {
+      "buy": 1,
+      "sell": 1,
+      "hold": 7
+    },
+    "current_price": null,
+    "price_change_24h": "N/A"
+  }
+]

@@ -1,0 +1,1 @@
+2025-04-11 17:53:13,181 - trade - INFO - 거래 결과: {'status': 'error', 'message': "거래 실행 오류: 'NoneType' object is not subscriptable"}

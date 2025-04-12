@@ -96,16 +96,46 @@ class TradingEngine:
         Returns:
             dict: 분석 결과
         """
-        # 시장 데이터 조회
-        market_data = self.get_market_data(ticker)
-        
-        # 신호 분석
-        analysis_result = self.signal_analyzer.analyze(market_data)
-        
-        # 분석 결과 로깅
-        self._log_analysis(analysis_result)
-        
-        return analysis_result
+        try:
+            # 시장 데이터 조회
+            market_data = self.get_market_data(ticker)
+            
+            # 신호 분석
+            analysis_result = self.signal_analyzer.analyze(market_data, ticker)
+            
+            # 결과가 None인 경우 기본값 생성
+            if analysis_result is None:
+                print("분석 결과가 None입니다. 기본값을 생성합니다.")
+                analysis_result = {
+                    "decision": "hold",
+                    "decision_kr": "홀드",
+                    "confidence": 0.5,
+                    "reasoning": "분석 결과가 없어 기본 홀드 상태로 설정합니다.",
+                    "signals": [],
+                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "signal_counts": {"buy": 0, "sell": 0, "hold": 0},
+                    "current_price": market_data.get("current_price"),
+                    "price_change_24h": market_data.get("price_change_24h", "N/A")
+                }
+            
+            # 분석 결과 로깅
+            self._log_analysis(analysis_result)
+            
+            return analysis_result
+        except Exception as e:
+            print(f"분석 중 오류 발생: {e}")
+            # 오류 발생 시 기본값 반환
+            return {
+                "decision": "hold",
+                "decision_kr": "홀드",
+                "confidence": 0.5,
+                "reasoning": f"분석 오류: {str(e)}",
+                "signals": [],
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "signal_counts": {"buy": 0, "sell": 0, "hold": 0},
+                "current_price": None,
+                "price_change_24h": "N/A"
+            }
     
     def execute_trade(self, analysis_result, ticker="KRW-BTC"):
         """
@@ -118,6 +148,11 @@ class TradingEngine:
         Returns:
             dict: 거래 결과
         """
+        
+        # 입력 데이터 검증
+        if not analysis_result or not isinstance(analysis_result, dict):
+            return {"status": "error", "message": "유효하지 않은 분석 결과입니다."}
+            
         if not self.enable_trade:
             return {"status": "disabled", "message": "거래 기능이 비활성화되어 있습니다."}
         
@@ -254,6 +289,11 @@ class TradingEngine:
             analysis_result: 분석 결과 (dict)
         """
         try:
+            # None 체크 추가
+            if analysis_result is None:
+                print("로깅할 분석 결과가 없습니다.")
+                return
+                
             # 로그 디렉토리 확인
             if not os.path.exists("logs"):
                 os.makedirs("logs")
@@ -270,6 +310,12 @@ class TradingEngine:
                         log_data = json.load(f)
                     except json.JSONDecodeError:
                         log_data = []
+            
+            # 로그 데이터에 필요한 기본 필드가 있는지 확인
+            if "signals" not in analysis_result:
+                analysis_result["signals"] = []
+            if "signal_counts" not in analysis_result:
+                analysis_result["signal_counts"] = {"buy": 0, "sell": 0, "hold": 0}
             
             # 로그 데이터 추가 - 결정 이유는 줄바꿈으로 포매팅
             if 'reasoning' in analysis_result and analysis_result['reasoning'] is not None:

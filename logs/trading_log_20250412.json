@@ -15942,5 +15942,533 @@
       "김프(한국 프리미엄) (sell): 높은 프리미엄 (김프: 1425.84%)",
       "장기추세(MA60) (buy): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
     ]
+  },
+  {
+    "timestamp": "2025-04-12 16:46:23",
+    "decision": "buy",
+    "decision_kr": "약한 매수",
+    "reasoning": "매수 신호 6개, 매도 신호 3개\n이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)\n호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 4.33)\n장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)",
+    "confidence": 0.5663461538461538,
+    "avg_signal_strength": 0.13269230769230766,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "상단 접근중 (밴드 내 위치: 상위 68%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 42.8)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 모멘텀 (K: 57.3 > D: 51.9)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 4.33)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1425.84%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 121600000.0
+      }
+    ],
+    "price_change_24h": "1.39%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개",
+      "이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)",
+      "호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 4.33)",
+      "장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-12 16:47:24",
+    "decision": "buy",
+    "decision_kr": "약한 매수",
+    "reasoning": "매수 신호 6개, 매도 신호 3개\n이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)\n호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 7.36)\n장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)",
+    "confidence": 0.5663461538461538,
+    "avg_signal_strength": 0.13269230769230766,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "상단 접근중 (밴드 내 위치: 상위 69%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 43.1)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 모멘텀 (K: 58.0 > D: 52.1)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 7.36)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1425.84%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 121612000.0
+      }
+    ],
+    "price_change_24h": "1.40%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개",
+      "이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)",
+      "호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 7.36)",
+      "장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-12 16:48:26",
+    "decision": "buy",
+    "decision_kr": "약한 매수",
+    "reasoning": "매수 신호 6개, 매도 신호 3개\n이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)\n호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 2.77)\n장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)",
+    "confidence": 0.5663461538461538,
+    "avg_signal_strength": 0.13269230769230766,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "상단 접근중 (밴드 내 위치: 상위 69%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 43.2)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 모멘텀 (K: 58.5 > D: 52.3)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 2.77)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1425.84%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 121620000.0
+      }
+    ],
+    "price_change_24h": "1.41%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개",
+      "이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)",
+      "호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 2.77)",
+      "장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-12 16:49:28",
+    "decision": "buy",
+    "decision_kr": "약한 매수",
+    "reasoning": "매수 신호 6개, 매도 신호 3개\n이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)\n호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 1.91)\n장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)",
+    "confidence": 0.5593928833731926,
+    "avg_signal_strength": 0.11878576674638523,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "상단 접근중 (밴드 내 위치: 상위 69%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 43.3)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 모멘텀 (K: 58.6 > D: 52.3)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.4553719741624067,
+        "description": "매수세 강함 (매수/매도 비율: 1.91)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1425.84%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 121621000.0
+      }
+    ],
+    "price_change_24h": "1.41%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개",
+      "이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)",
+      "호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 1.91)",
+      "장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-12 16:50:30",
+    "decision": "buy",
+    "decision_kr": "약한 매수",
+    "reasoning": "매수 신호 6개, 매도 신호 3개\n이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)\n호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 2.36)\n장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)",
+    "confidence": 0.5663461538461538,
+    "avg_signal_strength": 0.13269230769230766,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "상단 접근중 (밴드 내 위치: 상위 69%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 43.3)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 모멘텀 (K: 58.6 > D: 52.3)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 2.36)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1425.84%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 121622000.0
+      }
+    ],
+    "price_change_24h": "1.41%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개",
+      "이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)",
+      "호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 2.36)",
+      "장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-12 16:51:42",
+    "decision": "buy",
+    "decision_kr": "약한 매수",
+    "reasoning": "매수 신호 6개, 매도 신호 3개\n이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)\n호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 3.66)\n장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)",
+    "confidence": 0.5663461538461538,
+    "avg_signal_strength": 0.13269230769230766,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "상단 접근중 (밴드 내 위치: 상위 70%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 43.8)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 모멘텀 (K: 60.2 > D: 52.9)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 3.66)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1425.84%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 121649000.0
+      }
+    ],
+    "price_change_24h": "1.43%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개",
+      "이동평균선(MA): 골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)",
+      "호가창(매수/매도비율): 매수세 강함 (매수/매도 비율: 3.66)",
+      "장기추세(MA60): 장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+    ]
   }
 ]

@@ -785,54 +785,128 @@ class SignalAnalyzer(MarketAnalyzer):
         
     def analyze(self, market_data, ticker="KRW-BTC"):
         """시장 분석 및 매매 신호 생성"""
-        # market_data가 전달되더라도 티커 정보 추출
-        if market_data and isinstance(market_data.get('current_price'), list) and len(market_data.get('current_price', [])) > 0:
-            # market_data에서 티커 정보 추출 시도
-            try:
-                ticker_info = market_data['current_price'][0]
-                if isinstance(ticker_info, dict) and 'market' in ticker_info:
-                    ticker = ticker_info['market']
-                    logger.info(f"market_data에서 추출한 티커: {ticker}")
-            except Exception as e:
-                logger.warning(f"market_data에서 티커 추출 실패: {e}")
+        try:
+            # 기존 로직...
+            market_analysis = super().analyze(ticker)
+            
+            # market_analysis가 None이거나 비어있는 경우 기본값 설정
+            if market_analysis is None or not isinstance(market_analysis, dict):
+                logger.error("기본 분석 결과가 유효하지 않습니다. 기본값 사용")
+                market_analysis = {
+                    "decision": "hold",
+                    "decision_kr": "홀드",
+                    "confidence": 0.5,
+                    "reasoning": "분석 오류로 인한 기본 홀드 상태",
+                    "signals": [],
+                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "signal_counts": {"buy": 0, "sell": 0, "hold": 0},
+                    "current_price": market_data.get("current_price"),
+                    "price_change_24h": market_data.get("price_change_24h", "N/A")
+                }
         
-        # 기존 MarketAnalyzer의 analyze 메서드 사용
-        market_analysis = super().analyze(ticker)
+            # 기존 MarketAnalyzer의 analyze 메서드 사용
+            market_analysis = super().analyze(ticker)
+            
+            # Claude AI 분석 통합 (설정된 경우)
+            claude_settings = self.config.get("CLAUDE_SETTINGS", {})
+            if claude_settings.get("use_claude", False) and self.claude_api is not None:
+                try:
+                    # 기술적 지표 데이터 준비
+                    technical_data = {}
+                    if self.technical_indicators is not None:
+                        # 기술적 지표 데이터 구조화
+                        try:
+                            df = self.technical_indicators.df
+                            if df is not None and len(df) > 0:
+                                last_row = df.iloc[-1]
+                                
+                                technical_data = {
+                                    "ma": {
+                                        "ma5": float(self.technical_indicators.get_ma(period=5).iloc[-1]),
+                                        "ma20": float(self.technical_indicators.get_ma(period=20).iloc[-1]),
+                                        "ma60": float(self.technical_indicators.get_ma(period=60).iloc[-1]) if len(df) >= 60 else None
+                                    },
+                                    "rsi": float(self.technical_indicators.get_rsi().iloc[-1]),
+                                    "macd": {
+                                        "value": float(self.technical_indicators.get_macd()[0].iloc[-1]),
+                                        "signal": float(self.technical_indicators.get_macd()[1].iloc[-1]),
+                                        "histogram": float(self.technical_indicators.get_macd()[2].iloc[-1])
+                                    },
+                                    "bollingerBands": {
+                                        "upper": float(self.technical_indicators.get_bollinger_bands()[0].iloc[-1]),
+                                        "middle": float(self.technical_indicators.get_bollinger_bands()[1].iloc[-1]),
+                                        "lower": float(self.technical_indicators.get_bollinger_bands()[2].iloc[-1])
+                                    }
+                                }
+                        except Exception as e:
+                            print(f"기술적 지표 데이터 구성 오류: {e}")
+                    
+                    # 시장 지표 데이터 준비
+                    market_indicator_data = {}
+                    if self.market_indicators is not None:
+                        try:
+                            market_signals = market_analysis.get("signals", [])
+                            # 시장 신호 분류
+                            orderbook_signals = [s for s in market_signals if '호가창' in s.get('source', '')]
+                            trade_signals = [s for s in market_signals if '체결' in s.get('source', '')]
+                            kimp_signals = [s for s in market_signals if '김프' in s.get('source', '')]
+                            fear_greed_signals = [s for s in market_signals if '공포' in s.get('source', '') or '탐욕' in s.get('source', '')]
+                            
+                            market_indicator_data = {
+                                "orderbook": orderbook_signals[0] if orderbook_signals else {},
+                                "trades": trade_signals[0] if trade_signals else {},
+                                "kimchiPremium": kimp_signals[0] if kimp_signals else {},
+                                "fearGreedIndex": fear_greed_signals[0] if fear_greed_signals else {}
+                            }
+                        except Exception as e:
+                            print(f"시장 지표 데이터 구성 오류: {e}")
+                    
+                    # 현재 시장 데이터
+                    current_market_data = {
+                        "currentPrice": market_analysis.get("current_price", [{}])[0].get("trade_price", 0),
+                        "priceChange24h": market_analysis.get("price_change_24h", "0%"),
+                        "timestamp": market_analysis.get("timestamp", "")
+                    }
+                    
+                    # Claude API 호출
+                    claude_analysis = self.claude_api.analyze_market(current_market_data, {
+                        "technical": technical_data,
+                        "market": market_indicator_data,
+                        "signals": market_analysis.get("signals", [])
+                    })
+                    
+                    if claude_analysis and "signal" in claude_analysis:
+                        # Claude의 신뢰도가 높은 경우 신호 강화
+                        if claude_analysis["signal"] == market_analysis["decision"]:
+                            market_analysis["confidence"] = min(
+                                1.0, 
+                                market_analysis["confidence"] + claude_settings.get("confidence_boost", 0.1)
+                            )
+                            market_analysis["claude_agrees"] = True
+                        else:
+                            market_analysis["claude_agrees"] = False
+                        
+                        # Claude 분석 결과 저장
+                        market_analysis["claude_analysis"] = claude_analysis
+                    else:
+                        market_analysis["claude_error"] = "Claude 응답이 유효하지 않습니다"
+                
+                except Exception as e:
+                    logger.error(f"Claude 분석 오류: {e}")
+                    market_analysis["claude_error"] = str(e)
+            return market_analysis
         
-        # Claude AI 분석 통합 (설정된 경우)
-        claude_settings = self.config.get("CLAUDE_SETTINGS", {})
-        if claude_settings.get("use_claude", False) and self.claude_api is not None:
-            try:
-                # 기술적 지표 데이터 준비
-                technical_data = {}
-                if self.technical_indicators is not None:
-                    # 여기에 기술적 지표 데이터 구성 코드 추가
-                    pass
-                
-                # 시장 지표 데이터 준비
-                market_indicator_data = {}
-                if self.market_indicators is not None:
-                    # 여기에 시장 지표 데이터 구성 코드 추가
-                    pass
-                
-                # Claude API 호출
-                claude_analysis = self.claude_api.analyze_market(market_data, technical_data)
-                
-                # Claude의 신뢰도가 높은 경우 신호 강화
-                if claude_analysis["signal"] == market_analysis["decision"]:
-                    market_analysis["confidence"] = min(
-                        1.0, 
-                        market_analysis["confidence"] + claude_settings.get("confidence_boost", 0.1)
-                    )
-                    market_analysis["claude_agrees"] = True
-                else:
-                    market_analysis["claude_agrees"] = False
-                
-                # Claude 분석 결과 저장
-                market_analysis["claude_analysis"] = claude_analysis
-                
-            except Exception as e:
-                logger.error(f"Claude 분석 오류: {e}")
-                market_analysis["claude_error"] = str(e)
-        
-        return market_analysis
+        except Exception as e:
+            logger.error(f"시장 분석 오류: {e}")
+            # 오류 발생 시 기본값 반환
+            return {
+                "decision": "hold",
+                "decision_kr": "홀드",
+                "confidence": 0.5,
+                "reasoning": f"분석 오류: {str(e)}",
+                "signals": [],
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "signal_counts": {"buy": 0, "sell": 0, "hold": 0},
+                "current_price": market_data.get("current_price") if market_data else None,
+                "price_change_24h": market_data.get("price_change_24h", "N/A") if market_data else "N/A"
+            }

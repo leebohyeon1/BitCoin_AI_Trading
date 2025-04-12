@@ -84,7 +84,7 @@ INDICATOR_USAGE = {
 TRADING_SETTINGS = {
     "min_order_amount": 5000,  # 최소 주문 금액 (원) (기본값: 5000)
     "max_slippage": 0.005,     # 최대 허용 슬리피지 (주문가 대비 %) (기본값: 0.5%)
-    "trading_interval": 1,    # 매매 분석 간격 (분) (기본값: 60)
+    "trading_interval": 10,    # 매매 분석 간격 (분) (기본값: 60)
     "trading_hours": {         # 매매 허용 시간대 (24시간제)
         "enabled": False,      # 시간대 제한 사용 여부
         "start_hour": 9,       # 매매 시작 시간 (예: 오전 9시)
@@ -94,7 +94,7 @@ TRADING_SETTINGS = {
 
 # Claude AI 관련 설정
 CLAUDE_SETTINGS = {
-    "use_claude": True,       # Claude AI 분석 사용 여부
+    "use_claude": False,       # Claude AI 분석 사용 여부
     "weight": 1.0,             # Claude AI 분석 결과 가중치
     "confidence_boost": 0.1,   # 일치 시 신뢰도 상승 값 (기본값: 0.1)
 }

@@ -18,6 +18,8 @@ class ClaudeAPI:
             model: 사용할 Claude 모델
         """
         self.api_key = api_key or os.getenv("CLAUDE_API_KEY")
+
+        print(f"Claude API 키: {self.api_key[:5]}...{self.api_key[-5:] if self.api_key else 'None'}")
         self.model = model
         
         if self.api_key:
@@ -76,8 +78,6 @@ class ClaudeAPI:
         Returns:
             str: Claude에게 보낼 프롬프트
         """
-        current_price = market_data.get("current_price", {})
-        
         prompt = f"""
         # 비트코인 매매 신호 분석
 
@@ -98,15 +98,15 @@ class ClaudeAPI:
         
         응답은 다음 JSON 형식으로 제공해 주세요:
         ```json
-        {
-          "signal": "매수, 매도, 홀드 중 하나",
-          "confidence": "신뢰도 (0.0~1.0 사이 값)",
-          "reasoning": "매매 결정에 대한 근거",
-          "key_indicators": ["결정에 영향을 준 주요 지표들"],
-          "market_sentiment": "시장 심리 상태 평가",
-          "risk_level": "위험도 평가 (low, medium, high 중 하나)",
-          "suggested_position_size": "추천 포지션 크기 (0.0~1.0 사이 값)"
-        }
+        {{
+        "signal": "매수, 매도, 홀드 중 하나",
+        "confidence": 0.8,
+        "reasoning": "매매 결정에 대한 근거",
+        "key_indicators": ["결정에 영향을 준 주요 지표들"],
+        "market_sentiment": "시장 심리 상태 평가",
+        "risk_level": "low, medium, high 중 하나",
+        "suggested_position_size": 0.5
+        }}
         ```
         
         철저히 데이터에 기반한 객관적인 분석을 제공해 주세요.
@@ -126,20 +126,27 @@ class ClaudeAPI:
         """
         try:
             # JSON 형식 블록 찾기
-            json_start = text.find("```json\n")
+            json_start = text.find("```json")
             if json_start == -1:
-                json_start = text.find("```\n")
+                json_start = text.find("```")
                 if json_start == -1:
-                    # JSON 형식이 없으면 전체 텍스트를 파싱 시도
-                    return json.loads(text)
-                
+                    # JSON 블록 없이 바로 JSON 형식이면 전체 텍스트를 파싱 시도
+                    return json.loads(text.strip())
+            
+            # JSON 시작점 찾기
             json_start = text.find("\n", json_start) + 1
+            # JSON 끝점 찾기
             json_end = text.find("```", json_start)
             
-            json_str = text[json_start:json_end].strip()
+            if json_end == -1:  # 닫는 코드 블록이 없는 경우
+                json_str = text[json_start:].strip()
+            else:
+                json_str = text[json_start:json_end].strip()
+            
+            # 앞뒤 공백 제거 및 파싱
             return json.loads(json_str)
         except Exception as e:
-            print(f"JSON 파싱 오류: {e}")
+            print(f"JSON 파싱 오류: {e}\n원본 텍스트: {text[:500]}...")
             # 기본 응답
             return {
                 "signal": "hold",

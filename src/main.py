@@ -1,3 +1,53 @@
+
+def calculate_profit_info(upbit_api, ticker="KRW-BTC"):
+    """
+    현재 수익률 정보 계산
+    
+    Args:
+        upbit_api: UpbitAPI 인스턴스
+        ticker: 티커 (예: KRW-BTC)
+        
+    Returns:
+        dict: 수익률 정보
+    """
+    try:
+        if not upbit_api or not upbit_api.access_key or not upbit_api.secret_key:
+            return None
+            
+        # 잔고 조회
+        krw_balance = upbit_api.get_balance("KRW") or 0
+        btc_balance = upbit_api.get_balance(ticker) or 0
+        
+        # 현재가 조회
+        current_price = upbit_api.get_current_price(ticker) or 0
+        
+        # 평균 매수가 조회
+        avg_buy_price = upbit_api.get_avg_buy_price(ticker) or 0
+        
+        # 총 투자금 추정 (평균 매수가 * 수량)
+        total_investment = avg_buy_price * btc_balance if avg_buy_price > 0 and btc_balance > 0 else 0
+        
+        # 현재 가치
+        current_value = btc_balance * current_price if current_price > 0 and btc_balance > 0 else 0
+        
+        # 수익금
+        profit_amount = current_value - total_investment
+        
+        # 수익률
+        profit_rate = (profit_amount / total_investment) * 100 if total_investment > 0 else 0
+        
+        return {
+            'total_investment': total_investment,
+            'current_value': current_value,
+            'profit_amount': profit_amount,
+            'profit_rate': profit_rate,
+            'btc_balance': btc_balance,
+            'krw_balance': krw_balance
+        }
+    except Exception as e:
+        print(f"수익률 정보 계산 오류: {e}")
+        return None
+
 def generate_korean_reasoning(analysis_result):
     """
     분석 결과를 기반으로 자연스러운 한국어 설명 생성
@@ -257,7 +307,7 @@ def main():
                     return
                 
                 # 거래 실행 (enable_trade가 True일 때만)
-                if os.getenv("ENABLE_TRADE", "false").lower() == "true":
+                if os.getenv("ENABLE_TRADE", "").lower() == "true":
                     try:
                         trade_result = trading_engine.execute_trade(analysis_result, ticker)
                         logger.log_trade(f"거래 결과: {trade_result}")
@@ -272,37 +322,44 @@ def main():
                 # 자연스러운 한국어로 결정 이유 생성
                 explanation = generate_korean_reasoning(analysis_result)
                 
-                logger.log_app(f"분석 결과: {decision_kr} ({decision}) (신뢰도: {confidence:.2f})")
-                logger.log_app(f"분석 내용: {explanation}")
-                
-                # 원래 reasoning 값이 있으면 백업으로 저장
-                if 'reasoning' in analysis_result and analysis_result['reasoning']:
-                    original_reasoning = analysis_result.get('reasoning')
-                    logger.log_app(f"원본 신호 데이터: \n  {original_reasoning.replace('\n', '\n  ')}")
-                
                 # 한국어 설명 저장
                 analysis_result['korean_reasoning'] = explanation
                 
-                # 현재가 안전하게 추출
-                current_price_info = "N/A"
+                # 수익률 정보 계산
+                profit_info = None
                 try:
-                    if (analysis_result.get('current_price') and 
-                        isinstance(analysis_result['current_price'], list) and 
-                        analysis_result['current_price'][0] and
-                        analysis_result['current_price'][0].get('trade_price')):
+                    if upbit_api.access_key and upbit_api.secret_key:
+                        krw_balance = upbit_api.get_balance("KRW") or 0
+                        btc_balance = upbit_api.get_balance(ticker) or 0
+                        current_price = upbit_api.get_current_price(ticker) or 0
+                        avg_buy_price = upbit_api.get_avg_buy_price(ticker) or 0
                         
-                        current_price = analysis_result['current_price'][0].get('trade_price')
-                        if current_price:
-                            current_price_info = f"{current_price:,}원"
-                        else:
-                            # 가격이 None이면 오류 메시지 있는지 확인
-                            error_msg = analysis_result['current_price'][0].get('error', '알 수 없는 오류')
-                            current_price_info = f"N/A (오류: {error_msg})"
+                        # 총 투자금 추정 (평균 매수가 * 수량)
+                        total_investment = avg_buy_price * btc_balance if avg_buy_price > 0 and btc_balance > 0 else 0
+                        
+                        # 현재 가치
+                        current_value = btc_balance * current_price if current_price > 0 and btc_balance > 0 else 0
+                        
+                        # 수익금
+                        profit_amount = current_value - total_investment
+                        
+                        # 수익률
+                        profit_rate = (profit_amount / total_investment) * 100 if total_investment > 0 else 0
+                        
+                        profit_info = {
+                            'total_investment': total_investment,
+                            'current_value': current_value,
+                            'profit_amount': profit_amount,
+                            'profit_rate': profit_rate,
+                            'btc_balance': btc_balance,
+                            'krw_balance': krw_balance
+                        }
                 except Exception as e:
-                    logger.log_warning(f"현재가 정보 추출 오류: {e}")
-                    current_price_info = f"N/A (오류 발생: {e})"
+                    logger.log_warning(f"수익률 정보 계산 오류: {e}")
                 
-                logger.log_app(f"현재가: {current_price_info}")
+                # 새로운 로그 형식으로 출력
+                logger.log_trade_analysis(analysis_result, profit_info)
+
             except Exception as e:
                 logger.log_error(f"트레이딩 작업 오류: {e}")
                 

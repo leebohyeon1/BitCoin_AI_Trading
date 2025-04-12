@@ -3,13 +3,13 @@
 
 # 기본 매매 결정 임계값 설정
 DECISION_THRESHOLDS = {
-    "buy_threshold": 0.1,    # 평균 신호가 이 값보다 크면 매수 (기본값: 0.2)
-    "sell_threshold": -0.1,  # 평균 신호가 이 값보다 작으면 매도 (기본값: -0.2)
+    "buy_threshold": 0.15,    # 평균 신호가 이 값보다 크면 매수 (기본값: 0.2)
+    "sell_threshold": -0.15,  # 평균 신호가 이 값보다 작으면 매도 (기본값: -0.2)
 }
 
 # 투자 비율 설정
 INVESTMENT_RATIOS = {
-    "min_ratio": 0.1,  # 최소 투자 비율 (보유 자산의 %) (기본값: 0.2)
+    "min_ratio": 0.2,  # 최소 투자 비율 (보유 자산의 %) (기본값: 0.2)
     "max_ratio": 0.5,  # 최대 투자 비율 (보유 자산의 %) (기본값: 0.5)
 }
 
@@ -52,8 +52,8 @@ INDICATOR_WEIGHTS = {
     "MA": 1.2,           # 이동평균선
     "MA60": 1.0,         # 장기 이동평균선
     "BB": 1.2,           # 볼린저 밴드
-    "RSI": 1.2,          # RSI (상대강도지수) - 중요도 높음
-    "MACD": 1.2,         # MACD - 중요도 높음
+    "RSI": 1.5,          # RSI (상대강도지수) - 중요도 높음
+    "MACD": 1.5,         # MACD - 중요도 높음
     "Stochastic": 1.0,   # 스토캐스틱
     "Orderbook": 0.8,    # 호가창 분석
     "Trades": 0.8,       # 체결 데이터
@@ -84,7 +84,7 @@ INDICATOR_USAGE = {
 TRADING_SETTINGS = {
     "min_order_amount": 5000,  # 최소 주문 금액 (원) (기본값: 5000)
     "max_slippage": 0.005,     # 최대 허용 슬리피지 (주문가 대비 %) (기본값: 0.5%)
-    "trading_interval": 10,    # 매매 분석 간격 (분) (기본값: 60)
+    "trading_interval": 1,    # 매매 분석 간격 (분) (기본값: 60)
     "trading_hours": {         # 매매 허용 시간대 (24시간제)
         "enabled": False,      # 시간대 제한 사용 여부
         "start_hour": 9,       # 매매 시작 시간 (예: 오전 9시)
@@ -95,7 +95,7 @@ TRADING_SETTINGS = {
 # Claude AI 관련 설정
 CLAUDE_SETTINGS = {
     "use_claude": False,       # Claude AI 분석 사용 여부
-    "weight": 1.0,             # Claude AI 분석 결과 가중치
+    "weight": 1.5,             # Claude AI 분석 결과 가중치
     "confidence_boost": 0.1,   # 일치 시 신뢰도 상승 값 (기본값: 0.1)
 }
 

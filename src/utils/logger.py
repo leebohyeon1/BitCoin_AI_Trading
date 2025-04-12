@@ -1,5 +1,7 @@
 import os
 import logging
+import firebase_admin
+from firebase_admin import credentials, firestore
 from logging.handlers import RotatingFileHandler
 from datetime import datetime
 
@@ -7,18 +9,26 @@ class Logger:
     """
     로그 유틸리티 클래스
     application, trade, error 등 다양한 로그를 관리합니다.
+    로컬 파일 및 Firebase Cloud Firestore에 로그를 저장합니다.
     """
     
-    def __init__(self, log_dir="logs", log_level=logging.INFO):
+    # Firebase 인스턴스
+    firebase_app = None
+    firestore_db = None
+    
+    def __init__(self, log_dir="logs", log_level=logging.INFO, use_cloud=True, firebase_cred_path=None):
         """
         로거 초기화
         
         Args:
             log_dir: 로그 파일 디렉토리
             log_level: 로그 레벨 (logging.DEBUG, logging.INFO 등)
+            use_cloud: 클라우드 로깅 사용 여부
+            firebase_cred_path: Firebase 인증 파일 경로
         """
         self.log_dir = log_dir
         self.log_level = log_level
+        self.use_cloud = use_cloud
         
         # 로그 디렉토리 생성
         if not os.path.exists(log_dir):
@@ -28,6 +38,27 @@ class Logger:
         self.app_logger = self._setup_logger("app", f"{log_dir}/app.log")
         self.trade_logger = self._setup_logger("trade", f"{log_dir}/trade.log")
         self.error_logger = self._setup_logger("error", f"{log_dir}/error.log")
+        
+        # Firebase 초기화 (클라우드 로깅 사용 시)
+        if use_cloud and Logger.firebase_app is None:
+            try:
+                # Firebase 인증 경로 기본값
+                if firebase_cred_path is None:
+                    firebase_cred_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 
+                                                     "config", "firebase_credentials.json")
+                
+                # Firebase 초기화
+                if os.path.exists(firebase_cred_path):
+                    cred = credentials.Certificate(firebase_cred_path)
+                    Logger.firebase_app = firebase_admin.initialize_app(cred)
+                    Logger.firestore_db = firestore.client()
+                    self.app_logger.info("Firebase Cloud Firestore 연결 성공")
+                else:
+                    self.app_logger.warning(f"Firebase 인증 파일을 찾을 수 없습니다: {firebase_cred_path}")
+                    self.use_cloud = False
+            except Exception as e:
+                self.error_logger.error(f"Firebase 초기화 오류: {e}")
+                self.use_cloud = False
     
     def _setup_logger(self, name, log_file, level=None):
         """
@@ -69,35 +100,50 @@ class Logger:
         
         return logger
     
-    def log_app(self, message, level="info"):
+    def log_app(self, message, level="info", data=None):
         """
         애플리케이션 로그 출력
         
         Args:
             message: 로그 메시지
             level: 로그 레벨 (debug, info, warning, error, critical)
+            data: 추가 데이터 (클라우드에 저장될 dict)
         """
         self._log(self.app_logger, message, level)
+        
+        # 클라우드에 로그 저장
+        if self.use_cloud and Logger.firestore_db:
+            self._log_to_cloud('app', message, level, data)
     
-    def log_trade(self, message, level="info"):
+    def log_trade(self, message, level="info", data=None):
         """
         트레이딩 로그 출력
         
         Args:
             message: 로그 메시지
             level: 로그 레벨 (debug, info, warning, error, critical)
+            data: 추가 데이터 (클라우드에 저장될 dict)
         """
         self._log(self.trade_logger, message, level)
+        
+        # 클라우드에 로그 저장
+        if self.use_cloud and Logger.firestore_db:
+            self._log_to_cloud('trade', message, level, data)
     
-    def log_error(self, message, level="error"):
+    def log_error(self, message, level="error", data=None):
         """
         에러 로그 출력
         
         Args:
             message: 로그 메시지
             level: 로그 레벨 (debug, info, warning, error, critical)
+            data: 추가 데이터 (클라우드에 저장될 dict)
         """
         self._log(self.error_logger, message, level)
+        
+        # 클라우드에 로그 저장
+        if self.use_cloud and Logger.firestore_db:
+            self._log_to_cloud('error', message, level, data)
         
     def log_warning(self, message):
         """
@@ -130,6 +176,35 @@ class Logger:
             logger.critical(message)
         else:
             logger.info(message)
+            
+    def _log_to_cloud(self, log_type, message, level, data=None):
+        """
+        클라우드에 로그 저장
+        
+        Args:
+            log_type: 로그 타입 (app, trade, error)
+            message: 로그 메시지
+            level: 로그 레벨
+            data: 추가 데이터 (dict)
+        """
+        try:
+            # 저장할 로그 데이터 구성
+            log_data = {
+                'timestamp': datetime.now(),
+                'message': message,
+                'level': level,
+            }
+            
+            # 추가 데이터가 있으면 병합
+            if data is not None and isinstance(data, dict):
+                for key, value in data.items():
+                    log_data[key] = value
+            
+            # Firestore에 저장
+            Logger.firestore_db.collection(f'{log_type}_logs').add(log_data)
+        except Exception as e:
+            # 클라우드 로깅 실패 시 에러 로그
+            self.error_logger.error(f"클라우드 로깅 오류: {e}")
             
     def log_trade_analysis(self, analysis_result, profit_info=None):
         """

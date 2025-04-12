@@ -23,3 +23,1239 @@
 2025-04-12 16:38:34,073 - error - ERROR - 트레이딩 작업 오류: 'NoneType' object has no attribute 'get'
 2025-04-12 16:39:51,510 - error - ERROR - 거래 실행 오류: 'NoneType' object has no attribute 'get'
 2025-04-12 16:39:51,511 - error - ERROR - 트레이딩 작업 오류: 'NoneType' object has no attribute 'get'
+2025-04-12 22:47:22,375 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:22,405 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:22,532 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:22,557 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:22,665 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:25,659 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:25,659 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:25,920 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:25,920 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:26,546 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:26,546 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:26,570 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:47:26,570 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:26,598 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:26,598 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:26,729 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:26,729 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:30,421 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:30,421 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:30,421 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:30,666 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:30,666 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:30,666 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:31,306 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:31,306 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:48:31,306 - error - ERROR - 클라우드 로깅 오류: 403 Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: "SERVICE_DISABLED"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "firestore.googleapis.com"
+}
+metadata {
+  key: "serviceTitle"
+  value: "Cloud Firestore API"
+}
+metadata {
+  key: "containerInfo"
+  value: "bitcoin-ai-trading"
+}
+metadata {
+  key: "consumer"
+  value: "projects/bitcoin-ai-trading"
+}
+metadata {
+  key: "activationUrl"
+  value: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+, locale: "en-US"
+message: "Cloud Firestore API has not been used in project bitcoin-ai-trading before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+, links {
+  description: "Google developers console API activation"
+  url: "https://console.developers.google.com/apis/api/firestore.googleapis.com/overview?project=bitcoin-ai-trading"
+}
+]
+2025-04-12 22:49:08,237 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:08,237 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:08,237 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:13,958 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:13,985 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:14,117 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:14,144 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:15,269 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:19,027 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:19,027 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:19,223 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:19,223 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:20,825 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:20,825 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:20,850 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:49:20,850 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:20,917 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:20,917 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:21,347 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:21,347 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:26,378 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:26,378 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:26,378 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:26,857 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:26,857 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:26,857 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:27,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:27,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:50:27,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:27,318 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:27,318 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:27,318 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:27,524 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:27,524 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:27,524 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:29,601 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:29,601 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:29,601 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:29,601 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:29,789 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:29,789 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:29,789 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:29,789 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:30,133 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:30,133 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:30,133 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:51:30,133 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:30,167 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:30,167 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:30,167 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:30,167 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:30,331 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:30,331 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:30,331 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:30,331 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:32,932 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:32,932 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:32,932 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:32,932 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:32,932 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:33,135 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:33,135 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:33,135 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:33,135 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:33,135 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:33,510 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:33,510 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:33,510 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:33,510 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:52:33,510 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:33,802 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:33,802 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:33,802 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:33,802 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:33,802 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:33,924 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:33,924 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:33,924 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:33,924 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:33,924 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,452 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,452 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,452 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,452 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,452 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,452 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,651 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,651 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,651 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,651 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,651 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:37,651 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:38,272 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:38,272 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:38,272 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:38,272 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:38,272 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:53:38,272 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:38,299 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:38,299 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:38,299 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:38,299 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:38,299 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:38,299 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:39,164 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:39,164 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:39,164 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:39,164 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:39,164 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:39,164 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,255 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,255 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,255 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,255 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,255 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,255 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,255 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,453 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,453 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,453 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,453 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,453 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,453 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,453 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,806 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,806 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,806 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,806 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,806 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,806 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:54:42,806 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,838 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,838 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,838 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,838 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,838 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,838 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,838 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,943 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,943 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,943 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,943 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,943 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,943 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:42,943 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,761 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,761 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,761 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,761 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,761 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,761 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,761 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,761 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:46,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:47,367 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:47,367 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:47,367 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:47,367 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:47,367 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:47,367 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:47,367 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:55:47,367 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,397 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,397 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,397 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,397 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,397 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,397 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,397 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,397 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,503 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,503 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,503 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,503 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,503 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,503 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,503 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:47,503 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:56,710 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:56,710 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:56,710 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:56,710 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:56,710 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:56,710 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:56,710 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:56,710 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:56,710 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:57,184 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:57,184 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:57,184 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:57,184 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:57,184 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:57,184 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:57,184 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:57,184 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:57,184 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:58,629 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:58,629 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:58,629 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:58,629 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:58,629 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:58,629 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:58,629 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:58,629 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:56:58,629 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,655 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,655 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,655 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,655 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,655 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,655 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,655 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,655 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,655 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,770 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,770 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,770 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,770 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,770 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,770 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,770 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,770 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:57:58,770 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:01,823 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:01,823 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:01,823 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:01,823 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:01,823 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:01,823 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:01,823 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:01,823 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:01,823 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:01,823 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:02,054 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:02,054 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:02,054 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:02,054 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:02,054 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:02,054 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:02,054 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:02,054 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:02,054 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:02,054 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:03,411 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:03,411 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:03,411 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:03,411 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:03,411 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:03,411 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:03,411 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:03,411 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:03,411 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:58:03,411 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,441 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,441 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,441 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,441 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,441 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,441 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,441 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,441 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,441 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,441 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,560 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,560 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,560 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,560 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,560 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,560 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,560 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,560 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,560 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:03,560 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,539 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:05,738 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 22:59:06,113 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:06,261 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,089 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,288 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:00:08,649 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,678 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:08,804 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,391 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,597 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:01:10,962 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:02,931 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:02,954 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:03,074 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:03,096 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:03,191 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:04,569 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:04,569 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:04,794 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:04,794 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:05,103 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:05,103 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:05,118 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:10:05,118 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:05,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:05,141 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:05,236 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:05,236 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:06,937 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:06,937 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:06,937 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:07,125 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:07,125 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:07,125 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:07,463 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:07,463 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:11:07,463 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:07,491 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:07,491 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:07,491 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:07,605 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:07,605 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:07,605 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,025 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,025 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,025 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,025 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,229 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,229 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,229 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,229 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,563 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,563 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,563 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:12:09,563 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:13:09,586 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:13:09,586 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:13:09,586 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 
+2025-04-12 23:13:09,586 - error - ERROR - 클라우드 로깅 오류: 404 The database (default) does not exist for project bitcoin-ai-trading Please visit https://console.cloud.google.com/datastore/setup?project=bitcoin-ai-trading to add a Cloud Datastore or Cloud Firestore database. 

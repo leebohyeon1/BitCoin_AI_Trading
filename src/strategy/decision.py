@@ -326,6 +326,27 @@ class TradingEngine:
             # 로그 파일 쓰기
             with open(log_file, "w", encoding="utf-8") as f:
                 json.dump(log_data, f, ensure_ascii=False, indent=2)
+                
+            # 클라우드 로깅 시도 (Logger 클래스 사용)
+            try:
+                from utils import Logger
+                logger = Logger()
+                if hasattr(logger, '_log_to_cloud') and logger.use_cloud:
+                    # 로그에 추가 정보 기록
+                    cloud_data = analysis_result.copy()
+                    # 불필요한 큰 데이터 제거
+                    if 'reasoning_lines' in cloud_data:
+                        del cloud_data['reasoning_lines']
+                    
+                    # 메시지 생성
+                    decision = analysis_result.get('decision', 'unknown')
+                    confidence = analysis_result.get('confidence', 0)
+                    message = f"분석 결과: {decision} (신뢰도: {confidence:.2f})"
+                    
+                    # 클라우드 로깅
+                    logger._log_to_cloud('analysis', message, 'info', cloud_data)
+            except Exception as e:
+                print(f"클라우드 로깅 오류: {e}")
         
         except Exception as e:
             print(f"로그 저장 오류: {e}")
@@ -361,6 +382,25 @@ class TradingEngine:
             # 로그 파일 쓰기
             with open(log_file, "w", encoding="utf-8") as f:
                 json.dump(trade_log, f, ensure_ascii=False, indent=2)
+                
+            # 클라우드 로깅 시도 (Logger 클래스 사용)
+            try:
+                from utils import Logger
+                logger = Logger()
+                if hasattr(logger, '_log_to_cloud') and logger.use_cloud:
+                    # 메시지 생성
+                    trade_type = trade_info.get('type', 'unknown')
+                    ticker = trade_info.get('ticker', '')
+                    amount = trade_info.get('amount', 0)
+                    price = trade_info.get('price', 0)
+                    total = trade_info.get('total', 0)
+                    
+                    message = f"{trade_type.upper()} 거래 실행: {ticker} {total:,.0f}원 ({amount:,.8f} BTC @ {price:,.0f}원)"
+                    
+                    # 클라우드 로깅
+                    logger._log_to_cloud('trade', message, 'info', trade_info)
+            except Exception as e:
+                print(f"클라우드 로깅 오류: {e}")
         
         except Exception as e:
             print(f"거래 로그 저장 오류: {e}")

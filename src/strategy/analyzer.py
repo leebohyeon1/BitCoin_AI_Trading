@@ -73,8 +73,12 @@ class MarketAnalyzer:
     def get_current_price(self, ticker="KRW-BTC"):
         """현재 가격 조회"""
         try:
-            ticker_data = pyupbit.get_ticker(ticker)
-            return ticker_data
+            # get_ticker 대신 get_current_price 사용
+            current_price = pyupbit.get_current_price(ticker)
+            if current_price is None:
+                raise ValueError("현재가 조회 실패")
+            # 현재가를 딕셔너리 형태로 반환
+            return [{"market": ticker, "trade_price": current_price}]
         except Exception as e:
             logger.error(f"시장 데이터 조회 오류: {e}")
             return None
@@ -166,15 +170,27 @@ class MarketAnalyzer:
     def analyze_trades(self, ticker="KRW-BTC"):
         """체결 데이터 분석"""
         try:
-            # 최근 체결 데이터 조회
-            trades = pyupbit.get_trades(ticker, count=100)
+            # get_trades 함수가 없으므로 requests를 직접 사용해 API 호출
+            # 실패하면 중립값 반환
+            try:
+                url = f"https://api.upbit.com/v1/trades/ticks?market={ticker}&count=100"
+                headers = {'Accept': 'application/json'}
+                response = requests.get(url, headers=headers, timeout=5)
+                trades = response.json()
+            except Exception as e:
+                logger.warning(f"거래 데이터 API 호출 실패: {e}")
+                return 0.0
             
             if not trades:
                 return 0.0
                 
             # 매수/매도 거래량 계산
-            buy_volume = sum([x['trade_volume'] for x in trades if x['type'] == 'bid'])
-            sell_volume = sum([x['trade_volume'] for x in trades if x['type'] == 'ask'])
+            try:
+                buy_volume = sum([float(x.get('trade_volume', 0)) for x in trades if x.get('ask_bid') == 'bid'])
+                sell_volume = sum([float(x.get('trade_volume', 0)) for x in trades if x.get('ask_bid') == 'ask'])
+            except Exception as e:
+                logger.warning(f"거래량 계산 오류: {e}")
+                return 0.0
             
             # 매수 거래량 / 전체 거래량 비율 계산 (0.5가 중립)
             total_volume = buy_volume + sell_volume
@@ -195,34 +211,44 @@ class MarketAnalyzer:
         try:
             # 업비트 BTC 가격
             kr_price = pyupbit.get_current_price("KRW-BTC")
+            if kr_price is None:
+                logger.warning("업비트 가격을 가져올 수 없습니다")
+                return 0.0
             
-            # 해외 거래소 BTC 가격 (바이낸스 API 대신 다른 방법 사용)
-            # 환율 정보 조회
-            headers = {'User-Agent': 'Mozilla/5.0'}
-            response = requests.get(
-                "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD",
-                headers=headers,
-                timeout=10
-            )
-            
-            exchange_data = response.json()
-            usd_krw = exchange_data[0]['basePrice']
-            
-            # 바이낸스 API는 제한이 있으므로, 공개 API 사용
-            binance_response = requests.get(
-                "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT",
-                timeout=10
-            )
-            binance_data = binance_response.json()
-            us_price_in_usd = float(binance_data['price'])
-            
-            # USD 가격을 KRW로 변환
-            us_price_in_krw = us_price_in_usd * usd_krw
-            
-            # 김프 계산
-            kimchi_premium = ((kr_price - us_price_in_krw) / us_price_in_krw) * 100
-            
-            return kimchi_premium
+            # 환율 정보 및 바이낸스 가격 조회 시도
+            try:
+                # 환율 정보 조회 (오류 발생 시 고정값 사용)
+                try:
+                    url = "https://open.er-api.com/v6/latest/USD"
+                    response = requests.get(url, timeout=5)
+                    data = response.json()
+                    return data['rates']['KRW']
+                except Exception as e:
+                    print(f"ExchangeRate-API 환율 정보 조회 실패: {e}")
+                    return 1350.0  # 기본값
+                
+                # 바이낸스 API 조회
+                try:
+                    binance_response = requests.get(
+                        "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT",
+                        timeout=5
+                    )
+                    binance_data = binance_response.json()
+                    us_price_in_usd = float(binance_data['price'])
+                except Exception as e:
+                    logger.warning(f"바이낸스 가격 조회 실패: {e}, 기본값 사용")
+                    us_price_in_usd = kr_price / usd_krw  # 김프 0%로 가정
+                
+                # USD 가격을 KRW로 변환
+                us_price_in_krw = us_price_in_usd * usd_krw
+                
+                # 김프 계산
+                kimchi_premium = ((kr_price - us_price_in_krw) / us_price_in_krw) * 100
+                
+                return round(kimchi_premium, 2)
+            except Exception as e:
+                logger.warning(f"김프 계산 중 오류: {e}")
+                return 0.0
         except Exception as e:
             logger.error(f"김프 계산 오류: {e}")
             return 0.0  # 오류 발생 시 중립적 값 반환

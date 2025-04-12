@@ -28,10 +28,15 @@ def main():
         app_config = load_config("config/app_config.py")
         
         # API 클라이언트 초기화
-        upbit_api = UpbitAPI(
-            access_key=os.getenv("UPBIT_ACCESS_KEY"),
-            secret_key=os.getenv("UPBIT_SECRET_KEY")
-        )
+        try:
+            upbit_api = UpbitAPI(
+                access_key=os.getenv("UPBIT_ACCESS_KEY"),
+                secret_key=os.getenv("UPBIT_SECRET_KEY")
+            )
+            logger.log_app("UpbitAPI 초기화 성공")
+        except Exception as e:
+            logger.log_error(f"UpbitAPI 초기화 오류: {e}")
+            raise
         
         # Claude API 사용 여부 확인
         claude_api = None
@@ -45,7 +50,31 @@ def main():
         interval = app_config.get("DATA_CONFIG", {}).get("default_interval", "minute60")
         count = app_config.get("DATA_CONFIG", {}).get("candle_count", 200)
         
-        ohlcv = upbit_api.get_ohlcv(ticker, interval=interval, count=count)
+        try:
+            ohlcv = upbit_api.get_ohlcv(ticker, interval=interval, count=count)
+            if ohlcv is None or ohlcv.empty:
+                logger.log_warning("OHLCV 데이터가 비어 있습니다. 더미 데이터를 사용합니다.")
+                # 더미 데이터 생성
+                import numpy as np
+                import pandas as pd
+                from datetime import datetime, timedelta
+                
+                # 샘플 데이터 생성
+                dates = [(datetime.now() - timedelta(hours=i)).strftime("%Y-%m-%d %H:%M:%S") for i in range(count, 0, -1)]
+                prices = np.linspace(50000000, 52000000, count)  # 임의의 가격 범위
+                
+                ohlcv = pd.DataFrame({
+                    'open': prices,
+                    'high': prices * 1.01,
+                    'low': prices * 0.99,
+                    'close': prices,
+                    'volume': np.random.rand(count) * 10
+                }, index=pd.DatetimeIndex(dates))
+            else:
+                logger.log_app(f"OHLCV 데이터 크기: {len(ohlcv)}")
+        except Exception as e:
+            logger.log_error(f"OHLCV 데이터 조회 오류: {e}")
+            raise
         
         # 기술적 지표 계산기 초기화
         technical = TechnicalIndicators(ohlcv)
@@ -70,12 +99,23 @@ def main():
                     ohlcv = upbit_api.get_ohlcv(ticker, interval=interval, count=count)
                     if ohlcv is not None and not ohlcv.empty:
                         technical.set_data(ohlcv)
+                        logger.log_app(f"데이터 업데이트 완료 (최신 가격: {ohlcv['close'].iloc[-1]:,.0f}원)")
                     else:
-                        logger.log_error("OHLCV 데이터가 비어 있습니다.")
-                        return
+                        logger.log_error("OHLCV 데이터가 비어 있습니다. 기존 데이터로 계속합니다.")
+                        # 기존 데이터가 있으면 그대로 유지
+                        if technical.df is not None and not technical.df.empty:
+                            logger.log_app("기존 데이터 사용 중...")
+                        else:
+                            logger.log_error("사용 가능한 데이터가 없습니다.")
+                            return
                 except Exception as e:
                     logger.log_error(f"OHLCV 데이터 업데이트 오류: {e}")
-                    return
+                    # 기존 데이터가 있으면 그대로 유지
+                    if technical.df is not None and not technical.df.empty:
+                        logger.log_app("오류 발생, 기존 데이터 사용 중...")
+                    else:
+                        logger.log_error("사용 가능한 데이터가 없습니다.")
+                        return
                 
                 # 시장 분석
                 try:

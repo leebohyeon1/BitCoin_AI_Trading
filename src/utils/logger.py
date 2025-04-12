@@ -98,6 +98,16 @@ class Logger:
             level: 로그 레벨 (debug, info, warning, error, critical)
         """
         self._log(self.error_logger, message, level)
+        
+    def log_warning(self, message):
+        """
+        경고 로그 출력 (에러 로그와 앱 로그 모두에 기록)
+        
+        Args:
+            message: 로그 메시지
+        """
+        self._log(self.app_logger, message, "warning")
+        self._log(self.error_logger, message, "warning")
     
     def _log(self, logger, message, level):
         """

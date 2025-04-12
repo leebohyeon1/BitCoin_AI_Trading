@@ -130,9 +130,27 @@ class MarketAnalyzer:
             # 호가창 데이터 조회
             orderbook = pyupbit.get_orderbook(ticker)
             
-            # 매수/매도 호가 합계 계산
-            bid_total = sum([x['price'] * x['quantity'] for x in orderbook['bids']])
-            ask_total = sum([x['price'] * x['quantity'] for x in orderbook['asks']])
+            if not orderbook or len(orderbook) == 0:
+                logger.error("호가창 데이터가 비어있습니다.")
+                return 1.0
+                
+            # 데이터 구조 확인 (list 형태인 경우)
+            if isinstance(orderbook, list):
+                orderbook_data = orderbook[0]
+            else:
+                orderbook_data = orderbook
+            
+            # 구조에 따라 매수/매도 호가 합계 계산
+            if 'bids' in orderbook_data and 'asks' in orderbook_data:
+                bid_total = sum([x['price'] * x['quantity'] for x in orderbook_data['bids']])
+                ask_total = sum([x['price'] * x['quantity'] for x in orderbook_data['asks']])
+            elif 'orderbook_units' in orderbook_data:
+                units = orderbook_data['orderbook_units']
+                bid_total = sum([x['bid_price'] * x['bid_size'] for x in units])
+                ask_total = sum([x['ask_price'] * x['ask_size'] for x in units])
+            else:
+                logger.error(f"알 수 없는 호가창 구조: {list(orderbook_data.keys())}")
+                return 1.0
             
             # 매수/매도 비율 계산
             if ask_total > 0:

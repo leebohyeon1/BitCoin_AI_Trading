@@ -94,8 +94,6 @@ class UpbitAPI:
         else:
             return self.client.get_balances()
     
-    # get_orderbook 함수 수정
-    # get_orderbook 함수 수정
     def get_orderbook(self, ticker="KRW-BTC"):
         """
         호가창 조회
@@ -104,7 +102,7 @@ class UpbitAPI:
             ticker: 티커 (예: KRW-BTC)
                 
         Returns:
-            dict: 호가창 정보
+            dict or list: 호가창 정보
         """
         try:
             # 호가창 조회 시도
@@ -112,41 +110,39 @@ class UpbitAPI:
             
             # 데이터 구조 확인
             if orderbook is None or len(orderbook) == 0:
-                print("Empty orderbook response")
                 return [{
                     "market": ticker,
                     "orderbook_units": []
                 }]
             
-            # 호가창 구조 디버깅
-            print(f"Orderbook structure: {list(orderbook[0].keys())}")
-            
             # PyUpbit 0.2.33 버전 구조: orderbook_units 포함
-            if "orderbook_units" in orderbook[0]:
+            if isinstance(orderbook, list) and "orderbook_units" in orderbook[0]:
                 return orderbook
             
             # 최신 PyUpbit 버전 구조: asks, bids 포함
-            elif "asks" in orderbook[0] and "bids" in orderbook[0]:
+            elif isinstance(orderbook, list) and "asks" in orderbook[0] and "bids" in orderbook[0]:
                 # 안전하게 새 구조로 변환
+                asks = orderbook[0].get("asks", [])
+                bids = orderbook[0].get("bids", [])
+                
                 formatted_orderbook = [{
                     "market": ticker,
                     "timestamp": orderbook[0].get("timestamp", 0),
-                    "total_ask_size": sum([ask[1] for ask in orderbook[0]["asks"]]),
-                    "total_bid_size": sum([bid[1] for bid in orderbook[0]["bids"]]),
+                    "total_ask_size": sum([ask[1] for ask in asks]) if asks else 0,
+                    "total_bid_size": sum([bid[1] for bid in bids]) if bids else 0,
                     "orderbook_units": [
                         {
                             "ask_price": ask[0],
                             "ask_size": ask[1],
-                            "bid_price": bid[0] if idx < len(orderbook[0]["bids"]) else 0,
-                            "bid_size": bid[1] if idx < len(orderbook[0]["bids"]) else 0
-                        } for idx, (ask, bid) in enumerate(zip(orderbook[0]["asks"], orderbook[0]["bids"]))
-                    ]
+                            "bid_price": bid[0] if idx < len(bids) else 0,
+                            "bid_size": bid[1] if idx < len(bids) else 0
+                        } for idx, (ask, bid) in enumerate(zip(asks, bids))
+                    ] if asks and bids else []
                 }]
                 return formatted_orderbook
             
             # 알 수 없는 형태
             else:
-                print(f"Unknown orderbook structure: {orderbook[0]}")
                 return [{
                     "market": ticker,
                     "orderbook_units": []

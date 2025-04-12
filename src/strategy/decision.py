@@ -114,7 +114,17 @@ class TradingEngine:
             btc_balance = self.upbit_api.get_balance(ticker)
             
             # 현재가 조회
-            current_price = analysis_result.get("current_price")[0].get("trade_price")
+            current_price = None
+            if analysis_result.get("current_price") and len(analysis_result.get("current_price")) > 0:
+                current_price = analysis_result.get("current_price")[0].get("trade_price")
+                
+            # current_price가 None이면 직접 API로 조회 시도
+            if current_price is None:
+                current_price = self.upbit_api.get_current_price(ticker)
+                
+            # 여전히 None이면 거래 실패
+            if current_price is None:
+                return {"status": "error", "message": "현재가 정보를 가져올 수 없습니다."}
             
             # 투자 비율 계산 (신뢰도에 따라 조정)
             min_ratio = self.investment_ratios.get("min_ratio", 0.1)

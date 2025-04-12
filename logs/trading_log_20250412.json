@@ -302,5 +302,81 @@
     },
     "current_price": null,
     "price_change_24h": "2.10%"
+  },
+  {
+    "timestamp": "2025-04-12 10:33:05",
+    "decision": "hold",
+    "decision_kr": "홀드",
+    "confidence": 0.5236807891601067,
+    "avg_signal_strength": 0.047361578320213496,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "골든크로스 상태 (5일 이동평균선이 20일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "상단 접근중 (밴드 내 위치: 상위 67%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "sell",
+        "strength": 0.2,
+        "description": "매수세 우세 (RSI: 59.0)"
+      },
+      {
+        "source": "MACD",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "MACD 상승 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "하락 모멘텀 (K: 73.3 < D: 74.4)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "sell",
+        "strength": 0.42743958546977967,
+        "description": "매도세 강함 (매수/매도 비율: 0.15)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "hold",
+        "strength": 0,
+        "description": "적정 프리미엄 수준 (김프: 0.00%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 4,
+      "sell": 4,
+      "hold": 2
+    },
+    "current_price": null,
+    "price_change_24h": "2.35%"
   }
 ]

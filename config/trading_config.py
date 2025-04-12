@@ -84,7 +84,7 @@ INDICATOR_USAGE = {
 TRADING_SETTINGS = {
     "min_order_amount": 5000,  # 최소 주문 금액 (원) (기본값: 5000)
     "max_slippage": 0.005,     # 최대 허용 슬리피지 (주문가 대비 %) (기본값: 0.5%)
-    "trading_interval": 60,    # 매매 분석 간격 (분) (기본값: 60)
+    "trading_interval": 1,    # 매매 분석 간격 (분) (기본값: 60)
     "trading_hours": {         # 매매 허용 시간대 (24시간제)
         "enabled": False,      # 시간대 제한 사용 여부
         "start_hour": 9,       # 매매 시작 시간 (예: 오전 9시)
@@ -94,21 +94,21 @@ TRADING_SETTINGS = {
 
 # Claude AI 관련 설정
 CLAUDE_SETTINGS = {
-    "use_claude": False,       # Claude AI 분석 사용 여부
+    "use_claude": True,       # Claude AI 분석 사용 여부
     "weight": 1.0,             # Claude AI 분석 결과 가중치
     "confidence_boost": 0.1,   # 일치 시 신뢰도 상승 값 (기본값: 0.1)
 }
 
 # 이전 거래 이력 참고 설정
 HISTORICAL_SETTINGS = {
-    "use_historical_data": False,  # 이전 거래 이력 참고 여부
-    "history_length": 5,           # 참고할 이전 거래 수
+    "use_historical_data": True,  # 이전 거래 이력 참고 여부
+    "history_length": 10,           # 참고할 이전 거래 수
     "avoid_repeated_signals": True, # 연속 동일 신호 발생 시 강도 감소
 }
 
 # 알림 설정
 NOTIFICATION_SETTINGS = {
-    "enable_notifications": False,  # 알림 기능 사용 여부
+    "enable_notifications": True,  # 알림 기능 사용 여부
     "notify_on_trade": True,        # 실제 거래 발생 시 알림
     "notify_on_signal": True,       # 강한 매매 신호 발생 시 알림
     "notify_on_error": True,        # 오류 발생 시 알림

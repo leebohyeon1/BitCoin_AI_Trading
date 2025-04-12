@@ -1,4 +1,115 @@
-# -*- coding: utf-8 -*-
+def generate_korean_reasoning(analysis_result):
+    """
+    분석 결과를 기반으로 자연스러운 한국어 설명 생성
+    
+    Args:
+        analysis_result: 분석 결과 데이터
+        
+    Returns:
+        str: 한국어 설명
+    """
+    decision = analysis_result.get('decision', 'hold')
+    decision_kr = analysis_result.get('decision_kr', '홀드')
+    confidence = analysis_result.get('confidence', 0.5)
+    avg_signal_strength = analysis_result.get('avg_signal_strength', 0)
+    signals = analysis_result.get('signals', [])
+    signal_counts = analysis_result.get('signal_counts', {'buy': 0, 'sell': 0, 'hold': 0})
+    current_price = None
+    
+    # 기본 하드코딩된 값들
+    DECISION_THRESHOLDS = {'buy_threshold': 0.1, 'sell_threshold': -0.1}
+    
+    # 현재가 정보 추출
+    try:
+        if analysis_result.get('current_price') and len(analysis_result.get('current_price')) > 0:
+            current_price = analysis_result.get('current_price')[0].get('trade_price')
+    except:
+        pass
+    
+    # 신호 분류
+    buy_signals = [s for s in signals if s.get('signal') == 'buy']
+    sell_signals = [s for s in signals if s.get('signal') == 'sell']
+    hold_signals = [s for s in signals if s.get('signal') == 'hold']
+    
+    # 가장 강한 신호 추출 (가중치 적용)
+    def get_weighted_strength(signal):
+        source = signal.get('source', '').split('(')[0].strip()
+        # 기본 가중치 설정
+        weight = 1.0
+        if source in ['RSI', 'MACD', 'FearGreed']:
+            weight = 1.2
+        elif source in ['Orderbook', 'Trades', 'KIMP']:
+            weight = 0.8
+        return signal.get('strength', 0) * weight
+    
+    # 각 신호 유형별 강도 정렬
+    buy_signals_sorted = sorted(buy_signals, key=get_weighted_strength, reverse=True)
+    sell_signals_sorted = sorted(sell_signals, key=get_weighted_strength, reverse=True)
+    all_signals_sorted = sorted(signals, key=get_weighted_strength, reverse=True)
+    
+    # 상위 신호만 선택
+    top_buy_signals = buy_signals_sorted[:2] if len(buy_signals_sorted) > 2 else buy_signals_sorted
+    top_sell_signals = sell_signals_sorted[:2] if len(sell_signals_sorted) > 2 else sell_signals_sorted
+    top_all_signals = all_signals_sorted[:3] if len(all_signals_sorted) > 3 else all_signals_sorted
+    
+    # 설명 생성
+    explanation = []
+    
+    # 현재가 정보 추가
+    if current_price:
+        explanation.append(f"\n현재 비트코인 가격은 {current_price:,.0f}원입니다.")
+    
+    # 결정 유형에 따른 설명
+    if decision == 'buy':
+        explanation.append(f"\n현재 시장 상황을 분석한 결과 '매수' 결정을 내렸습니다. (신뢰도: {confidence:.1%})")
+        explanation.append(f"\n전체 {len(signals)}개 지표 중 매수 신호가 {signal_counts.get('buy', 0)}개, 매도 신호가 {signal_counts.get('sell', 0)}개, 중립 신호가 {signal_counts.get('hold', 0)}개로 매수 신호가 우세합니다.")
+        
+        # 최상위 매수 신호 추가
+        if top_buy_signals:
+            explanation.append("\n특히 다음 지표들이 매수 결정에 큰 영향을 주었습니다:")
+            for signal in top_buy_signals:
+                explanation.append(f"- {signal.get('source')}: {signal.get('description')}")
+    
+    elif decision == 'sell':
+        explanation.append(f"\n현재 시장 상황을 분석한 결과 '매도' 결정을 내렸습니다. (신뢰도: {confidence:.1%})")
+        explanation.append(f"\n전체 {len(signals)}개 지표 중 매도 신호가 {signal_counts.get('sell', 0)}개, 매수 신호가 {signal_counts.get('buy', 0)}개, 중립 신호가 {signal_counts.get('hold', 0)}개로 매도 신호가 우세합니다.")
+        
+        # 최상위 매도 신호 추가
+        if top_sell_signals:
+            explanation.append("\n특히 다음 지표들이 매도 결정에 큰 영향을 주었습니다:")
+            for signal in top_sell_signals:
+                explanation.append(f"- {signal.get('source')}: {signal.get('description')}")
+    
+    else:  # 홀드
+        explanation.append(f"\n현재 시장 상황을 분석한 결과 '{decision_kr}' 결정을 내렸습니다. (신뢰도: {confidence:.1%})")
+        
+        # 홀드 설명 - 더 자연스럽게
+        if signal_counts.get('buy', 0) > signal_counts.get('sell', 0):
+            explanation.append(f"\n매수 신호({signal_counts.get('buy', 0)}개)가 매도 신호({signal_counts.get('sell', 0)}개)보다 많지만, 강도가 충분히 높지 않습니다. (신호 강도 평균: {avg_signal_strength:.4f})")
+        elif signal_counts.get('sell', 0) > signal_counts.get('buy', 0):
+            explanation.append(f"\n매도 신호({signal_counts.get('sell', 0)}개)가 매수 신호({signal_counts.get('buy', 0)}개)보다 많지만, 강도가 충분히 높지 않습니다. (신호 강도 평균: {avg_signal_strength:.4f})")
+        else:
+            explanation.append(f"\n매수 신호와 매도 신호가 균형을 이루고 있습니다. (매수: {signal_counts.get('buy', 0)}개, 매도: {signal_counts.get('sell', 0)}개, 중립: {signal_counts.get('hold', 0)}개)")
+
+        explanation.append(f"\n매수/매도 결정 임계값 범위({DECISION_THRESHOLDS['sell_threshold']:.1f}~{DECISION_THRESHOLDS['buy_threshold']:.1f}) 내에 신호 강도가 있어 포지션 변화를 제안하지 않습니다.")
+        
+        # 현재 주요 시장 지표 추가
+        explanation.append("\n현재 주요 시장 지표:")
+        for signal in top_all_signals:
+            signal_type = ""
+            if signal.get('signal') == 'buy':
+                signal_type = "(매수 신호)"
+            elif signal.get('signal') == 'sell':
+                signal_type = "(매도 신호)"
+            else:
+                signal_type = "(중립)"
+                
+            explanation.append(f"- {signal.get('source')} {signal_type}: {signal.get('description')}")
+    
+    # 추가 설명 - 이곳에 필요한 경우 추가 설명 추가
+    explanation.append("\n이 결정은 자동 분석 시스템에 의한 것으로, 최종 투자 결정은 심도있는 고려가 필요합니다.")
+    
+    return ''.join(explanation)# -*- coding: utf-8 -*-
 import os
 import time
 import schedule
@@ -96,26 +207,47 @@ def main():
             try:
                 # OHLCV 데이터 업데이트
                 try:
+                    logger.log_app(f"{ticker} {interval} 데이터 조회 시도 중...")
                     ohlcv = upbit_api.get_ohlcv(ticker, interval=interval, count=count)
+                    
                     if ohlcv is not None and not ohlcv.empty:
                         technical.set_data(ohlcv)
-                        logger.log_app(f"데이터 업데이트 완료 (최신 가격: {ohlcv['close'].iloc[-1]:,.0f}원)")
+                        logger.log_app(f"데이터 업데이트 완료 (최신 가격: {ohlcv['close'].iloc[-1]:,.0f}원, 데이터 수: {len(ohlcv)})")
                     else:
-                        logger.log_error("OHLCV 데이터가 비어 있습니다. 기존 데이터로 계속합니다.")
-                        # 기존 데이터가 있으면 그대로 유지
+                        logger.log_error("OHLCV 데이터를 가져올 수 없습니다. 현재가만 직접 조회합니다.")
+                        # 현재가 직접 조회 시도
+                        current_price = upbit_api.get_current_price(ticker)
+                        logger.log_app(f"현재가 직접 조회 결과: {current_price}")
+                        
+                        # 기존 데이터가 있으면 그대로 유지하고, 현재가 정보 추가
                         if technical.df is not None and not technical.df.empty:
-                            logger.log_app("기존 데이터 사용 중...")
+                            logger.log_app("기존 데이터 사용 + 현재가 정보 추가")
+                            # 필요시 여기서 마지막 레코드의 종가 업데이트 가능
+                            if current_price is not None:
+                                logger.log_app(f"현재가 정보로 기존 데이터 업데이트: {current_price}원")
                         else:
-                            logger.log_error("사용 가능한 데이터가 없습니다.")
-                            return
+                            if current_price is None:
+                                logger.log_error("OHLCV 데이터도 없고 현재가도 가져올 수 없어 작업을 중단합니다.")
+                                return
+                            else:
+                                logger.log_app(f"OHLCV 데이터는 없지만 현재가({current_price}원)는 확인되어 계속 진행합니다.")
                 except Exception as e:
                     logger.log_error(f"OHLCV 데이터 업데이트 오류: {e}")
                     # 기존 데이터가 있으면 그대로 유지
                     if technical.df is not None and not technical.df.empty:
                         logger.log_app("오류 발생, 기존 데이터 사용 중...")
                     else:
-                        logger.log_error("사용 가능한 데이터가 없습니다.")
-                        return
+                        # 현재가만이라도 가져와서 진행 시도
+                        try:
+                            current_price = upbit_api.get_current_price(ticker)
+                            if current_price is not None:
+                                logger.log_app(f"오류 발생했으나 현재가는 확인됨: {current_price}원")
+                            else:
+                                logger.log_error("OHLCV 데이터도 없고 현재가도 가져올 수 없어 작업을 중단합니다.")
+                                return
+                        except Exception as e2:
+                            logger.log_error(f"현재가 조회도 실패: {e2}")
+                            return
                 
                 # 시장 분석
                 try:
@@ -133,14 +265,42 @@ def main():
                         logger.log_error(f"거래 실행 오류: {e}")
                 
                 # 분석 결과 로깅
-                logger.log_app(f"분석 결과: {analysis_result.get('decision', 'unknown')} (신뢰도: {analysis_result.get('confidence', 0):.2f})")
+                decision = analysis_result.get('decision', 'unknown')
+                confidence = analysis_result.get('confidence', 0)
+                decision_kr = analysis_result.get('decision_kr', decision)
                 
+                # 자연스러운 한국어로 결정 이유 생성
+                explanation = generate_korean_reasoning(analysis_result)
+                
+                logger.log_app(f"분석 결과: {decision_kr} ({decision}) (신뢰도: {confidence:.2f})")
+                logger.log_app(f"분석 내용: {explanation}")
+                
+                # 원래 reasoning 값이 있으면 백업으로 저장
+                if 'reasoning' in analysis_result and analysis_result['reasoning']:
+                    original_reasoning = analysis_result.get('reasoning')
+                    logger.log_app(f"원본 신호 데이터: \n  {original_reasoning.replace('\n', '\n  ')}")
+                
+                # 한국어 설명 저장
+                analysis_result['korean_reasoning'] = explanation
+                
+                # 현재가 안전하게 추출
                 current_price_info = "N/A"
                 try:
-                    if analysis_result.get('current_price') and analysis_result['current_price'][0]:
-                        current_price_info = f"{analysis_result['current_price'][0].get('trade_price', 'N/A'):,}원"
-                except:
-                    pass
+                    if (analysis_result.get('current_price') and 
+                        isinstance(analysis_result['current_price'], list) and 
+                        analysis_result['current_price'][0] and
+                        analysis_result['current_price'][0].get('trade_price')):
+                        
+                        current_price = analysis_result['current_price'][0].get('trade_price')
+                        if current_price:
+                            current_price_info = f"{current_price:,}원"
+                        else:
+                            # 가격이 None이면 오류 메시지 있는지 확인
+                            error_msg = analysis_result['current_price'][0].get('error', '알 수 없는 오류')
+                            current_price_info = f"N/A (오류: {error_msg})"
+                except Exception as e:
+                    logger.log_warning(f"현재가 정보 추출 오류: {e}")
+                    current_price_info = f"N/A (오류 발생: {e})"
                 
                 logger.log_app(f"현재가: {current_price_info}")
             except Exception as e:

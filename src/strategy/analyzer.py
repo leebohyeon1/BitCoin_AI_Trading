@@ -68,7 +68,8 @@ class MarketAnalyzer:
             return df
         except Exception as e:
             logger.error(f"시장 데이터 조회 오류: {e}")
-            return None
+            # None 대신 빈 데이터프레임 반환
+            return pd.DataFrame(columns=['open', 'high', 'low', 'close', 'volume', 'value'])
     
     def get_current_price(self, ticker="KRW-BTC"):
         """현재 가격 조회"""
@@ -81,7 +82,8 @@ class MarketAnalyzer:
             return [{"market": ticker, "trade_price": current_price}]
         except Exception as e:
             logger.error(f"시장 데이터 조회 오류: {e}")
-            return None
+            # None 대신 오류 정보가 담긴 기본값 반환
+            return [{"market": ticker, "trade_price": 0, "error": f"시장 데이터 조회 오류: {e}"}]
     
     def calculate_technical_indicators(self, df):
         """기술적 지표 계산"""
@@ -644,22 +646,64 @@ class MarketAnalyzer:
         # 신뢰도 계산 (0.5 ~ 1.0 범위)
         confidence = 0.5 + abs(avg_signal_strength) / 2
         
-        # 최종 결정
+        # 최종 결정 및 결정 이유
+        reasoning = []
         if avg_signal_strength >= DECISION_THRESHOLDS["buy_threshold"]:
             decision = "buy"
             decision_kr = "매수" if avg_signal_strength >= 0.4 else "약한 매수"
+            
+            # 매수 결정 이유 추가
+            buy_signals = [s for s in signals if s["signal"] == "buy"]
+            # 가장 강한 매수 신호 최대 3개 추출
+            top_buy_signals = sorted(buy_signals, key=lambda x: x["strength"] * INDICATOR_WEIGHTS.get(x["source"].split("(")[0].strip(), 1.0), reverse=True)
+            top_buy_signals = top_buy_signals[:3] if len(top_buy_signals) > 3 else top_buy_signals
+            
+            reasoning.append(f"매수 신호 {len(buy_signals)}개, 매도 신호 {len(signals) - len(buy_signals) - len([s for s in signals if s['signal'] == 'hold'])}개")
+            for signal in top_buy_signals:
+                reasoning.append(f"{signal['source']}: {signal['description']}")
+                
         elif avg_signal_strength <= DECISION_THRESHOLDS["sell_threshold"]:
             decision = "sell"
             decision_kr = "매도" if avg_signal_strength <= -0.4 else "약한 매도"
+            
+            # 매도 결정 이유 추가
+            sell_signals = [s for s in signals if s["signal"] == "sell"]
+            # 가장 강한 매도 신호 최대 3개 추출
+            top_sell_signals = sorted(sell_signals, key=lambda x: x["strength"] * INDICATOR_WEIGHTS.get(x["source"].split("(")[0].strip(), 1.0), reverse=True)
+            top_sell_signals = top_sell_signals[:3] if len(top_sell_signals) > 3 else top_sell_signals
+            
+            reasoning.append(f"매도 신호 {len(sell_signals)}개, 매수 신호 {len(signals) - len(sell_signals) - len([s for s in signals if s['signal'] == 'hold'])}개")
+            for signal in top_sell_signals:
+                reasoning.append(f"{signal['source']}: {signal['description']}")
+                
         else:
             decision = "hold"
             decision_kr = "홀드" if abs(avg_signal_strength) < 0.05 else "약한 홀드"
+            
+            # 홀드 결정 이유 추가
+            buy_count = len([s for s in signals if s["signal"] == "buy"])
+            sell_count = len([s for s in signals if s["signal"] == "sell"])
+            hold_count = len([s for s in signals if s["signal"] == "hold"])
+            
+            reasoning.append(f"매수 신호 {buy_count}개, 매도 신호 {sell_count}개, 홀드 신호 {hold_count}개")
+            reasoning.append(f"평균 신호 강도: {avg_signal_strength:.4f} (결정 임계값: {DECISION_THRESHOLDS['buy_threshold']}/{DECISION_THRESHOLDS['sell_threshold']})")
+            
+            # 가장 강한 신호 몇 개 표시
+            # 가장 강한 신호 최대 3개 추출
+            top_signals = sorted(signals, key=lambda x: x["strength"] * INDICATOR_WEIGHTS.get(x["source"].split("(")[0].strip(), 1.0), reverse=True)
+            top_signals = top_signals[:3] if len(top_signals) > 3 else top_signals
+            for signal in top_signals:
+                reasoning.append(f"{signal['source']} ({signal['signal']}): {signal['description']}")
+        
+        # 결정 이유를 문자열로 합치기
+        reasoning_text = "\n".join(reasoning)
         
         # 결과 반환
         result = {
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "decision": decision,
             "decision_kr": decision_kr,
+            "reasoning": reasoning_text,  # 결정 이유 추가
             "confidence": confidence,
             "avg_signal_strength": avg_signal_strength,
             "signals": signals,
@@ -696,7 +740,16 @@ class MarketAnalyzer:
             df = self.calculate_technical_indicators(df)
             
             # 3. 현재가 조회
-            current_price = self.get_current_price(ticker)
+            try:
+                # 현재가 조회 안전하게 처리
+                current_price = self.get_current_price(ticker)
+                # None 또는 빈 리스트인 경우 기본값 설정
+                if current_price is None or len(current_price) == 0:
+                    current_price = [{"market": ticker, "trade_price": df['close'].iloc[-1]}]
+                    logger.warning(f"현재가 조회 실패, 최근 종가 사용: {current_price[0]['trade_price']}")
+            except Exception as e:
+                logger.error(f"현재가 조회 오류: {e}, 최근 종가 사용")
+                current_price = [{"market": ticker, "trade_price": df['close'].iloc[-1]}]
             
             # 4. 호가창 분석
             orderbook_ratio = self.analyze_orderbook(ticker)
@@ -732,6 +785,17 @@ class SignalAnalyzer(MarketAnalyzer):
         
     def analyze(self, market_data, ticker="KRW-BTC"):
         """시장 분석 및 매매 신호 생성"""
+        # market_data가 전달되더라도 티커 정보 추출
+        if market_data and isinstance(market_data.get('current_price'), list) and len(market_data.get('current_price', [])) > 0:
+            # market_data에서 티커 정보 추출 시도
+            try:
+                ticker_info = market_data['current_price'][0]
+                if isinstance(ticker_info, dict) and 'market' in ticker_info:
+                    ticker = ticker_info['market']
+                    logger.info(f"market_data에서 추출한 티커: {ticker}")
+            except Exception as e:
+                logger.warning(f"market_data에서 티커 추출 실패: {e}")
+        
         # 기존 MarketAnalyzer의 analyze 메서드 사용
         market_analysis = super().analyze(ticker)
         

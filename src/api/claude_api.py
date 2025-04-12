@@ -9,7 +9,7 @@ class ClaudeAPI:
     Anthropic의 Claude AI를 사용하여 시장 분석 및 매매 결정을 보조합니다.
     """
     
-    def __init__(self, api_key=None, model="claude-3-5-sonnet-20240620"):
+    def __init__(self, api_key=None, model="claude-3-7-sonnet-20250219"):
         """
         Claude API 초기화
         

@@ -62,19 +62,104 @@ class UpbitAPI:
     
     def get_current_price(self, ticker="KRW-BTC"):
         """
-        현재가 조회
+        현재가 조회 - 여러 방법으로 시도
         
         Args:
             ticker: 티커 (예: KRW-BTC)
             
         Returns:
-            float: 현재가 (원)
+            float: 현재가 (원) 혹은 실패 시 None
         """
-        try:
-            return pyupbit.get_current_price(ticker)
-        except Exception as e:
-            print(f"현재가 조회 오류: {e}")
-            return None
+        # 여러 방법으로 조회 시도
+        methods = [
+            "pyupbit.get_current_price",
+            "pyupbit.get_orderbook", 
+            "direct_api_call"
+        ]
+        
+        last_error = None
+        
+        for method in methods:
+            try:
+                print(f"현재가 조회 시도 ({method})...")
+                
+                # 방법 1: 기본 PyUpbit 현재가 조회
+                if method == "pyupbit.get_current_price":
+                    current_price = pyupbit.get_current_price(ticker)
+                    if current_price is not None and current_price > 0:
+                        print(f"{method} 성공: {current_price}")
+                        return current_price
+                
+                # 방법 2: 호가창에서 정보 추출
+                elif method == "pyupbit.get_orderbook":
+                    orderbook = pyupbit.get_orderbook(ticker)
+                    if orderbook and len(orderbook) > 0:
+                        # 호가창 정보에서 중앙값 추출
+                        if 'orderbook_units' in orderbook[0] and orderbook[0]['orderbook_units']:
+                            units = orderbook[0]['orderbook_units']
+                            if units:
+                                # 첫 번째 호가 정보에서 추출
+                                first_unit = units[0]
+                                ask_price = first_unit.get('ask_price')
+                                bid_price = first_unit.get('bid_price')
+                                
+                                if ask_price and bid_price:
+                                    # 매수/매도가의 중간값 사용
+                                    avg_price = (ask_price + bid_price) / 2
+                                    if avg_price > 0:
+                                        print(f"{method} 성공: {avg_price} (매수-매도 호가 중간값)")
+                                        return avg_price
+                                        
+                        # 최신 PyUpbit 버전 호가창 구조 지원 (최근 업데이트 반영)
+                        elif 'asks' in orderbook[0] and 'bids' in orderbook[0]:
+                            asks = orderbook[0].get('asks', [])
+                            bids = orderbook[0].get('bids', [])
+                            
+                            if asks and bids:
+                                ask_price = asks[0][0] if asks else None
+                                bid_price = bids[0][0] if bids else None
+                                
+                                if ask_price and bid_price:
+                                    avg_price = (ask_price + bid_price) / 2
+                                    if avg_price > 0:
+                                        print(f"{method} 성공: {avg_price} (매수-매도 호가 중간값)")
+                                        return avg_price
+                
+                # 방법 3: 직접 API 요청
+                elif method == "direct_api_call":
+                    # 티커 API 요청
+                    url = f"{self.base_url}/ticker?markets={ticker}"
+                    headers = self._get_headers()
+                    response = requests.get(url, headers=headers, timeout=10)
+                    
+                    if response.status_code == 200:
+                        data = response.json()
+                        if data and len(data) > 0:
+                            price = data[0].get('trade_price')
+                            if price is not None and price > 0:
+                                print(f"{method} 성공: {price}")
+                                return price
+                    
+                    # 다른 URL도 시도
+                    url = f"{self.base_url}/trades/ticks?market={ticker}&count=1"
+                    response = requests.get(url, headers=headers, timeout=10)
+                    
+                    if response.status_code == 200:
+                        data = response.json()
+                        if data and len(data) > 0:
+                            price = data[0].get('trade_price')
+                            if price is not None and price > 0:
+                                print(f"{method} 성공 (trades/ticks): {price}")
+                                return price
+                    
+            except Exception as e:
+                print(f"{method} 실패: {e}")
+                last_error = e
+        
+        # 모든 방법 실패 시
+        error_msg = str(last_error) if last_error else "알 수 없는 오류"
+        print(f"모든 방법으로 현재가 조회 실패: {error_msg}")
+        return None
         
     def get_balance(self, ticker=None):
         """

@@ -1,1 +1,171 @@
 2025-04-11 17:53:13,181 - trade - INFO - 거래 결과: {'status': 'error', 'message': "거래 실행 오류: 'NoneType' object is not subscriptable"}
+2025-04-12 13:23:23,759 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:24:21,633 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:25:22,654 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:26:23,673 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:27:24,688 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:30:35,627 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:31:36,514 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:32:37,419 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:33:39,356 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:34:40,367 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:35:41,408 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:36:42,402 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:37:43,423 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:38:44,539 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:39:45,484 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:40:46,824 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:41:47,828 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:42:48,804 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:43:49,737 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:44:50,695 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:45:51,577 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:46:52,516 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:47:53,469 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:48:54,292 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:49:55,325 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:50:56,393 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:51:57,414 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:52:58,511 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'buy', 'amount': 6138.126874645079, 'price': 121342000.0, 'message': 'KRW-BTC 6138원 매수 완료'}
+2025-04-12 13:53:59,458 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:55:00,482 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:56:01,587 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'buy', 'amount': 5240.706628765078, 'price': 121306000.0, 'message': 'KRW-BTC 5241원 매수 완료'}
+2025-04-12 13:57:02,524 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'buy', 'amount': 5000, 'price': 121353000.0, 'message': 'KRW-BTC 5000원 매수 완료'}
+2025-04-12 13:58:03,522 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 13:59:04,561 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:00:05,972 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:01:06,952 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:02:08,309 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:03:09,452 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.118310833628479e-05, 'price': 121409000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 14:04:10,677 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.118616144975288e-05, 'price': 121400000.0, 'message': 'KRW-BTC 0.00004119 BTC 매도 완료'}
+2025-04-12 14:05:11,728 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:06:12,735 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1152602079029457e-05, 'price': 121499000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 14:07:13,923 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1157683316321494e-05, 'price': 121484000.0, 'message': 'KRW-BTC 0.00004116 BTC 매도 완료'}
+2025-04-12 14:08:14,935 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1179377367814196e-05, 'price': 121420000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 14:09:16,099 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1167849556210585e-05, 'price': 121454000.0, 'message': 'KRW-BTC 0.00004117 BTC 매도 완료'}
+2025-04-12 14:10:17,167 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:11:18,201 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.117022240154141e-05, 'price': 121447000.0, 'message': 'KRW-BTC 0.00004117 BTC 매도 완료'}
+2025-04-12 14:12:19,346 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.116615483414156e-05, 'price': 121459000.0, 'message': 'KRW-BTC 0.00004117 BTC 매도 완료'}
+2025-04-12 14:13:20,412 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:14:21,417 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.116581590647127e-05, 'price': 121460000.0, 'message': 'KRW-BTC 0.00004117 BTC 매도 완료'}
+2025-04-12 14:15:22,468 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:16:23,432 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.116547698438182e-05, 'price': 121461000.0, 'message': 'KRW-BTC 0.00004117 BTC 매도 완료'}
+2025-04-12 14:17:24,823 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:18:25,853 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:19:26,883 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:20:27,967 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:21:28,948 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.114379757251594e-05, 'price': 121525000.0, 'message': 'KRW-BTC 0.00004114 BTC 매도 완료'}
+2025-04-12 14:22:30,095 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1152940789148796e-05, 'price': 121498000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 14:23:31,134 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:24:32,276 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.117768169652048e-05, 'price': 121425000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 14:25:33,358 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:26:34,416 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:27:35,416 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:28:39,588 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:29:40,641 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:30:41,705 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:31:42,881 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.113668899017656e-05, 'price': 121546000.0, 'message': 'KRW-BTC 0.00004114 BTC 매도 완료'}
+2025-04-12 14:32:44,095 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:33:45,121 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:34:46,346 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.114684485993614e-05, 'price': 121516000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 14:35:47,370 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:36:48,693 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:37:49,850 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1138042816474966e-05, 'price': 121542000.0, 'message': 'KRW-BTC 0.00004114 BTC 매도 완료'}
+2025-04-12 14:38:50,971 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1138042816474966e-05, 'price': 121542000.0, 'message': 'KRW-BTC 0.00004114 BTC 매도 완료'}
+2025-04-12 14:39:52,022 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115090861206215e-05, 'price': 121504000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 14:40:53,359 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115090861206215e-05, 'price': 121504000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 14:41:54,555 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115124729430549e-05, 'price': 121503000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 14:42:55,720 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115124729430549e-05, 'price': 121503000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 14:43:56,863 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1138719763040976e-05, 'price': 121540000.0, 'message': 'KRW-BTC 0.00004114 BTC 매도 완료'}
+2025-04-12 14:44:57,978 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:45:59,184 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1168866456430987e-05, 'price': 121451000.0, 'message': 'KRW-BTC 0.00004117 BTC 매도 완료'}
+2025-04-12 14:47:00,339 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1179716518831484e-05, 'price': 121419000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 14:48:01,876 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:49:03,696 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:50:04,909 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.118887570844866e-05, 'price': 121392000.0, 'message': 'KRW-BTC 0.00004119 BTC 매도 완료'}
+2025-04-12 14:51:05,960 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.123371268349002e-05, 'price': 121260000.0, 'message': 'KRW-BTC 0.00004123 BTC 매도 완료'}
+2025-04-12 14:52:07,043 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:53:09,140 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:54:10,179 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:55:11,239 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:56:12,180 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 14:57:13,372 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.124391652231296e-05, 'price': 121230000.0, 'message': 'KRW-BTC 0.00004124 BTC 매도 완료'}
+2025-04-12 14:58:14,511 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.124391652231296e-05, 'price': 121230000.0, 'message': 'KRW-BTC 0.00004124 BTC 매도 완료'}
+2025-04-12 14:59:15,700 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.124629814474151e-05, 'price': 121223000.0, 'message': 'KRW-BTC 0.00004125 BTC 매도 완료'}
+2025-04-12 15:00:16,932 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.12428959111793e-05, 'price': 121233000.0, 'message': 'KRW-BTC 0.00004124 BTC 매도 완료'}
+2025-04-12 15:01:18,195 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.122215443467937e-05, 'price': 121294000.0, 'message': 'KRW-BTC 0.00004122 BTC 매도 완료'}
+2025-04-12 15:02:19,363 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.11820907323823e-05, 'price': 121412000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 15:03:20,533 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.11834475487612e-05, 'price': 121408000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 15:04:21,738 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.118412599047823e-05, 'price': 121406000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 15:05:22,989 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1199396840830253e-05, 'price': 121361000.0, 'message': 'KRW-BTC 0.00004120 BTC 매도 완료'}
+2025-04-12 15:06:24,181 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.118514369496635e-05, 'price': 121403000.0, 'message': 'KRW-BTC 0.00004119 BTC 매도 완료'}
+2025-04-12 15:07:25,327 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.11834475487612e-05, 'price': 121408000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 15:08:27,477 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1183786766825634e-05, 'price': 121407000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 15:09:28,657 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.118480445454845e-05, 'price': 121404000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 15:10:29,831 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.118751853438334e-05, 'price': 121396000.0, 'message': 'KRW-BTC 0.00004119 BTC 매도 완료'}
+2025-04-12 15:11:31,651 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1199396840830253e-05, 'price': 121361000.0, 'message': 'KRW-BTC 0.00004120 BTC 매도 완료'}
+2025-04-12 15:12:33,587 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.120007580813949e-05, 'price': 121359000.0, 'message': 'KRW-BTC 0.00004120 BTC 매도 완료'}
+2025-04-12 15:13:34,743 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.120041530018623e-05, 'price': 121358000.0, 'message': 'KRW-BTC 0.00004120 BTC 매도 완료'}
+2025-04-12 15:14:35,984 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1202791901179223e-05, 'price': 121351000.0, 'message': 'KRW-BTC 0.00004120 BTC 매도 완료'}
+2025-04-12 15:15:37,232 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.119057230181156e-05, 'price': 121387000.0, 'message': 'KRW-BTC 0.00004119 BTC 매도 완료'}
+2025-04-12 15:16:38,351 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.119057230181156e-05, 'price': 121387000.0, 'message': 'KRW-BTC 0.00004119 BTC 매도 완료'}
+2025-04-12 15:17:39,471 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1190911637256357e-05, 'price': 121386000.0, 'message': 'KRW-BTC 0.00004119 BTC 매도 완료'}
+2025-04-12 15:18:41,658 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.120313143798929e-05, 'price': 121350000.0, 'message': 'KRW-BTC 0.00004120 BTC 매도 완료'}
+2025-04-12 15:19:42,899 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.120313143798929e-05, 'price': 121350000.0, 'message': 'KRW-BTC 0.00004120 BTC 매도 완료'}
+2025-04-12 15:20:44,232 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.120313143798929e-05, 'price': 121350000.0, 'message': 'KRW-BTC 0.00004120 BTC 매도 완료'}
+2025-04-12 15:21:45,323 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 15:22:46,479 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 15:23:48,629 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 15:24:49,711 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 15:25:50,916 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1125523322284274e-05, 'price': 121579000.0, 'message': 'KRW-BTC 0.00004113 BTC 매도 완료'}
+2025-04-12 15:26:51,950 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 15:27:54,141 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115158598212375e-05, 'price': 121502000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 15:28:55,271 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.113161293506964e-05, 'price': 121561000.0, 'message': 'KRW-BTC 0.00004113 BTC 매도 완료'}
+2025-04-12 15:29:56,458 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115158598212375e-05, 'price': 121502000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 15:30:57,640 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115124729430549e-05, 'price': 121503000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 15:31:58,825 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.113364320677882e-05, 'price': 121555000.0, 'message': 'KRW-BTC 0.00004113 BTC 매도 완료'}
+2025-04-12 15:32:59,942 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1148876635667845e-05, 'price': 121510000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 15:34:01,175 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.114718347529112e-05, 'price': 121515000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 15:35:02,328 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115023126429971e-05, 'price': 121506000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 15:36:03,608 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.117327360463776e-05, 'price': 121438000.0, 'message': 'KRW-BTC 0.00004117 BTC 매도 완료'}
+2025-04-12 15:37:04,852 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.118175154225659e-05, 'price': 121413000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 15:38:06,033 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115903852486006e-05, 'price': 121480000.0, 'message': 'KRW-BTC 0.00004116 BTC 매도 완료'}
+2025-04-12 15:39:07,023 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115327950484374e-05, 'price': 121497000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 15:40:08,034 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115531191610901e-05, 'price': 121491000.0, 'message': 'KRW-BTC 0.00004116 BTC 매도 완료'}
+2025-04-12 15:41:09,180 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115327950484374e-05, 'price': 121497000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 15:42:10,290 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115158598212375e-05, 'price': 121502000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 15:43:11,431 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1132628045871106e-05, 'price': 121558000.0, 'message': 'KRW-BTC 0.00004113 BTC 매도 완료'}
+2025-04-12 15:44:12,671 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1132628045871106e-05, 'price': 121558000.0, 'message': 'KRW-BTC 0.00004113 BTC 매도 완료'}
+2025-04-12 15:45:13,927 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1112673392700036e-05, 'price': 121617000.0, 'message': 'KRW-BTC 0.00004111 BTC 매도 완료'}
+2025-04-12 15:46:17,065 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 15:47:18,097 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1130936222370294e-05, 'price': 121563000.0, 'message': 'KRW-BTC 0.00004113 BTC 매도 완료'}
+2025-04-12 15:48:19,891 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1130936222370294e-05, 'price': 121563000.0, 'message': 'KRW-BTC 0.00004113 BTC 매도 완료'}
+2025-04-12 15:49:20,929 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.113364320677882e-05, 'price': 121555000.0, 'message': 'KRW-BTC 0.00004113 BTC 매도 완료'}
+2025-04-12 15:50:23,088 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.117734257901932e-05, 'price': 121426000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 15:51:25,256 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.117734257901932e-05, 'price': 121426000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 15:52:26,458 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.11820907323823e-05, 'price': 121412000.0, 'message': 'KRW-BTC 0.00004118 BTC 매도 완료'}
+2025-04-12 15:53:27,677 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.115395695296103e-05, 'price': 121495000.0, 'message': 'KRW-BTC 0.00004115 BTC 매도 완료'}
+2025-04-12 15:54:28,923 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.1157344528131047e-05, 'price': 121485000.0, 'message': 'KRW-BTC 0.00004116 BTC 매도 완료'}
+2025-04-12 15:55:30,433 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.119057230181156e-05, 'price': 121387000.0, 'message': 'KRW-BTC 0.00004119 BTC 매도 완료'}
+2025-04-12 15:56:32,726 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.119328714192735e-05, 'price': 121379000.0, 'message': 'KRW-BTC 0.00004119 BTC 매도 완료'}
+2025-04-12 15:57:33,659 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.11953235068755e-05, 'price': 121373000.0, 'message': 'KRW-BTC 0.00004120 BTC 매도 완료'}
+2025-04-12 15:58:34,812 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.119803897334487e-05, 'price': 121365000.0, 'message': 'KRW-BTC 0.00004120 BTC 매도 완료'}
+2025-04-12 15:59:35,906 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'sell', 'amount': 4.116276580856021e-05, 'price': 121469000.0, 'message': 'KRW-BTC 0.00004116 BTC 매도 완료'}
+2025-04-12 16:07:25,185 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:08:26,591 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:09:27,599 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:10:28,568 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:11:29,992 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:12:31,550 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:12:49,536 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:13:55,780 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:14:56,653 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:15:57,649 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:16:58,747 - trade - INFO - 거래 결과: {'status': 'success', 'action': 'buy', 'amount': 6216.166938915685, 'price': 121544000.0, 'message': 'KRW-BTC 6216원 매수 완료'}
+2025-04-12 16:17:59,727 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:19:01,163 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:19:24,187 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:20:25,211 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:21:26,267 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:22:27,435 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-12 16:23:28,512 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}

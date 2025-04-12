@@ -258,11 +258,18 @@ function updateCurrentStatus(latestLog) {
     if (!latestLog) return;
     
     // 현재가 설정
-    const currentPrice = latestLog.current_price?.[0]?.trade_price;
-    if (currentPrice) {
+    const currentPriceObj = latestLog.current_price?.[0];
+    const currentPrice = currentPriceObj?.trade_price;
+    
+    if (currentPrice && currentPrice > 0) {
         document.getElementById('current-price').textContent = formatKRW(currentPrice);
     } else {
-        document.getElementById('current-price').textContent = '데이터 없음';
+        // 에러 메세지가 있으면 표시
+        if (currentPriceObj?.error) {
+            document.getElementById('current-price').textContent = '오류: ' + currentPriceObj.error;
+        } else {
+            document.getElementById('current-price').textContent = '현재가 데이터 없음';
+        }
     }
     
     // 가격 변화율

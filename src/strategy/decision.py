@@ -39,33 +39,52 @@ class TradingEngine:
         Returns:
             dict: 시장 데이터
         """
+        # 기본 데이터 구조 정의
+        market_data = {
+            "current_price": None,
+            "price_change_24h": "N/A"
+        }
+        
+        # 1. 현재가 조회
+        current_price = None
         try:
-            # 현재가 조회
             current_price = self.upbit_api.get_current_price(ticker)
-            
-            # 일봉 데이터 조회 (24시간 가격 변화율 계산용)
-            ohlcv = self.upbit_api.get_ohlcv(ticker, interval="day", count=2)
-            
-            # 24시간 가격 변화율 계산
-            price_change_24h = "N/A"
-            if ohlcv is not None and not ohlcv.empty and len(ohlcv) >= 2:
-                prev_close = ohlcv['close'].iloc[-2]
-                if current_price and prev_close:
-                    price_change_24h = ((current_price / prev_close) - 1) * 100
-                    price_change_24h = f"{price_change_24h:.2f}%"
-            
-            # 시장 데이터 반환
-            # get_ticker 대신 현재가를 직접 사용
-            return {
-                "current_price": [{"trade_price": current_price}],
-                "price_change_24h": price_change_24h
-            }
+            if current_price is not None:
+                print(f"현재가 조회 성공: {current_price}")
+                market_data["current_price"] = [
+                    {"market": ticker, "trade_price": current_price}
+                ]
+            else:
+                print("현재가 조회 실패: None 반환")
         except Exception as e:
-            print(f"시장 데이터 조회 오류: {e}")
-            return {
-                "current_price": [{"trade_price": 0}],  # 기본값 제공
-                "price_change_24h": "N/A"
-            }
+            print(f"현재가 조회 오류: {e}")
+            
+        # 2. 일봉 데이터 조회 (24시간 가격 변화율 계산용)
+        try:
+            ohlcv = self.upbit_api.get_ohlcv(ticker, interval="day", count=2)
+            if ohlcv is not None and not ohlcv.empty and len(ohlcv) >= 2:
+                print(f"일봉 데이터 조회 성공: {len(ohlcv)} 개 데이터")
+                
+                # 24시간 가격 변화율 계산
+                prev_close = ohlcv['close'].iloc[-2]
+                if current_price is not None and prev_close > 0:
+                    price_change = ((current_price / prev_close) - 1) * 100
+                    market_data["price_change_24h"] = f"{price_change:.2f}%"
+                    print(f"24시간 가격 변화율: {market_data['price_change_24h']}")
+            else:
+                print("일봉 데이터 없거나 불충분")
+        except Exception as e:
+            print(f"일봉 데이터 조회 오류: {e}")
+            
+        # 3. 현재가가 없으면 데이터 표시 처리
+        if market_data["current_price"] is None:
+            # 현재가 없을 때는 윈시리스트 추가 - 나중에 재시도할 수 있도록
+            market_data["current_price"] = [
+                {"market": ticker, "trade_price": None, "error": "현재가 정보 없음"}
+            ]
+        
+        print(f"반환되는 시장 데이터: {market_data}")
+        return market_data
     
     def analyze_market(self, ticker="KRW-BTC"):
         """
@@ -113,17 +132,28 @@ class TradingEngine:
             krw_balance = self.upbit_api.get_balance("KRW")
             btc_balance = self.upbit_api.get_balance(ticker)
             
-            # 현재가 조회
+            # 현재가 조회 - 안전하게 처리
             current_price = None
-            if analysis_result.get("current_price") and len(analysis_result.get("current_price")) > 0:
-                current_price = analysis_result.get("current_price")[0].get("trade_price")
+            
+            # 1. 분석 결과에서 현재가 추출 시도
+            try:
+                if analysis_result.get("current_price") and isinstance(analysis_result.get("current_price"), list) and len(analysis_result.get("current_price")) > 0:
+                    current_price = analysis_result.get("current_price")[0].get("trade_price")
+                    print(f"분석 결과에서 추출한 현재가: {current_price}")
+            except Exception as e:
+                print(f"분석 결과에서 현재가 추출 오류: {e}")
                 
-            # current_price가 None이면 직접 API로 조회 시도
-            if current_price is None:
-                current_price = self.upbit_api.get_current_price(ticker)
-                
-            # 여전히 None이면 거래 실패
-            if current_price is None:
+            # 2. current_price가 None이면 직접 API로 조회 시도
+            if not current_price:
+                try:
+                    current_price = self.upbit_api.get_current_price(ticker)
+                    print(f"API에서 직접 조회한 현재가: {current_price}")
+                except Exception as e:
+                    print(f"API에서 현재가 조회 오류: {e}")
+            
+            # 3. 여전히 None이면 거래 실패
+            if not current_price:
+                print("현재가 정보를 가져올 수 없어 거래를 중단합니다.")
                 return {"status": "error", "message": "현재가 정보를 가져올 수 없습니다."}
             
             # 투자 비율 계산 (신뢰도에 따라 조정)
@@ -241,7 +271,10 @@ class TradingEngine:
                     except json.JSONDecodeError:
                         log_data = []
             
-            # 로그 데이터 추가
+            # 로그 데이터 추가 - 결정 이유는 줄바꿈으로 포매팅
+            if 'reasoning' in analysis_result and analysis_result['reasoning'] is not None:
+                analysis_result['reasoning_lines'] = analysis_result['reasoning'].split('\n')
+            
             log_data.append(analysis_result)
             
             # 로그 파일 쓰기

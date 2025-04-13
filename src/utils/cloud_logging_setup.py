@@ -17,7 +17,7 @@ project_root = Path(__file__).parent.parent.parent.absolute()
 
 def check_firebase_setup():
     """Firebase 설정 상태 확인"""
-    credentials_path = project_root / "config" / "firebase_credentials.json"
+    credentials_path = Path("C:\\firebase_credentials.json")
     sample_path = project_root / "config" / "firebase_credentials.sample.json"
     config_path = project_root / "config" / "firebase_config.py"
     
@@ -67,7 +67,7 @@ def test_firebase_connection():
         import firebase_admin
         from firebase_admin import credentials, firestore
         
-        credentials_path = project_root / "config" / "firebase_credentials.json"
+        credentials_path = Path("C:\\firebase_credentials.json")
         
         # 이미 초기화되었는지 확인
         try:
@@ -114,7 +114,7 @@ def test_firebase_connection():
 def create_sample_credentials():
     """샘플 인증 파일 복사"""
     sample_path = project_root / "config" / "firebase_credentials.sample.json"
-    credentials_path = project_root / "config" / "firebase_credentials.json"
+    credentials_path = Path("C:\\firebase_credentials.json")
     
     if credentials_path.exists():
         print(f"[알림] {credentials_path} 파일이 이미 존재합니다. 덮어쓰지 않습니다.")

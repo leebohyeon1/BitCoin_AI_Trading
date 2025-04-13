@@ -4,7 +4,7 @@ FIREBASE_CONFIG = {
     "use_firebase": True,
     
     # Firebase 인증 정보 파일 경로
-    "credentials_file": "config/firebase_credentials.json",
+    "credentials_file": "\firebase_credentials.json",
     
     # Firebase 프로젝트 ID
     "project_id": "bitcoin-ai-trading",

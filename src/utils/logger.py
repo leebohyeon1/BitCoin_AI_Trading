@@ -16,6 +16,9 @@ class Logger:
     firebase_app = None
     firestore_db = None
     
+    # 로거 인스턴스 캐싱
+    _loggers = {}
+    
     def __init__(self, log_dir="logs", log_level=logging.INFO, use_cloud=True, firebase_cred_path=None):
         """
         로거 초기화
@@ -44,8 +47,8 @@ class Logger:
             try:
                 # Firebase 인증 경로 기본값
                 if firebase_cred_path is None:
-                    firebase_cred_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 
-                                                     "config", "firebase_credentials.json")
+                    # C: 루트에 있는 파일 사용
+                    firebase_cred_path = "C:\\firebase_credentials.json"
                 
                 # Firebase 초기화
                 if os.path.exists(firebase_cred_path):
@@ -75,12 +78,23 @@ class Logger:
         if level is None:
             level = self.log_level
         
+        # 이미 초기화된 로거가 있으면 재사용
+        if name in Logger._loggers:
+            return Logger._loggers[name]
+        
         # 로거 생성
         logger = logging.getLogger(name)
+        
+        # 이미 핸들러가 설정되어 있으면 먼저 제거
+        if logger.handlers:
+            for handler in logger.handlers[:]:
+                logger.removeHandler(handler)
+        
         logger.setLevel(level)
+        logger.propagate = False  # 상위 로거로 전파 방지
         
         # 파일 핸들러 설정 (10MB 크기, 최대 5개 로그 유지)
-        handler = RotatingFileHandler(
+        file_handler = RotatingFileHandler(
             log_file, maxBytes=10*1024*1024, backupCount=5, encoding="utf-8"
         )
         
@@ -88,15 +102,16 @@ class Logger:
         formatter = logging.Formatter(
             "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
         )
-        handler.setFormatter(formatter)
-        
-        # 핸들러 추가
-        logger.addHandler(handler)
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
         
         # 콘솔 출력 핸들러 추가
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
+        
+        # 로거 캐싱
+        Logger._loggers[name] = logger
         
         return logger
     

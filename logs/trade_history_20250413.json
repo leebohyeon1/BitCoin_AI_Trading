@@ -1,0 +1,52 @@
+[
+  {
+    "type": "buy",
+    "ticker": "KRW-BTC",
+    "price": 121923000.0,
+    "amount": 0.00010941043833435113,
+    "total": 13339.648873039092,
+    "timestamp": "2025-04-13 23:02:09",
+    "confidence": 0.6068181818181818,
+    "order_id": "1a2a11bf-6541-49fb-a275-949281432a96"
+  },
+  {
+    "type": "buy",
+    "ticker": "KRW-BTC",
+    "price": 121961000.0,
+    "amount": 7.58024681220133e-05,
+    "total": 9244.944814628863,
+    "timestamp": "2025-04-13 23:03:11",
+    "confidence": 0.6068181818181818,
+    "order_id": "b8373d26-f428-4c9a-8366-92ab0564c6c1"
+  },
+  {
+    "type": "buy",
+    "ticker": "KRW-BTC",
+    "price": 121924000.0,
+    "amount": 5.25522540378768e-05,
+    "total": 6407.381021314091,
+    "timestamp": "2025-04-13 23:04:13",
+    "confidence": 0.6068181818181818,
+    "order_id": "4e9c2bc3-4787-4d22-bbf9-88625cbc0882"
+  },
+  {
+    "type": "buy",
+    "ticker": "KRW-BTC",
+    "price": 121892000.0,
+    "amount": 4.101991927279887e-05,
+    "total": 5000,
+    "timestamp": "2025-04-13 23:06:17",
+    "confidence": 0.6025061700458805,
+    "order_id": "76a1fe42-93f0-4d5d-8c8f-ccc1de24b562"
+  },
+  {
+    "type": "buy",
+    "ticker": "KRW-BTC",
+    "price": 121893000.0,
+    "amount": 4.101958274880428e-05,
+    "total": 5000,
+    "timestamp": "2025-04-13 23:30:00",
+    "confidence": 0.6068181818181818,
+    "order_id": "e75b8354-549f-41b6-b5f1-8c9b80ebee57"
+  }
+]

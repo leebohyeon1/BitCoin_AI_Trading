@@ -4383,5 +4383,1446 @@
       "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
       "스토캐스틱 (buy): 과매도 반등 신호 (K: 17.4, D: 10.5)"
     ]
+  },
+  {
+    "timestamp": "2025-04-13 23:45:11",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 10%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 18.2, D: 10.7)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 10%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 31.0)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 18.2, D: 10.7)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 6.58)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122124000.0
+      }
+    ],
+    "price_change_24h": "-0.72%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 10%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 18.2, D: 10.7)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:46:12",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 11%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 19.4, D: 11.1)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 11%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 31.5)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 19.4, D: 11.1)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 6.50)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122157000.0
+      }
+    ],
+    "price_change_24h": "-0.69%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 11%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 19.4, D: 11.1)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:47:13",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 11%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 18.6, D: 10.9)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 11%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 31.2)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 18.6, D: 10.9)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 8.60)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122117000.0
+      }
+    ],
+    "price_change_24h": "-0.71%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 11%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 18.6, D: 10.9)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:48:14",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 17.4, D: 10.5)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 9%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 30.7)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 17.4, D: 10.5)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 11.99)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122101000.0
+      }
+    ],
+    "price_change_24h": "-0.74%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 17.4, D: 10.5)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:49:14",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 10%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 17.9, D: 10.6)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 10%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 30.9)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 17.9, D: 10.6)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 9.03)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122114000.0
+      }
+    ],
+    "price_change_24h": "-0.73%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 10%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 17.9, D: 10.6)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:50:15",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 17.4, D: 10.5)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 9%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 30.6)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 17.4, D: 10.5)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 5.67)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122102000.0
+      }
+    ],
+    "price_change_24h": "-0.74%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 17.4, D: 10.5)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:51:15",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 17.5, D: 10.5)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 9%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 30.7)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 17.5, D: 10.5)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 5.20)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122102000.0
+      }
+    ],
+    "price_change_24h": "-0.74%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 17.5, D: 10.5)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:52:16",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 17.5, D: 10.5)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 9%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 30.7)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 17.5, D: 10.5)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 5.88)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122102000.0
+      }
+    ],
+    "price_change_24h": "-0.74%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 17.5, D: 10.5)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:53:16",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 11%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 18.9, D: 11.0)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 11%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 31.4)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 18.9, D: 11.0)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 8.47)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122140000.0
+      }
+    ],
+    "price_change_24h": "-0.70%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 11%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 18.9, D: 11.0)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:54:17",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1045 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 12%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n호가창(매수/매도비율) (buy): 매수세 강함 (매수/매도 비율: 6.60)",
+    "confidence": 0.5522727272727272,
+    "avg_signal_strength": 0.10454545454545454,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 12%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 31.9)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.3,
+        "description": "상승 모멘텀 (K: 20.1 > D: 11.4)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 6.60)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122179000.0
+      }
+    ],
+    "price_change_24h": "-0.68%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1045 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 12%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "호가창(매수/매도비율) (buy): 매수세 강함 (매수/매도 비율: 6.60)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:55:17",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 12%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 19.9, D: 11.3)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 12%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 31.8)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 19.9, D: 11.3)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 5.61)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122172000.0
+      }
+    ],
+    "price_change_24h": "-0.68%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 12%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 19.9, D: 11.3)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:56:18",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 12%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 19.8, D: 11.3)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 12%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 31.8)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 19.8, D: 11.3)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 3.98)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122171000.0
+      }
+    ],
+    "price_change_24h": "-0.68%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 12%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 19.8, D: 11.3)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:57:18",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1270 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 17.5, D: 10.5)",
+    "confidence": 0.5635125783967436,
+    "avg_signal_strength": 0.12702515679348736,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 9%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 30.7)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 17.5, D: 10.5)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.5472767247283612,
+        "description": "매수세 강함 (매수/매도 비율: 2.09)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122171000.0
+      }
+    ],
+    "price_change_24h": "-0.74%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1270 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 17.5, D: 10.5)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:57:28",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1273 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 17.5, D: 10.5)",
+    "confidence": 0.5636615447794233,
+    "avg_signal_strength": 0.12732308955884653,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 9%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 30.7)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 17.5, D: 10.5)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.5505539851473116,
+        "description": "매수세 강함 (매수/매도 비율: 2.10)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122102000.0
+      }
+    ],
+    "price_change_24h": "-0.74%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1273 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 17.5, D: 10.5)"
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:57:31",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "\n[AI 분석 결과] 약한 홀드 (신뢰도: 56.3%)\n전체 지표: 매수(6개), 매도(3개), 홀드(1개)\n\n현재 비트코인은 12,210만원에 거래되고 있으며, 24시간 동안 0.74% 하락했습니다. 기술적 지표들을 살펴보면 매수 신호가 더 우세한 상황입니다. 특히 RSI가 30.7로 과매도 영역에 진입했고, 볼린저밴드 하단에 가까운 위치(하위 9%)에 있어 반등 가능성이 높아 보입니다. 또한 호가창에서 매수/매도 비율이 2.08로 매수세가 강하게 유입되고 있습니다. 공포&탐욕지수도 39로 '공포' 상태를 나타내고 있어 역발상 매수 기회로 볼 수 있습니다. 다만 단기 이평선(MA5)이 중기 이평선(MA20) 아래에 있어 데드크로스 상태이고, MACD도 약세 신호를 보내고 있어 완전한 추세 전환이 확인된 것은 아닙니다. 김치프리미엄이 매우 높은 점도 주의해야 합니다. 종합적으로는 중장기 추세(MA60)가 상승 중이고 과매도 신호가 뚜렷하여 분할 매수 전략이 적합해 보입니다. 보유 자금의 30% 정도로 소규모 매수 후 추가 하락 시 분할 매수하는 전략을 추천합니다.",
+    "confidence": 0.5631367647835556,
+    "avg_signal_strength": 0.1262735295671112,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 9%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 30.7)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 17.5, D: 10.5)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.539008825238223,
+        "description": "매수세 강함 (매수/매도 비율: 2.08)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122102000.0
+      }
+    ],
+    "price_change_24h": "-0.74%",
+    "claude_agrees": false,
+    "claude_analysis": {
+      "signal": "매수",
+      "confidence": 0.6,
+      "reasoning": "매수 신호가 우세하며 특히 볼린저밴드와 RSI 지표가 과매도 상태를 나타내고 있음",
+      "key_indicators": [
+        "볼린저밴드(하위 9%)",
+        "RSI(30.7)",
+        "매수/매도 비율(2.08)",
+        "MA60 상승추세"
+      ],
+      "market_sentiment": "공포 우세 상태로 역발상 매수 기회",
+      "risk_level": "medium",
+      "suggested_position_size": 0.3,
+      "korean_analysis": "현재 비트코인은 12,210만원에 거래되고 있으며, 24시간 동안 0.74% 하락했습니다. 기술적 지표들을 살펴보면 매수 신호가 더 우세한 상황입니다. 특히 RSI가 30.7로 과매도 영역에 진입했고, 볼린저밴드 하단에 가까운 위치(하위 9%)에 있어 반등 가능성이 높아 보입니다. 또한 호가창에서 매수/매도 비율이 2.08로 매수세가 강하게 유입되고 있습니다. 공포&탐욕지수도 39로 '공포' 상태를 나타내고 있어 역발상 매수 기회로 볼 수 있습니다. 다만 단기 이평선(MA5)이 중기 이평선(MA20) 아래에 있어 데드크로스 상태이고, MACD도 약세 신호를 보내고 있어 완전한 추세 전환이 확인된 것은 아닙니다. 김치프리미엄이 매우 높은 점도 주의해야 합니다. 종합적으로는 중장기 추세(MA60)가 상승 중이고 과매도 신호가 뚜렷하여 분할 매수 전략이 적합해 보입니다. 보유 자금의 30% 정도로 소규모 매수 후 추가 하락 시 분할 매수하는 전략을 추천합니다."
+    },
+    "original_reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1263 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 9%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 17.5, D: 10.5)",
+    "reasoning_lines": [
+      "",
+      "[AI 분석 결과] 약한 홀드 (신뢰도: 56.3%)",
+      "전체 지표: 매수(6개), 매도(3개), 홀드(1개)",
+      "",
+      "현재 비트코인은 12,210만원에 거래되고 있으며, 24시간 동안 0.74% 하락했습니다. 기술적 지표들을 살펴보면 매수 신호가 더 우세한 상황입니다. 특히 RSI가 30.7로 과매도 영역에 진입했고, 볼린저밴드 하단에 가까운 위치(하위 9%)에 있어 반등 가능성이 높아 보입니다. 또한 호가창에서 매수/매도 비율이 2.08로 매수세가 강하게 유입되고 있습니다. 공포&탐욕지수도 39로 '공포' 상태를 나타내고 있어 역발상 매수 기회로 볼 수 있습니다. 다만 단기 이평선(MA5)이 중기 이평선(MA20) 아래에 있어 데드크로스 상태이고, MACD도 약세 신호를 보내고 있어 완전한 추세 전환이 확인된 것은 아닙니다. 김치프리미엄이 매우 높은 점도 주의해야 합니다. 종합적으로는 중장기 추세(MA60)가 상승 중이고 과매도 신호가 뚜렷하여 분할 매수 전략이 적합해 보입니다. 보유 자금의 30% 정도로 소규모 매수 후 추가 하락 시 분할 매수하는 전략을 추천합니다."
+    ]
+  },
+  {
+    "timestamp": "2025-04-13 23:58:29",
+    "decision": "hold",
+    "decision_kr": "약한 홀드",
+    "reasoning": "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개\n평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)\n볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 10%)\n이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)\n스토캐스틱 (buy): 과매도 반등 신호 (K: 18.4, D: 10.8)",
+    "confidence": 0.5659090909090909,
+    "avg_signal_strength": 0.13181818181818183,
+    "signals": [
+      {
+        "source": "이동평균선(MA)",
+        "signal": "sell",
+        "strength": 0.6,
+        "description": "데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)"
+      },
+      {
+        "source": "장기추세(MA60)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "장기 상승 추세 (현재가가 60일 이동평균선 위에 위치)"
+      },
+      {
+        "source": "볼린저밴드(BB)",
+        "signal": "buy",
+        "strength": 0.7,
+        "description": "하단 돌파/접근 (밴드 내 위치: 하위 10%)"
+      },
+      {
+        "source": "RSI(상대강도지수)",
+        "signal": "buy",
+        "strength": 0.2,
+        "description": "매도세 우세 (RSI: 31.1)"
+      },
+      {
+        "source": "MACD",
+        "signal": "sell",
+        "strength": 0.3,
+        "description": "MACD 하락 추세 유지중"
+      },
+      {
+        "source": "스토캐스틱",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "과매도 반등 신호 (K: 18.4, D: 10.8)"
+      },
+      {
+        "source": "호가창(매수/매도비율)",
+        "signal": "buy",
+        "strength": 0.6,
+        "description": "매수세 강함 (매수/매도 비율: 2.56)"
+      },
+      {
+        "source": "체결데이터",
+        "signal": "hold",
+        "strength": 0,
+        "description": "중립적 체결 (신호 강도: 0.00)"
+      },
+      {
+        "source": "김프(한국 프리미엄)",
+        "signal": "sell",
+        "strength": 0.5,
+        "description": "높은 프리미엄 (김프: 1428.95%)"
+      },
+      {
+        "source": "시장심리(공포&탐욕지수)",
+        "signal": "buy",
+        "strength": 0.4,
+        "description": "공포 우세 상태 (Fear & Greed: 39, Fear)"
+      }
+    ],
+    "signal_counts": {
+      "buy": 6,
+      "sell": 3,
+      "hold": 1
+    },
+    "current_price": [
+      {
+        "market": "KRW-BTC",
+        "trade_price": 122144000.0
+      }
+    ],
+    "price_change_24h": "-0.72%",
+    "reasoning_lines": [
+      "매수 신호 6개, 매도 신호 3개, 홀드 신호 1개",
+      "평균 신호 강도: 0.1318 (결정 임계값: 0.15/-0.15)",
+      "볼린저밴드(BB) (buy): 하단 돌파/접근 (밴드 내 위치: 하위 10%)",
+      "이동평균선(MA) (sell): 데드크로스 상태 (5일 이동평균선이 20일 이동평균선 아래에 위치)",
+      "스토캐스틱 (buy): 과매도 반등 신호 (K: 18.4, D: 10.8)"
+    ]
   }
 ]

@@ -95,8 +95,9 @@ TRADING_SETTINGS = {
 # Claude AI 관련 설정
 CLAUDE_SETTINGS = {
     "use_claude": True,       # Claude AI 분석 사용 여부
-    "weight": 1.5,             # Claude AI 분석 결과 가중치
+    "weight": 5,             # Claude AI 분석 결과 가중치
     "confidence_boost": 0.1,   # 일치 시 신뢰도 상승 값 (기본값: 0.1)
+    "override_reasoning": True  # Claude의 분석 이유로 기존 내용 대체 여부
 }
 
 # 이전 거래 이력 참고 설정

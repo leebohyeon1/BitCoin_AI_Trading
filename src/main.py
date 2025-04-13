@@ -58,6 +58,34 @@ def generate_korean_reasoning(analysis_result):
     Returns:
         str: 한국어 설명
     """
+    # Claude API의 한국어 분석 결과가 있는 경우 우선 사용
+    if 'claude_analysis' in analysis_result and 'korean_analysis' in analysis_result['claude_analysis']:
+        korean_analysis = analysis_result['claude_analysis']['korean_analysis']
+        
+        # 현재가 정보 추출 및 추가
+        current_price = None
+        try:
+            if analysis_result.get('current_price') and len(analysis_result.get('current_price')) > 0:
+                current_price = analysis_result.get('current_price')[0].get('trade_price')
+        except:
+            pass
+        
+        # 헤더 추가
+        header = []
+        if current_price and isinstance(current_price, (int, float)):
+            header.append(f"\n현재 비트코인 가격은 {current_price:,.0f}원입니다.")
+        
+        decision = analysis_result.get('decision', 'hold')
+        decision_kr = analysis_result.get('decision_kr', '홀드')
+        confidence = analysis_result.get('confidence', 0.5)
+        
+        # 결정 요약 추가
+        header.append(f"\n현재 시장 상황을 분석한 결과 '{decision_kr}' 결정을 내렸습니다. (신뢰도: {confidence:.1%})\n")
+        
+        # 분석 내용 추가
+        return ''.join(header) + korean_analysis
+    
+    # Claude API 분석이 없는 경우 기존 방식으로 설명 생성
     decision = analysis_result.get('decision', 'hold')
     decision_kr = analysis_result.get('decision_kr', '홀드')
     confidence = analysis_result.get('confidence', 0.5)

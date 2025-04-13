@@ -888,6 +888,21 @@ class SignalAnalyzer(MarketAnalyzer):
                         
                         # Claude 분석 결과 저장
                         market_analysis["claude_analysis"] = claude_analysis
+                        
+                        # Claude의 자연어 분석 이유를 기존 reasoning에 추가 혹은 대체
+                        if "korean_analysis" in claude_analysis and claude_settings.get("override_reasoning", False):
+                            # 기존 reasoning 저장
+                            market_analysis["original_reasoning"] = market_analysis.get("reasoning", "")
+                            
+                            # 신뢰도와 신호 정보는 유지하면서 Claude의 분석을 사용
+                            decision_summary = f"\n[AI 분석 결과] {market_analysis.get('decision_kr', '홀드')} (신뢰도: {market_analysis.get('confidence', 0.5):.1%})"
+                            
+                            # 신호 카운트
+                            signal_counts = market_analysis.get('signal_counts', {})
+                            counts_summary = f"\n전체 지표: 매수({signal_counts.get('buy', 0)}개), 매도({signal_counts.get('sell', 0)}개), 홀드({signal_counts.get('hold', 0)}개)"
+                            
+                            # Claude의 분석을 기본 reasoning으로 사용
+                            market_analysis["reasoning"] = decision_summary + counts_summary + "\n\n" + claude_analysis["korean_analysis"]
                     else:
                         market_analysis["claude_error"] = "Claude 응답이 유효하지 않습니다"
                 

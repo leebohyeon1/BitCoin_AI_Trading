@@ -1,4 +1,5 @@
 @echo off
+@chcp 65001 1>NULL 2>NUL
 echo 비트코인 자동매매 대시보드 실행
 echo.
 

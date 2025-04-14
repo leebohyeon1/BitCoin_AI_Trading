@@ -8,6 +8,21 @@ import datetime
 from datetime import timedelta
 from dotenv import load_dotenv
 
+# 전역 변수로 설정
+# 이중 간격 모드 설정
+interval_settings = {}
+trading_settings = {}
+ai_settings = {}
+logging_settings = {}
+price_alerts = {}
+volume_settings = {}
+dynamic_settings = {}
+time_restrictions = {}
+
+# 마지막 거래 시간 및 거래 결정 추적을 위한 전역 변수
+last_trade_time = None
+last_trade_decision = None
+
 # 모듈 import
 from api import UpbitAPI, ClaudeAPI
 from indicators import TechnicalIndicators, MarketIndicators
@@ -198,16 +213,34 @@ def generate_korean_reasoning(analysis_result):
     
     return ''.join(explanation)
 
-def run_trading_without_ai(trading_engine, ticker, logger):
+def run_trading(trading_engine, ticker, logger, use_ai=False, skip_trade=False):
     """
-    AI 없이 트레이딩 작업 실행
+    트레이딩 작업 실행 (AI 사용 여부에 따라 달라짐)
+    
+    Args:
+        trading_engine: 트레이딩 엔진 인스턴스
+        ticker: 티커 (예: KRW-BTC)
+        logger: 로거 인스턴스
+        use_ai: AI 사용 여부
+        skip_trade: 거래 실행 건너뛰기 여부 (쿨다운 시간에 True)
+    
+    Returns:
+        dict: 분석 결과
     """
+    global last_trade_time, last_trade_decision
+    
     # AI 사용 여부 저장
     original_use_claude = trading_engine.signal_analyzer.config.get("CLAUDE_SETTINGS", {}).get("use_claude", False)
     
     try:
-        # 임시로 AI 사용 비활성화
-        trading_engine.signal_analyzer.config["CLAUDE_SETTINGS"]["use_claude"] = False
+        # AI 사용 설정
+        trading_engine.signal_analyzer.config["CLAUDE_SETTINGS"]["use_claude"] = use_ai
+        
+        # AI 우선 결정 여부 설정 (모든 분석에서 기술적 분석은 참고용으로만 사용)
+        ai_primary_decision = trading_engine.signal_analyzer.config.get("CLAUDE_SETTINGS", {}).get("ai_primary_decision", False)
+        
+        # 분석 타입 로그
+        analysis_type = "AI" if use_ai else "일반"
         
         # 시장 분석
         analysis_result = trading_engine.analyze_market(ticker)
@@ -215,76 +248,71 @@ def run_trading_without_ai(trading_engine, ticker, logger):
             # 결과 로깅
             decision = analysis_result.get('decision', 'unknown')
             confidence = analysis_result.get('confidence', 0)
-            #logger.log_app(f"일반 분석 결과: {decision} (신뢰도: {confidence:.2f})")
             
-            # 거래 실행
-            if os.getenv("ENABLE_TRADE", "").lower() == "true":
-                trade_result = trading_engine.execute_trade(analysis_result, ticker)
-                logger.log_trade(f"거래 결과: {trade_result}")
+            # AI 모드일 때만 상세 로깅
+            if use_ai:
+                logger.log_app(f"AI 통합 분석 결과: {decision} (신뢰도: {confidence:.2f})")
+                
+                # AI 분석 결과 로깅 (있는 경우)
+                if 'claude_analysis' in analysis_result:
+                    ai_signal = analysis_result['claude_analysis'].get('signal', 'unknown')
+                    ai_confidence = analysis_result['claude_analysis'].get('confidence', 0)
+                    logger.log_app(f"AI 분석: {ai_signal} (신뢰도: {ai_confidence:.2f})")
             
-            # 자연스러운 한국어로 결정 이유 생성
-            #explanation = generate_korean_reasoning(analysis_result)
-            #analysis_result['korean_reasoning'] = explanation
+            # 거래 실행 검토
+            trade_executed = False
+            if os.getenv("ENABLE_TRADE", "").lower() == "true" and not skip_trade:
+                # 신뢰도 검사
+                min_confidence = 0.7  # 최소 70% 신뢰도 필요
+                if confidence >= min_confidence:
+                    # 동일한 신호 연속 발생 체크
+                    if decision != last_trade_decision or last_trade_decision is None:
+                        trade_result = trading_engine.execute_trade(analysis_result, ticker)
+                        logger.log_trade(f"거래 결과: {trade_result}")
+                        
+                        # 거래 성공 시 쿨다운 타이머 설정
+                        cooldown_minutes = trading_engine.config.get("TRADING_SETTINGS", {}).get("cooldown_minutes", 30)
+                        if trade_result and isinstance(trade_result, dict) and trade_result.get("status") == "success":
+                            last_trade_time = datetime.datetime.now()
+                            last_trade_decision = decision
+                            trade_executed = True
+                            logger.log_app(f"거래 실행 후 쿨다운 시작 ({cooldown_minutes}분)")
+                    elif use_ai:  # AI 모드일 때만 상세 로깅
+                        logger.log_app(f"동일한 신호({decision})가 연속으로 발생하여 중복 거래를 방지합니다.")
+                elif use_ai:  # AI 모드일 때만 상세 로깅
+                    logger.log_app(f"신뢰도가 낮아 거래를 실행하지 않습니다. (현재: {confidence:.2f}, 필요: {min_confidence})")
+            elif skip_trade and use_ai:  # AI 모드일 때만 상세 로깅
+                logger.log_app("쿨다운 중이므로 거래 실행을 건너뜁니다.")
             
-            # 수익률 정보 계산
-            profit_info = calculate_profit_info(trading_engine.upbit_api, ticker)
+            # AI 모드일 때만 자연스러운 한국어로 결정 이유 생성
+            if use_ai:
+                explanation = generate_korean_reasoning(analysis_result)
+                analysis_result['korean_reasoning'] = explanation
             
-            # 로그 출력
-            logger.log_trade_analysis(analysis_result, profit_info)
+            # 수익률 정보 계산 (AI 모드이거나 거래가 있었을 때)
+            profit_info = None
+            if use_ai or trade_executed:
+                profit_info = calculate_profit_info(trading_engine.upbit_api, ticker)
+            
+            # 로그 출력 조건
+            if use_ai or trade_executed or confidence >= 0.8:
+                logger.log_trade_analysis(analysis_result, profit_info)
             
             return analysis_result
     except Exception as e:
-        logger.log_error(f"일반 분석 작업 오류: {e}")
+        logger.log_error(f"{analysis_type} 분석 작업 오류: {e}")
     finally:
         # 원래 AI 사용 설정 복원
         trading_engine.signal_analyzer.config["CLAUDE_SETTINGS"]["use_claude"] = original_use_claude
 
-def run_trading_with_ai(trading_engine, ticker, logger):
-    """
-    AI를 사용하여 트레이딩 작업 실행
-    """
-    # AI 사용 여부 저장
-    original_use_claude = trading_engine.signal_analyzer.config.get("CLAUDE_SETTINGS", {}).get("use_claude", False)
-    
-    try:
-        # 임시로 AI 사용 활성화
-        trading_engine.signal_analyzer.config["CLAUDE_SETTINGS"]["use_claude"] = True
-        
-        # 시장 분석
-        analysis_result = trading_engine.analyze_market(ticker)
-        if analysis_result:
-            # 결과 로깅
-            decision = analysis_result.get('decision', 'unknown')
-            confidence = analysis_result.get('confidence', 0)
-            logger.log_app(f"AI 통합 분석 결과: {decision} (신뢰도: {confidence:.2f})")
-            
-            # AI 분석 결과 로깅 (있는 경우)
-            if 'claude_analysis' in analysis_result:
-                ai_signal = analysis_result['claude_analysis'].get('signal', 'unknown')
-                ai_confidence = analysis_result['claude_analysis'].get('confidence', 0)
-                logger.log_app(f"AI 분석: {ai_signal} (신뢰도: {ai_confidence:.2f})")
-            
-            # 거래 실행
-            if os.getenv("ENABLE_TRADE", "").lower() == "true":
-                trade_result = trading_engine.execute_trade(analysis_result, ticker)
-                logger.log_trade(f"거래 결과: {trade_result}")
-            
-            # 자연스러운 한국어로 결정 이유 생성
-            explanation = generate_korean_reasoning(analysis_result)
-            analysis_result['korean_reasoning'] = explanation
-            
-            # 수익률 정보 계산
-            profit_info = calculate_profit_info(trading_engine.upbit_api, ticker)
-            
-            # 로그 출력
-            logger.log_trade_analysis(analysis_result, profit_info)
-            
-            return analysis_result
-    except Exception as e:
-        logger.log_error(f"AI 분석 작업 오류: {e}")
-    finally:
-        # 원래 AI 사용 설정 복원
-        trading_engine.signal_analyzer.config["CLAUDE_SETTINGS"]["use_claude"] = original_use_claude
+# 기존 함수를 새 함수로 연결하는 래퍼 함수들
+def run_trading_without_ai(trading_engine, ticker, logger, skip_trade=False):
+    """AI 없이 트레이딩 작업 실행 (래퍼 함수)"""
+    return run_trading(trading_engine, ticker, logger, use_ai=False, skip_trade=skip_trade)
+
+def run_trading_with_ai(trading_engine, ticker, logger, skip_trade=False):
+    """AI를 사용하여 트레이딩 작업 실행 (래퍼 함수)"""
+    return run_trading(trading_engine, ticker, logger, use_ai=True, skip_trade=skip_trade)
 
 def update_ohlcv_data(upbit_api, technical, ticker, interval, count, logger):
     """
@@ -318,6 +346,15 @@ def main():
     """
     # 환경 변수 로드
     load_dotenv()
+    
+    # 전역 변수 참조
+    global interval_settings, trading_settings, ai_settings, logging_settings, price_alerts
+    global volume_settings, dynamic_settings, time_restrictions
+    global last_trade_time, last_trade_decision
+    
+    # 거래 후 쿨다운 추적을 위한 전역 변수 초기화
+    last_trade_time = None
+    last_trade_decision = None
     
     # 로거 초기화
     logger = Logger()
@@ -379,37 +416,58 @@ def main():
         # 트레이딩 엔진 초기화
         trading_engine = TradingEngine(trading_config, upbit_api, analyzer)
         
-        # 트레이딩 간격 설정
-        normal_interval_minutes = 60  # 일반 분석은 초 간격
-        ai_interval_minutes = 30     # AI 분석은 30분 간격
+        # 트레이딩 간격 설정 (config에서 가져오기)
+        normal_interval_seconds = app_config.get("DUAL_TRADING_CONFIG", {}).get("normal_interval_seconds", 30)  # 일반 분석 간격(초)
+        ai_interval_minutes = app_config.get("DUAL_TRADING_CONFIG", {}).get("ai_interval_minutes", 30)     # AI 분석 간격(분)
         
         # 마지막 실행 시간 초기화
-        last_normal_run = datetime.datetime.now() - timedelta(minutes=normal_interval_minutes)
+        last_normal_run = datetime.datetime.now() - timedelta(seconds=normal_interval_seconds)
         last_ai_run = datetime.datetime.now() - timedelta(minutes=ai_interval_minutes)
         
-        logger.log_app(f"트레이딩 스케줄러 시작 (일반 분석: {normal_interval_minutes}분 간격, AI 분석: {ai_interval_minutes}분 간격)")
+        logger.log_app(f"트레이딩 스케줄러 시작 (일반 분석: {normal_interval_seconds}초 간격, AI 분석: {ai_interval_minutes}분 간격)")
+        
+        # 거래 쿨다운 설정 (분) - config에서 가져오기
+        trade_cooldown_minutes = trading_config.get("TRADING_SETTINGS", {}).get("cooldown_minutes", 30)
         
         # 메인 루프
         try:
             while True:
                 current_time = datetime.datetime.now()
                 
+                # 거래 쿨다운 체크
+                in_cooldown = False
+                remaining_cooldown = 0
+                if last_trade_time is not None:
+                    elapsed_minutes = (current_time - last_trade_time).total_seconds() / 60
+                    if elapsed_minutes < trade_cooldown_minutes:
+                        in_cooldown = True
+                        remaining_cooldown = trade_cooldown_minutes - int(elapsed_minutes)
+                        # 쿨다운 상태는 10분 간격으로만 로그 남김 (로그 최소화)
+                        if int(elapsed_minutes) % 10 == 0:
+                            logger.log_app(f"거래 쿨다운 중: 다음 거래까지 {remaining_cooldown}분 남음")
+                
                 # OHLCV 데이터 주기적 업데이트 (분석 실행 바로 전에만 수행)
-                should_update = ((current_time - last_normal_run).total_seconds() >= normal_interval_minutes or
+                should_update = ((current_time - last_normal_run).total_seconds() >= normal_interval_seconds or
                                  (current_time - last_ai_run).total_seconds() >= ai_interval_minutes * 60)
                 if should_update:
                     update_ohlcv_data(upbit_api, technical, ticker, interval, count, logger)
                 
-                # 일반 분석 실행 (1분 간격)
-                if (current_time - last_normal_run).total_seconds() >= normal_interval_minutes:
-                    logger.log_app(f"일반 분석 실행 (간격: {normal_interval_minutes}분)")
-                    run_trading_without_ai(trading_engine, ticker, logger)
+                # 일반 분석 실행 (설정된 간격)
+                if (current_time - last_normal_run).total_seconds() >= normal_interval_seconds:
+                    # 분석 실행 로그
+                    if app_config.get("DUAL_TRADING_CONFIG", {}).get("log_regular_analysis", False):
+                        logger.log_app(f"일반 분석 실행 (간격: {normal_interval_seconds}초, 참고용 데이터)")
+                    
+                    # 일반 분석은 실행하되 해당 결과로 거래는 하지 않음 (항상 skip_trade=True로 설정)
+                    run_trading_without_ai(trading_engine, ticker, logger, skip_trade=True)
                     last_normal_run = current_time
                 
-                # AI 분석 실행 (30분 간격)
+                # AI 분석 실행 (설정된 간격)
                 if (current_time - last_ai_run).total_seconds() >= ai_interval_minutes * 60:
-                    logger.log_app(f"AI 분석 실행 (간격: {ai_interval_minutes}분)")
-                    run_trading_with_ai(trading_engine, ticker, logger)
+                    if app_config.get("DUAL_TRADING_CONFIG", {}).get("log_ai_analysis", True):
+                        logger.log_app(f"AI 분석 실행 (간격: {ai_interval_minutes}분, 실제 거래에 사용)")
+                    # AI 분석 결과만 실제 거래에 사용 (skip_trade는 쿨다운 여부에 따라 결정)
+                    run_trading_with_ai(trading_engine, ticker, logger, skip_trade=in_cooldown)
                     last_ai_run = current_time
                 
                 # 1초 대기

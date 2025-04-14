@@ -2727,3 +2727,4 @@
 2025-04-14 12:31:04,464 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
 2025-04-14 12:32:04,652 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
 2025-04-14 12:33:04,573 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}
+2025-04-14 22:25:52,843 - trade - INFO - 거래 결과: {'status': 'no_action', 'message': '조건에 맞는 거래가 없습니다.'}

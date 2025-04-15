@@ -41,14 +41,6 @@ DATA_CONFIG = {
     "update_interval": 60,  # 데이터 업데이트 주기 (초)
 }
 
-# 이중 간격 모드 설정
-DUAL_TRADING_CONFIG = {
-    "normal_interval_seconds": 10,  # 일반 분석 간격 (초)
-    "ai_interval_minutes": 30,     # AI 분석 간격 (분)
-    "log_regular_analysis": False,  # 일반 분석 로그 상세 출력 여부
-    "log_ai_analysis": True        # AI 분석 로그 상세 출력 여부
-}
-
 # 백테스팅 설정
 BACKTEST_CONFIG = {
     "enabled": False,

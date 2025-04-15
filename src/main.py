@@ -1,3 +1,4 @@
+
 def calculate_profit_info(upbit_api, ticker="KRW-BTC"):
     """
     현재 수익률 정보 계산
@@ -191,7 +192,6 @@ import os
 import time
 import schedule
 import pandas as pd
-from datetime import datetime
 from dotenv import load_dotenv
 
 # 모듈 import
@@ -206,11 +206,6 @@ def main():
     """
     # 환경 변수 로드
     load_dotenv()
-    
-    # 마지막 거래 시간 및 거래 상태 추적을 위한 전역변수
-    global last_trade_time, last_decision
-    last_trade_time = None
-    last_decision = None
     
     # 로거 초기화
     logger = Logger()
@@ -286,17 +281,7 @@ def main():
         interval_minutes = trading_config.get("TRADING_SETTINGS", {}).get("trading_interval", 60)
         
         # 스케줄 설정 (매 interval_minutes분마다 실행)
-        def trading_job(skip_trade=False):
-            """트레이딩 작업 실행
-            
-            Args:
-                skip_trade: True이면 분석만 수행하고 거래는 실행하지 않음
-                
-            Returns:
-                dict or None: 거래 결과 (거래가 실행된 경우)
-            """
-            global last_trade_time, last_decision
-            trade_executed = False
+        def trading_job():
             try:
                 # OHLCV 데이터 업데이트
                 try:
@@ -349,34 +334,13 @@ def main():
                     logger.log_error(f"시장 분석 오류: {e}")
                     return
                 
-                # 거래 실행 (enable_trade가 True이고 skip_trade가 False일 때만)
-                trade_result = None
-                if os.getenv("ENABLE_TRADE", "").lower() == "true" and not skip_trade:
+                # 거래 실행 (enable_trade가 True일 때만)
+                if os.getenv("ENABLE_TRADE", "").lower() == "true":
                     try:
-                        # 동일한 신호가 연속으로 발생하는지 확인
-                        current_decision = analysis_result.get('decision')
-                        
-                        # 신뢰도와 상관없이 거래 실행 - 신뢰도 제한 제거
-                        confidence_threshold = 0.0  # 제한 없음
-                        current_confidence = analysis_result.get('confidence', 0)
-                        
-                        # 이전과 다른 결정인 경우에만 거래 실행
-                        if current_decision != last_decision or last_decision is None:
-                            trade_result = trading_engine.execute_trade(analysis_result, ticker)
-                            logger.log_trade(f"거래 결과: {trade_result}")
-                            
-                            # 거래가 성공적으로 실행되었는지 확인
-                            if trade_result and isinstance(trade_result, dict) and trade_result.get("status") == "success":
-                                last_trade_time = datetime.now()
-                                last_decision = current_decision
-                                trade_executed = True
-                                logger.log_app(f"거래 실행 후 쿨다운 시작 (30분)")
-                        else:
-                            logger.log_app(f"동일한 신호({current_decision})가 연속으로 발생하여 중복 거래를 방지합니다.")
+                        trade_result = trading_engine.execute_trade(analysis_result, ticker)
+                        logger.log_trade(f"거래 결과: {trade_result}")
                     except Exception as e:
                         logger.log_error(f"거래 실행 오류: {e}")
-                elif skip_trade:
-                    logger.log_app("쿨다운 중이므로 거래 실행을 건너뜁니다.")
                 
                 # 분석 결과 로깅
                 decision = analysis_result.get('decision', 'unknown')
@@ -423,47 +387,23 @@ def main():
                 
                 # 새로운 로그 형식으로 출력
                 logger.log_trade_analysis(analysis_result, profit_info)
-                
-                # 거래 실행 결과 반환
-                return trade_result if trade_executed else None
 
             except Exception as e:
                 logger.log_error(f"트레이딩 작업 오류: {e}")
                 
-        # 스케줄 설정
-        # 스케줄러 대신 무한 루프 사용
+        # 스케줄 등록
+         # 스케줄러 대신 무한 루프 사용
         interval_minutes = trading_config.get("TRADING_SETTINGS", {}).get("trading_interval", 60)
-        
-        # 트레이딩 간격이 너무 짧으면 기본값으로 설정 (최소 5분)
-        if interval_minutes < 5:
-            logger.log_warning(f"설정된 트레이딩 간격({interval_minutes}분)이 너무 짧습니다. 5분으로 설정합니다.")
-            interval_minutes = 5
-            
-        # 거래 후 쿨다운 시간 (분)
-        trade_cooldown_minutes = trading_config.get("TRADING_SETTINGS", {}).get("trade_cooldown_minutes", 30)
-        
         interval_seconds = interval_minutes * 60
         
         # 시작시 한 번 실행
         trading_job()
         
         # 스케줄러 실행
-        logger.log_app(f"트레이딩 스케줄러 시작 (분석 간격: {interval_minutes}분, 거래 쿨다운: {trade_cooldown_minutes}분, 신뢰도 제한 없음)")
+        logger.log_app(f"트레이딩 스케줄러 시작 (간격: {interval_minutes}분)")
         try:
             while True:
                 time.sleep(interval_seconds)
-                
-                # 쿨다운 체크
-                current_time = datetime.now()
-                if last_trade_time is not None:
-                    elapsed_minutes = (current_time - last_trade_time).total_seconds() / 60
-                    if elapsed_minutes < trade_cooldown_minutes:
-                        logger.log_app(f"거래 쿨다운 중입니다. 다음 거래까지 {trade_cooldown_minutes - int(elapsed_minutes)}분 남았습니다.")
-                        # 쿨다운 중에도 데이터 분석은 계속 수행하되 거래는 실행하지 않음
-                        trading_job(skip_trade=True)
-                        continue
-                
-                # 거래 포함하여 작업 실행
                 trading_job()
         except KeyboardInterrupt:
             logger.log_app("프로그램 종료 (키보드 인터럽트)")

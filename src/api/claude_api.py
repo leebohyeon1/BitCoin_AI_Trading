@@ -15,15 +15,6 @@ class ClaudeAPI:
         
         Args:
             api_key: Claude API 키 (없으면 환경변수에서 로드)
-            model: 사용할 Claude 모델 (기본값: claude-3-7-sonnet-20250219)
-            
-        참고: 모델 버전은 정기적으로 업데이트될 수 있으므로 Anthropic 공식 문서 확인 필요
-        """
-        """
-        Claude API 초기화
-        
-        Args:
-            api_key: Claude API 키 (없으면 환경변수에서 로드)
             model: 사용할 Claude 모델
         """
         self.api_key = api_key or os.getenv("CLAUDE_API_KEY")
@@ -53,27 +44,14 @@ class ClaudeAPI:
         # 프롬프트 생성
         prompt = self._create_prompt(market_data, indicators_data)
         
-        # Claude API 호출 (오류 처리 추가)
-        try:
-            response = self.client.messages.create(
-                model=self.model,
-                max_tokens=4096,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
-            )
-        except Exception as e:
-            print(f"Claude API 호출 오류: {e}")
-            # 기본 응답 반환
-            return {
-                "signal": "hold",
-                "confidence": 0.5,
-                "reasoning": f"API 호출 오류: {e}",
-                "key_indicators": [],
-                "market_sentiment": "neutral",
-                "risk_level": "medium",
-                "korean_analysis": f"API 호출 중 오류가 발생했습니다: {e}"
-            }
+        # Claude API 호출
+        response = self.client.messages.create(
+            model=self.model,
+            max_tokens=4096,
+            messages=[
+                {"role": "user", "content": prompt}
+            ]
+        )
         
         # 응답 파싱
         try:
@@ -141,7 +119,7 @@ class ClaudeAPI:
     
     def _extract_json(self, text):
         """
-        텍스트에서 JSON 응답 추출 (개선된 버전)
+        텍스트에서 JSON 응답 추출
         
         Args:
             text: Claude의 응답 텍스트
@@ -150,82 +128,31 @@ class ClaudeAPI:
             dict: 파싱된 JSON 객체
         """
         try:
-            # 1. 먼저 ```json 블록 찾기
+            # JSON 형식 블록 찾기
             json_start = text.find("```json")
-            if json_start != -1:
-                # JSON 시작점 찾기
-                json_start = text.find("\n", json_start) + 1
-                # JSON 끝점 찾기
-                json_end = text.find("```", json_start)
-                
-                if json_end != -1:
-                    json_str = text[json_start:json_end].strip()
-                    return json.loads(json_str)
+            if json_start == -1:
+                json_start = text.find("```")
+                if json_start == -1:
+                    # JSON 블록 없이 바로 JSON 형식이면 전체 텍스트를 파싱 시도
+                    return json.loads(text.strip())
             
-            # 2. 일반 ``` 코드 블록 찾기
-            json_start = text.find("```")
-            if json_start != -1:
-                # JSON 시작점 찾기
-                json_start = text.find("\n", json_start) + 1
-                # JSON 끝점 찾기
-                json_end = text.find("```", json_start)
-                
-                if json_end != -1:
-                    json_str = text[json_start:json_end].strip()
-                    try:
-                        return json.loads(json_str)
-                    except:
-                        # 블록 내용이 JSON이 아닐 수 있음
-                        pass
+            # JSON 시작점 찾기
+            json_start = text.find("\n", json_start) + 1
+            # JSON 끝점 찾기
+            json_end = text.find("```", json_start)
             
-            # 3. 전체 텍스트에서 JSON 형식 찾기 (중괄호로 둘러싸인 부분)
-            json_start = text.find("{")
-            if json_start != -1:
-                # 중첩된 중괄호 처리를 위한 카운터
-                brace_count = 1
-                json_end = json_start + 1
-                
-                while json_end < len(text) and brace_count > 0:
-                    if text[json_end] == "{":
-                        brace_count += 1
-                    elif text[json_end] == "}":
-                        brace_count -= 1
-                    json_end += 1
-                
-                if brace_count == 0:
-                    json_str = text[json_start:json_end].strip()
-                    try:
-                        return json.loads(json_str)
-                    except:
-                        # 형식이 맞지 않을 수 있음
-                        pass
+            if json_end == -1:  # 닫는 코드 블록이 없는 경우
+                json_str = text[json_start:].strip()
+            else:
+                json_str = text[json_start:json_end].strip()
             
-            # 4. 마지막으로 전체 텍스트를 JSON으로 파싱 시도
-            try:
-                return json.loads(text.strip())
-            except:
-                pass
-            
-            # 모든 방법 실패 시 기본 응답
-            print(f"JSON 파싱 실패, 기본값 반환. 원본 텍스트 시작 부분:\n{text[:300]}...")
-            return {
-                "signal": "hold",
-                "confidence": 0.5,
-                "reasoning": "JSON 파싱 오류로 인해 기본 홀드 신호를 반환합니다.",
-                "key_indicators": [],
-                "market_sentiment": "neutral",
-                "risk_level": "medium",
-                "korean_analysis": "응답 처리 중 오류가 발생하여 기본값으로 홀드 신호를 반환합니다."
-            }
+            # 앞뒤 공백 제거 및 파싱
+            return json.loads(json_str)
         except Exception as e:
-            print(f"JSON 파싱 오류: {e}\n원본 텍스트 시작 부분: {text[:300]}...")
+            print(f"JSON 파싱 오류: {e}\n원본 텍스트: {text[:500]}...")
             # 기본 응답
             return {
                 "signal": "hold",
                 "confidence": 0.5,
-                "reasoning": f"JSON 파싱 오류: {e}",
-                "key_indicators": [],
-                "market_sentiment": "neutral",
-                "risk_level": "medium",
-                "korean_analysis": f"응답 처리 중 오류가 발생했습니다: {e}"
+                "reasoning": "JSON 파싱 오류로 인해 기본 홀드 신호를 반환합니다."
             }

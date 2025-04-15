@@ -159,11 +159,6 @@ class TradingEngine:
         decision = analysis_result.get("decision")
         confidence = analysis_result.get("confidence", 0.5)
         
-        # 신뢰도 제한 없이 모든 거래 처리 (AI 결정 우선)
-        min_confidence_threshold = 0.0  # 신뢰도 제한 제거
-        # 참고용 로깅 메시지
-        print(f"거래 신뢰도: {confidence:.2f} (제한 없음)")
-        
         # 최소 주문 금액
         min_order_amount = self.trading_settings.get("min_order_amount", 5000)
         
@@ -196,31 +191,15 @@ class TradingEngine:
                 print("현재가 정보를 가져올 수 없어 거래를 중단합니다.")
                 return {"status": "error", "message": "현재가 정보를 가져올 수 없습니다."}
             
-            # 투자 비율 계산 (신뢰도에 따라 조정) - 신뢰도가 낮아도 투자는 진행
+            # 투자 비율 계산 (신뢰도에 따라 조정)
             min_ratio = self.investment_ratios.get("min_ratio", 0.1)
             max_ratio = self.investment_ratios.get("max_ratio", 0.5)
             
             # 신뢰도에 따른 투자 비율 결정 (선형 보간)
-            # 낮은 신뢰도라도 최소 비율로 투자
             investment_ratio = min_ratio + (max_ratio - min_ratio) * (confidence - 0.5) * 2
             investment_ratio = max(min_ratio, min(max_ratio, investment_ratio))
             
-            # 거래 신호 확인 - 임계값 크게 완화 (대부분의 신호 허용)
-            avg_signal_strength = analysis_result.get('avg_signal_strength', 0)
-            buy_threshold = self.config.get("DECISION_THRESHOLDS", {}).get("buy_threshold", 0.05)
-            sell_threshold = self.config.get("DECISION_THRESHOLDS", {}).get("sell_threshold", -0.05)
-            
-            # 신호 강도 확인은 하되 매우 낮은 임계값 적용 (대부분 신호 허용)
-            # 임계값 이하라도 거의 모든 신호 수용
-            signal_margin = 0.02  # 낮은 여유도
-            if decision == "buy" and avg_signal_strength < buy_threshold - signal_margin:
-                print(f"매수 신호 강도가 매우 낮음 (현재: {avg_signal_strength:.2f}, 임계값: {buy_threshold:.2f})")
-                # 그래도 계속 진행
-            elif decision == "sell" and avg_signal_strength > sell_threshold + signal_margin:
-                print(f"매도 신호 강도가 매우 낮음 (현재: {avg_signal_strength:.2f}, 임계값: {sell_threshold:.2f})")
-                # 그래도 계속 진행
-                
-            # 매매 실행 기본값
+            # 매매 실행
             trade_result = {"status": "no_action", "message": "조건에 맞는 거래가 없습니다."}
             
             if decision == "buy" and krw_balance > min_order_amount:

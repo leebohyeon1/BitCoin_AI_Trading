@@ -262,20 +262,25 @@ def run_trading(trading_engine, ticker, logger, use_ai=False, skip_trade=False):
             # 거래 실행 검토
             trade_executed = False
             if os.getenv("ENABLE_TRADE", "").lower() == "true" and not skip_trade:
-                # 동일한 신호 연속 발생 체크
-                if decision != last_trade_decision or last_trade_decision is None:
-                    trade_result = trading_engine.execute_trade(analysis_result, ticker)
-                    logger.log_trade(f"거래 결과: {trade_result}")
-                    
-                    # 거래 성공 시 쿨다운 타이머 설정
-                    cooldown_minutes = trading_engine.config.get("TRADING_SETTINGS", {}).get("cooldown_minutes", 30)
-                    if trade_result and isinstance(trade_result, dict) and trade_result.get("status") == "success":
-                        last_trade_time = datetime.datetime.now()
-                        last_trade_decision = decision
-                        trade_executed = True
-                        logger.log_app(f"거래 실행 후 쿨다운 시작 ({cooldown_minutes}분)")
+                # 신뢰도 검사
+                min_confidence = 0.7  # 최소 70% 신뢰도 필요
+                if confidence >= min_confidence:
+                    # 동일한 신호 연속 발생 체크
+                    if decision != last_trade_decision or last_trade_decision is None:
+                        trade_result = trading_engine.execute_trade(analysis_result, ticker)
+                        logger.log_trade(f"거래 결과: {trade_result}")
+                        
+                        # 거래 성공 시 쿨다운 타이머 설정
+                        cooldown_minutes = trading_engine.config.get("TRADING_SETTINGS", {}).get("cooldown_minutes", 30)
+                        if trade_result and isinstance(trade_result, dict) and trade_result.get("status") == "success":
+                            last_trade_time = datetime.datetime.now()
+                            last_trade_decision = decision
+                            trade_executed = True
+                            logger.log_app(f"거래 실행 후 쿨다운 시작 ({cooldown_minutes}분)")
+                    elif use_ai:  # AI 모드일 때만 상세 로깅
+                        logger.log_app(f"동일한 신호({decision})가 연속으로 발생하여 중복 거래를 방지합니다.")
                 elif use_ai:  # AI 모드일 때만 상세 로깅
-                    logger.log_app(f"동일한 신호({decision})가 연속으로 발생하여 중복 거래를 방지합니다.")
+                    logger.log_app(f"신뢰도가 낮아 거래를 실행하지 않습니다. (현재: {confidence:.2f}, 필요: {min_confidence})")
             elif skip_trade and use_ai:  # AI 모드일 때만 상세 로깅
                 logger.log_app("쿨다운 중이므로 거래 실행을 건너뜁니다.")
             

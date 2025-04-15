@@ -1,5 +1,4 @@
 @echo off
-@chcp 65001 1>NULL 2>NUL
 echo 비트코인 자동매매 프로그램 시작 (이중 간격 모드)
 echo 1분마다 일반 분석, 30분마다 AI 분석을 수행합니다.
 echo.

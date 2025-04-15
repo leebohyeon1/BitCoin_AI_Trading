@@ -215,7 +215,7 @@ def run_trading_without_ai(trading_engine, ticker, logger):
             # 결과 로깅
             decision = analysis_result.get('decision', 'unknown')
             confidence = analysis_result.get('confidence', 0)
-            #logger.log_app(f"일반 분석 결과: {decision} (신뢰도: {confidence:.2f})")
+            logger.log_app(f"일반 분석 결과: {decision} (신뢰도: {confidence:.2f})")
             
             # 거래 실행
             if os.getenv("ENABLE_TRADE", "").lower() == "true":
@@ -223,8 +223,8 @@ def run_trading_without_ai(trading_engine, ticker, logger):
                 logger.log_trade(f"거래 결과: {trade_result}")
             
             # 자연스러운 한국어로 결정 이유 생성
-            #explanation = generate_korean_reasoning(analysis_result)
-            #analysis_result['korean_reasoning'] = explanation
+            explanation = generate_korean_reasoning(analysis_result)
+            analysis_result['korean_reasoning'] = explanation
             
             # 수익률 정보 계산
             profit_info = calculate_profit_info(trading_engine.upbit_api, ticker)
@@ -380,7 +380,7 @@ def main():
         trading_engine = TradingEngine(trading_config, upbit_api, analyzer)
         
         # 트레이딩 간격 설정
-        normal_interval_minutes = 60  # 일반 분석은 초 간격
+        normal_interval_minutes = 1  # 일반 분석은 1분 간격
         ai_interval_minutes = 30     # AI 분석은 30분 간격
         
         # 마지막 실행 시간 초기화
@@ -395,13 +395,13 @@ def main():
                 current_time = datetime.datetime.now()
                 
                 # OHLCV 데이터 주기적 업데이트 (분석 실행 바로 전에만 수행)
-                should_update = ((current_time - last_normal_run).total_seconds() >= normal_interval_minutes or
+                should_update = ((current_time - last_normal_run).total_seconds() >= normal_interval_minutes * 60 or
                                  (current_time - last_ai_run).total_seconds() >= ai_interval_minutes * 60)
                 if should_update:
                     update_ohlcv_data(upbit_api, technical, ticker, interval, count, logger)
                 
                 # 일반 분석 실행 (1분 간격)
-                if (current_time - last_normal_run).total_seconds() >= normal_interval_minutes:
+                if (current_time - last_normal_run).total_seconds() >= normal_interval_minutes * 60:
                     logger.log_app(f"일반 분석 실행 (간격: {normal_interval_minutes}분)")
                     run_trading_without_ai(trading_engine, ticker, logger)
                     last_normal_run = current_time
